@@ -1,0 +1,22 @@
+languageCode = "en-us"
+title = "Telco Network Cloud Orchestration Learning Center"
+theme = "docdock"
+googleAnalytics = "UA-67374957-2"
+canonifyURLs = true
+publishDir = "docs/"
+
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
+
+[params]
+#disableHomeIcon = true
+disableNavChevron = true
+themeStyle = "flex"
+
+[[menu.shortcuts]]
+name = ""
+url = "/"
+weight = 100
+
+[deployment]
+order = [".jpg$", ".gif$"]
