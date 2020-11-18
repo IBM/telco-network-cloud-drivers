@@ -11,7 +11,7 @@ This section describes the steps required to request an intent on a Network Serv
 
 ## Pre-requisites
 * An existing Network Service Design
-* Access to the UI of a running instance of Agile Lifecycle Manager (ALM)
+* Access to the UI of a running instance of Telco Network Cloud Orchestration (TNCO)
 
 ## Assembly Instances
 
@@ -39,7 +39,7 @@ Once you press Create, the Assembly Instance will show up on the Recent Assembly
 
 ##	Intent Execution Graph
 
-ALM includes intent based orchestration capabilities. Once you have onboarded and designed your VNF and Network Services, the Intent Engine automatically calculates and executes the best path to get an assembly from the current state to the desired state without having to manually program any of the tasks. The Intent Execution graph is a view all the tasks that the Intent Engine is executing to bring the Network Service or VNF into its intended state.
+TNCO includes intent based orchestration capabilities. Once you have onboarded and designed your VNF and Network Services, the Intent Engine automatically calculates and executes the best path to get an assembly from the current state to the desired state without having to manually program any of the tasks. The Intent Execution graph is a view all the tasks that the Intent Engine is executing to bring the Network Service or VNF into its intended state.
 
 When an Intent is being executed, you can view all the tasks the Intent Engine is performing in real-time in a moving graph. You can see what task is performed first, and what lifecycle action or operation is being performed.
 

@@ -7,7 +7,7 @@ weight: 20
 
 To complete this guide you will need:
 
-- An existing installation of the Agile Lifecycle Manager (ALM)
+- An existing installation of the Telco Network Cloud Orchestration (TNCO)
 - An understanding of how to [configure LM using the Vault UI](/user-guides/administration/configuration/configuring-lm)
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) client with access to the Kubernetes cluster LM is installed on
 

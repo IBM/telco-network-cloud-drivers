@@ -14,7 +14,7 @@ lmctl project create --name myvns --version 0.1 --servicetype NS ./myns
 ```
 
 {{%note %}}
-NOTE: The name should NOT contain '-' as a separator in the name (this is not a restriction on Agile Lifecycle Manager (ALM), but simplifies pipeline automation later).
+NOTE: The name should NOT contain '-' as a separator in the name (this is not a restriction on Telco Network Cloud Orchestration (TNCO), but simplifies pipeline automation later).
 {{%/note %}}
 
 This creates a NS directory structure for the NS. The result of this is a NS directory structure that is created that should look like this:
@@ -37,11 +37,11 @@ A top level project structure can have the following artifacts:
 
 | Directory               | Required | Description                                                                                                                                                                    |
 | ----------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Descriptor**          | Yes      | This directory must contain a descriptor file called **"assembly.yml"**, representing the top level Network Service. The descriptor is pushed to ALM during onboarding |
+| **Descriptor**          | Yes      | This directory must contain a descriptor file called **"assembly.yml"**, representing the top level Network Service. The descriptor is pushed to TNCO during onboarding |
 | **Behaviour**           | optional | This optional directory contains the Assembly Templates and Scenarios used by the test scenarios                                                                               |
-| **Behaviour/Tests**     | optional | This optional directory contains the Test Scenarios. These are pushed to ALM automatically during on boarding                                                          |
-| **Behaviour/Templates** | optional | This optional directory contains the Assembly Templates. These are pushed to ALM automatically during onboarding                                                       |
-| **Behaviour/Runtime**   | optional | This optional directory contains the Runtime Scenarios, such as Diagnostic tests. These are pushed to ALM automatically during on boarding                             |
+| **Behaviour/Tests**     | optional | This optional directory contains the Test Scenarios. These are pushed to TNCO automatically during on boarding                                                          |
+| **Behaviour/Templates** | optional | This optional directory contains the Assembly Templates. These are pushed to TNCO automatically during onboarding                                                       |
+| **Behaviour/Runtime**   | optional | This optional directory contains the Runtime Scenarios, such as Diagnostic tests. These are pushed to TNCO automatically during on boarding                             |
 
 #### lmproject File
 
@@ -96,4 +96,4 @@ The NS project needs to be pushed to the development environment. Run the follow
   $ lmctl project push dev
 ```
 
-When you login to ALM and go to the Assembly Designer section, you should see an assembly with the project name you created.
+When you login to TNCO and go to the Assembly Designer section, you should see an assembly with the project name you created.

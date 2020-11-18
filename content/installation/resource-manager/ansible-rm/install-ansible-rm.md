@@ -7,7 +7,7 @@ This section assumes you have followed the configuration steps and now have:
 
 - an Ansible RM Helm chart
 - a custom values YAML file
-- a target Kubernetes namespace with Agile Lifecycle Manager (ALM) installed
+- a target Kubernetes namespace with Telco Network Cloud Orchestration (TNCO) installed
 
 # Installing with Helm
 

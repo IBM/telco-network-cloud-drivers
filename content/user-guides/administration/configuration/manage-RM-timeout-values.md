@@ -5,7 +5,7 @@ weight: 30
 
 ## Introduction
 
-Agile Lifecycle Manager (ALM) can communicate with a number of Resource Managers (RM) when executing the set of tasks of an intent. This communication is through the OSSLM API. There are three timers and three associated timer configurations values which govern this relationship. 
+Telco Network Cloud Orchestration (TNCO) can communicate with a number of Resource Managers (RM) when executing the set of tasks of an intent. This communication is through the OSSLM API. There are three timers and three associated timer configurations values which govern this relationship. 
 
 *  `alm.http.clientReadTimeout`
 *  `alm.daytona.resource-manager.default-timeout-duration`
@@ -22,7 +22,7 @@ Agile Lifecycle Manager (ALM) can communicate with a number of Resource Managers
 
  IntentEng-ResourceMgr-timers
 
-Once a request has been accepted by the RM, ALM gives it a finite amount of time to complete the task. During this time, the Intent Engine will poll the RM at intervals to determine if the task has been completed. Once the RM responds to the poll indicating that the Task has completed (be it successfully or unsuccessfully), the Intent Engine will cease polling and cancel The default-timeout-duration timer.
+Once a request has been accepted by the RM, TNCO gives it a finite amount of time to complete the task. During this time, the Intent Engine will poll the RM at intervals to determine if the task has been completed. Once the RM responds to the poll indicating that the Task has completed (be it successfully or unsuccessfully), the Intent Engine will cease polling and cancel The default-timeout-duration timer.
 
 
 All three of these timer values can be set to specific values in Vault following the same procedure should the default values not meet the needs of a specific deployment. They can be set collectively or individually as required. There is no requirement to set all three. In the following example we look at setting `clientReadTimeout` but this can be applied to all three timers.

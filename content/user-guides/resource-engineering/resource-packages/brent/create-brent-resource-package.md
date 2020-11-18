@@ -43,7 +43,7 @@ lmctl project build
 
 This will create an LMCTL package at `_lmctl/build`. Note that the LMCTL package is not a Resource package. The package and it's structure is specific to LMCTL, the Resource is actually inside. You should continue to use LMCTL to manage the package rather than attempting to directly onboard it through Rest APIs.
 
-You can push the package to a Agile Lifecycle Manager (ALM) environment with `project push`:
+You can push the package to a Telco Network Cloud Orchestration (TNCO) environment with `project push`:
 
 ```
 lmctl project push myenvironment

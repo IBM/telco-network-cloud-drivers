@@ -28,7 +28,7 @@ The package is then available for use in other projects.
 
 ## Create the Pipeline script
 
-The following is an example Jenkins pipeline script that executes the steps in the previous section. The target Agile Lifecycle Manager (ALM) environment in the case below is called **testing**. 
+The following is an example Jenkins pipeline script that executes the steps in the previous section. The target Telco Network Cloud Orchestration (TNCO) environment in the case below is called **testing**. 
 
 Create a pipeline file name 'Jenkinsfile' at the top-level of your VNF or Network Service project. 
 

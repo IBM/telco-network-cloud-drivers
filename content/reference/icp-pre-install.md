@@ -5,7 +5,7 @@ weight: 0
 
 # ICP Pre-Install Considerations
 
-This section details topics that should be considered when installing the CI/CD Hub and/or Agile Lifecycle Manager (ALM) to ICP.
+This section details topics that should be considered when installing the CI/CD Hub and/or Telco Network Cloud Orchestration (TNCO) to ICP.
 
 # Helm
 
@@ -17,7 +17,7 @@ NOTE: when using Helm with ICP you may need to include the `--tls` options for a
 
 # Pod Security Policy
 
-If you are installing [CI/CD Hub](/installation/cicdhub/cicd-hub-start.md) or [Agile Lifecycle Manager (ALM)](/installation/lm/alm-start/) on ICP, you should do so in a namespace that is bound to a less restrictive Pod Security Policy. We recommend creating a new namespace and binding it to an existing policy called `ibm-anyuid-psp`. This can be done through the ICP dashboard, see [ICP - Create a namespace with pod security policy binding](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_3.1.2/user_management/create_namespace_pspbind.html) for more details.
+If you are installing [CI/CD Hub](/installation/cicdhub/cicd-hub-start.md) or [Telco Network Cloud Orchestration (TNCO)](/installation/lm/alm-start/) on ICP, you should do so in a namespace that is bound to a less restrictive Pod Security Policy. We recommend creating a new namespace and binding it to an existing policy called `ibm-anyuid-psp`. This can be done through the ICP dashboard, see [ICP - Create a namespace with pod security policy binding](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_3.1.2/user_management/create_namespace_pspbind.html) for more details.
 
 # Docker Images
 

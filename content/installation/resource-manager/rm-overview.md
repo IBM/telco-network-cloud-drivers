@@ -5,7 +5,7 @@ weight: 10
 
 # Introduction
 
-The Agile Lifecycle Manager (ALM) provides open integration of external virtual and physical resources to be assembled with others into complete services. While orchestrating Assemblies, LM leverages a set of one or more external Resource Managers (RM) through their northbound APIs to orchestrate the lifecycles of the managed resource instances deployed to Virtual Infrastructure Managers (VIMs). The Resource Managers are responsible for communicating with VIMs to request actions on cloud infrastructure compute, storage and network resources in support of deployed resource instances lifecycles.
+The Telco Network Cloud Orchestration (TNCO) provides open integration of external virtual and physical resources to be assembled with others into complete services. While orchestrating Assemblies, LM leverages a set of one or more external Resource Managers (RM) through their northbound APIs to orchestrate the lifecycles of the managed resource instances deployed to Virtual Infrastructure Managers (VIMs). The Resource Managers are responsible for communicating with VIMs to request actions on cloud infrastructure compute, storage and network resources in support of deployed resource instances lifecycles.
 
 # The role of the Resource Manager
 
@@ -17,11 +17,11 @@ LM ships with an existing Resource Manager commonly referred to as Brent (see se
 
 # Brent
 
-Brent is a Carrier-grade Resource Manager shipped with ALM and is automatically onboarded into LM by the Kubernetes lm-post-configurator job.
+Brent is a Carrier-grade Resource Manager shipped with TNCO and is automatically onboarded into LM by the Kubernetes lm-post-configurator job.
 
 Brent performs the following functions:
 
-- Resource package management - resource packages are uploaded to Brent (either using the REST API or by using LMCTL) and the types are then imported into ALM when Brent is onboarded or refreshed.
+- Resource package management - resource packages are uploaded to Brent (either using the REST API or by using LMCTL) and the types are then imported into TNCO when Brent is onboarded or refreshed.
 - [Infrastructure Key](/user-guides/operations/infrastructure-key-management) management - infrastructure keys include SSH keys for securely communicating with running instances (such as VMs) in a infrastructure object.
 - Execution of operations against resource instances running in a Virtualized Infrastructure Manager (VIM) block. [Resource drivers](/user-guides/resource-engineering/drivers/overview) onboarded to Brent serve as the mechanism of achieving this by managing infrastructure and running lifecycle operations against them.
 

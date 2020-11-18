@@ -1,17 +1,17 @@
 ---
-title: Scale a Running ALM
+title: Scale a Running TNCO
 weight: 50
 ---
 
-The following guide explains how to upgrade a running Agile Lifecycle Manager (ALM) to scale with CPU usage.
+The following guide explains how to upgrade a running Telco Network Cloud Orchestration (TNCO) to scale with CPU usage.
 
 ## Pre-requisites:
 
-- The [Kubernetes metrics server](https://kubernetes.io/docs/tasks/debug-application-cluster/resource-metrics-pipeline/#metrics-server) must be running in your Kubernetes environment for scaling of ALM to work.
+- The [Kubernetes metrics server](https://kubernetes.io/docs/tasks/debug-application-cluster/resource-metrics-pipeline/#metrics-server) must be running in your Kubernetes environment for scaling of TNCO to work.
 
-## Configure ALM
+## Configure TNCO
 
-Existing installations of ALM can be scaled by adding an [Horizontal Pod Autoscaler](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/) via `kubectl`.  
+Existing installations of TNCO can be scaled by adding an [Horizontal Pod Autoscaler](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/) via `kubectl`.  
 For each service that you want to scale do the following:
 
 1. Ensure that the service has resources set, you can do this by running:
@@ -62,7 +62,7 @@ helm upgrade lm <helm chart> --values <custom values file>
 
 3. Once your service has resources then you can create an autoscaler using a command like this:
 ```
-kubectl autoscale deployment <ALM service deployment> --min=<minimum pods> --max=<maximum pods> --cpu-percent=<cpu target percentage>
+kubectl autoscale deployment <TNCO service deployment> --min=<minimum pods> --max=<maximum pods> --cpu-percent=<cpu target percentage>
 ```
 For example if you want to scale Apollo between 1 and 3 pods whenever a pod exceeds 80% CPU you would use this command:
 ```
@@ -75,5 +75,5 @@ kubectl get hpa
 ```
 
 {{%note %}}
-NOTE: the names of ALM services can be viewed by inspecting Kubernetes deployments (kubectl get deployments)
+NOTE: the names of TNCO services can be viewed by inspecting Kubernetes deployments (kubectl get deployments)
 {{%/note %}}

@@ -47,7 +47,7 @@ On completion, the driver is expected to produce a message on the `lm_vnfc_lifec
 
 ## Find Reference Infrastructure
 
-Assemblies designed in Agile Lifecycle Manager (ALM) are allowed to have external references to Resources which may or may not have been created by Brent. These Resources should be discovered by Brent, using a name and deployment location. Once the Resource has been found, operations can be executed on it.
+Assemblies designed in Telco Network Cloud Orchestration (TNCO) are allowed to have external references to Resources which may or may not have been created by Brent. These Resources should be discovered by Brent, using a name and deployment location. Once the Resource has been found, operations can be executed on it.
 Resource Driver API `/references/find` is designed for Brent to discover infrastructures previously created on a LM deployment location, to be referenced as a resource associated topology.
 
 On a find reference request, Brent will send the following to the resource driver:

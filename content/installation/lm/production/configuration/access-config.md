@@ -3,9 +3,9 @@ title: Access Configuration
 weight: 30
 ---
 
-# Configuring Access to Agile Lifecycle Manager (ALM)
+# Configuring Access to Telco Network Cloud Orchestration (TNCO)
 
-The installation of ALM includes an Ingress Controller which exposes the key services externally. This needs to be configured so that access to these services will be on the required hostnames and ports.
+The installation of TNCO includes an Ingress Controller which exposes the key services externally. This needs to be configured so that access to these services will be on the required hostnames and ports.
 
 If your environment already has an Ingress Controller available, then disable the one that comes with the LM installation. You can check the status of your ingress controller with:
 

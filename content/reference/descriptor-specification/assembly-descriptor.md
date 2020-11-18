@@ -5,7 +5,7 @@ weight: 11
 
 # Introduction
 
-This document describes the assembly descriptors that are used by the Agile Lifecycle Manager (ALM). ALM needs to have descriptions of the building blocks of applications that it is going to manage. The basic building blocks are described in resource descriptors (resource descriptors are described in separate document). Sets of these are composed into assembly descriptors to allow designers to describe a complete application/service that they need LM to manage.  
+This document describes the assembly descriptors that are used by the Telco Network Cloud Orchestration (TNCO). TNCO needs to have descriptions of the building blocks of applications that it is going to manage. The basic building blocks are described in resource descriptors (resource descriptors are described in separate document). Sets of these are composed into assembly descriptors to allow designers to describe a complete application/service that they need LM to manage.  
 
 Within the assembly will be a description of the relationships between resources that allow configuration to be applied to the actual instances of the components that LM will manage.  Assemblies may also reference assemblies and existing infrastructure items, such as network instantiated outside of LM.
 
@@ -264,7 +264,7 @@ references:
 ​      name:
 ​        value: '${storage-name}'
 
-  management-network: # reference to a neutron network not created by the Agile Lifecycle Manager (ALM) 
+  management-network: # reference to a neutron network not created by the Telco Network Cloud Orchestration (TNCO) 
 ​    type: resource::ucd_network::1.0
 ​    properties:
 ​      deploymentLocation:

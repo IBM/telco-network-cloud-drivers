@@ -5,7 +5,7 @@ weight: 20
 
 # Introduction
 
-This document describes the descriptors that are used by the Agile Lifecycle Manager (ALM). ALM needs to have descriptions of the building blocks of applications that it is going to manage. The basic building blocks are described in resource descriptors. Sets of these are composed into assembly descriptors to allow designers to describe a complete application/service that they need LM to manage.  
+This document describes the descriptors that are used by the Telco Network Cloud Orchestration (TNCO). TNCO needs to have descriptions of the building blocks of applications that it is going to manage. The basic building blocks are described in resource descriptors. Sets of these are composed into assembly descriptors to allow designers to describe a complete application/service that they need LM to manage.  
 
 ## Naming
 
@@ -112,7 +112,7 @@ properties:
 
 * `name` - each property name must be unique within its property section (scope). The name cannot contain dot (period) character but has limited additional restrictions.
 
-* `type` - currently, the _type_ field has restricted use. As of ALM 2.1 two additional supported types of `resourceKeyId` and `key` are supported over the previously supported `string`. The default type is `string`.
+* `type` - currently, the _type_ field has restricted use. As of TNCO 2.1 two additional supported types of `resourceKeyId` and `key` are supported over the previously supported `string`. The default type is `string`.
 
 _type_ will in future allow active handling of different types of data (for example: dates, IP addresses, etc…). It is recommended users omit this field or use the supported values of “string” and "key" to avoid compatibility issues in the future.
 
@@ -135,7 +135,7 @@ Properties can have a type `key`. For non-read-only properties, the value of a k
 ### Volatile Properties
 New to LM 2.1 is an additonal property attribute 'volatile' which identifies a property as being a runtime modifiable property. 
 
-A volatile property is one which the designer has actively identified as being modifiable for an instantiated, active assembly/resource without the need for ALM to _'reinstall'_ the assembly/resource. Rather, where the set of property changes to individual resources within an assembly, wholly consists of changes to the values of volatile properties, LM will execute a [Reconfigure operation](/user-guides/operations/manage-instances/) on those resources rather than follow the default resource 'reinstall' procedure which would otherwise be followed.
+A volatile property is one which the designer has actively identified as being modifiable for an instantiated, active assembly/resource without the need for TNCO to _'reinstall'_ the assembly/resource. Rather, where the set of property changes to individual resources within an assembly, wholly consists of changes to the values of volatile properties, LM will execute a [Reconfigure operation](/user-guides/operations/manage-instances/) on those resources rather than follow the default resource 'reinstall' procedure which would otherwise be followed.
 
 It is important to note that while it can be identified as an attribute of a property at both the assembly and resource level it only meaning at the resource level. However it is good practice to flag properties as being volatile through the assembly hierarchy 
 
@@ -323,7 +323,7 @@ A metric is defined as having a name, type and an optional publication-period.
 
 If no publication period is given at all, a default of 60 seconds is assumed.  The publication period is in seconds.  A value of 0 means no metrics will be published.  The value must be +integer
 
-There are two reserved types that are used by ALM to monitor the health of the associated resource instances.:
+There are two reserved types that are used by TNCO to monitor the health of the associated resource instances.:
  
 
 * `metric::integrity`
@@ -830,7 +830,7 @@ operations:
 
 #### Metrics in the Resource Descriptor
 
-Each resource may emit metric information to help in its management. ALM is expecting all collected metrics from resources to be made available on Kafka. ALM listens to specific Kafka topics for events containing metrics. Metrics should be associated with necessary identifiers including timestamps, names of the metric and “Metric Identifiers” specifying the source resource of the metrics. 
+Each resource may emit metric information to help in its management. TNCO is expecting all collected metrics from resources to be made available on Kafka. TNCO listens to specific Kafka topics for events containing metrics. Metrics should be associated with necessary identifiers including timestamps, names of the metric and “Metric Identifiers” specifying the source resource of the metrics. 
 
 Metrics for Integrity and Load are defined in the resource Descriptor. The Integrity metric is used to heal a broken resource. The Load metric is used in the VNF or Network Service to scale a VNF:
 ```

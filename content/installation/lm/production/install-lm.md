@@ -1,5 +1,5 @@
 ---
-title: Installing ALM
+title: Installing TNCO
 weight: 40
 ---
 

@@ -4,25 +4,25 @@ weight: 40
 ---
 
 ## Objectives
-* Learn how to access **Service Designer** tool in Agile Lifecycle Manager (ALM)
+* Learn how to access **Service Designer** tool in Telco Network Cloud Orchestration (TNCO)
 * Create a new *Assembly Descriptor* working as a starting point for a new Network Service (NS) design
 * Design the Network Service using the Designer
 
 ## Pre-requisites
 Before you begin following pre-requisites should be fulfilled:
 
-* Access to ALM environment with applicable user role assigned to the user account (see Installation and Config of ALM for more details on user roles)
-* Necessary Virtual Network Function (VNF) packages developed and onboarded to the ALM environment (see [Develop a VNF package for more details](/user-guides/resource-engineering/resource-overview/))
+* Access to TNCO environment with applicable user role assigned to the user account (see Installation and Config of TNCO for more details on user roles)
+* Necessary Virtual Network Function (VNF) packages developed and onboarded to the TNCO environment (see [Develop a VNF package for more details](/user-guides/resource-engineering/resource-overview/))
 * Used the LMCTL command to create the NS project and pushed that into the environment
 
 ## Create a new Assembly Descriptor
 
-This step is only relevant if you have not created a NS project with LMCTL yet and you start one from scratch in the ALM Designer UI. If you have already created and onboarded the NS project with LMCTL, you can skip to the [next](/user-guides/network-service-design/develop-a-network-service-package/implement-a-network-service-descriptor/#add-elements-to-assembly) section.
+This step is only relevant if you have not created a NS project with LMCTL yet and you start one from scratch in the TNCO Designer UI. If you have already created and onboarded the NS project with LMCTL, you can skip to the [next](/user-guides/network-service-design/develop-a-network-service-package/implement-a-network-service-descriptor/#add-elements-to-assembly) section.
 
  
 1. To create a new *Assembly Descriptor* to model the network service, first you need to navigate to **Service Designer** tool. The **Service Designer** is accessible by selecting **Designer -> Assembly Designer** option from the Navigation Panel on the left. Ones the **Assembly Designer** option is selected the entry page of the Service Designer called **Assembly Descriptors** is opened. **Assembly Descriptors** page is shown in the below screenshot.
 ![Assembly Descriptors page](/images/user-guides/network-service-design/develop-a-network-service-package/implement-a-network-service-descriptor/assembly-descriptors-page.png "Assembly Descriptors page")
-2. The **Assembly Descriptors** page lists all the *Assembly Descriptors* already available in ALM. This includes both Network Service Descriptors and VNF Descriptors.
+2. The **Assembly Descriptors** page lists all the *Assembly Descriptors* already available in TNCO. This includes both Network Service Descriptors and VNF Descriptors.
 3. A new *Assembly Descriptor* is created by clicking the **Create** button on the top right corner of the page. Clicking the **Create** button opens a dialog box (see screenshot below) allowing to enter necessary identification information associated to the *Assembly Descriptor*.
 ![Create Assembly Descriptors dialog](/images/user-guides/network-service-design/develop-a-network-service-package/implement-a-network-service-descriptor/create-assembly-descriptor-dialog.png "Create Assembly Descriptors dialog")
 4. Define header information for the *Assembly Descriptor* according to following rules
@@ -61,7 +61,7 @@ The picture below shows the NS and in this case the gateway element that was add
 ![Pass Properties](/images/user-guides/network-service-design/develop-a-network-service-package/implement-a-network-service-descriptor/pass-properties-ns.png "Pass Properties")
 
 ## Metrics and Policies
-ALM supports Load and Integrity as the standard metrics that are defined in the VNFC Descriptor. The Integrity metric is used in the Healing policy at the VNFC level to heal the VNF if it is broken. The Heal policy is designed at the VNFC level so no need to design this on the NS level.  
+TNCO supports Load and Integrity as the standard metrics that are defined in the VNFC Descriptor. The Integrity metric is used in the Healing policy at the VNFC level to heal the VNF if it is broken. The Heal policy is designed at the VNFC level so no need to design this on the NS level.  
 
 The Load metric is used for the Scaling policy of a VNF, and can be defined in the VNF or in the NS Descriptor. In our example of a voice-service, we had already Promoted the Load metric when we designed the VNF so it becomes available on the NS level, and can be used for the Scaling policy in the next section. In a NS, you can also promote a metric if it needs to be used in a higher-level NS that uses this NS as an element.
 

@@ -3,7 +3,7 @@ title: External LDAP
 weight: 70
 ---
 
-Agile Lifecycle Manager (ALM) makes use of LDAP as its user store for secure access. It is configured by default to connect to the OpenLDAP service which is part of installation. Is is possible to disable this installation of this OpenLDAP service, and to connect to an external LDAP implementation. This includes support for Active Directory.
+Telco Network Cloud Orchestration (TNCO) makes use of LDAP as its user store for secure access. It is configured by default to connect to the OpenLDAP service which is part of installation. Is is possible to disable this installation of this OpenLDAP service, and to connect to an external LDAP implementation. This includes support for Active Directory.
 
 # Configuring an External LDAP Server
 
@@ -70,4 +70,4 @@ The purpose of each configuration item is as follows:
 
 # Next Steps
 
-Continue to [Scaling ALM](/installation/lm/production/configuration/scaling-policy).
+Continue to [Scaling TNCO](/installation/lm/production/configuration/scaling-policy).

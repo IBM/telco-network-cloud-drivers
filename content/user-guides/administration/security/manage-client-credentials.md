@@ -3,13 +3,13 @@ title: Manage Client Credentials
 weight: 50
 ---
 
-The following guide details how to configure Client Credentials in Agile Lifecycle Manager (ALM) on a deployed system. These credentials are required to make API requests from external API clients and integrated systems. To assist in maintaining a secure system it is recommended that each external client have its own set of credentials.
+The following guide details how to configure Client Credentials in Telco Network Cloud Orchestration (TNCO) on a deployed system. These credentials are required to make API requests from external API clients and integrated systems. To assist in maintaining a secure system it is recommended that each external client have its own set of credentials.
 
 # Pre-requisites
 
 To complete this guide you will need:
 
-- An existing installation of the ALM
+- An existing installation of the TNCO
 - A REST client 
 - Understanding of how to [make authenticated requests to LM](/user-guides/authenticated-api-requests)
 

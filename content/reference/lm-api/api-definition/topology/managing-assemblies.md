@@ -3,7 +3,7 @@ title: Assembly Intents
 weight: 0
 ---
 
-This section covers the APIs used to manage Assembly instances during their life. It is based around the state model of Agile Lifecycle Manager (ALM)
+This section covers the APIs used to manage Assembly instances during their life. It is based around the state model of Telco Network Cloud Orchestration (TNCO)
 
 Associated with each definition are details of the request parameters and responses. These include the name of each field plus a brief description and whether the field is mandatory. Whether a field is required or not is based on the context of the examples. The underlying API definition may mark a field as optional, but in some contexts, the fields must be supplied.
 

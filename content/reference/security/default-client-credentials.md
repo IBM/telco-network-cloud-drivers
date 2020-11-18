@@ -2,7 +2,7 @@
 title: Default Client Credentials 
 weight: 10
 ---
-During the default installation of Agile Lifecycle Manager (ALM) your system is deployed with a set of credentials configured for three standard clients. Unless changed (recommended), these will be as follows; 
+During the default installation of Telco Network Cloud Orchestration (TNCO) your system is deployed with a set of credentials configured for three standard clients. Unless changed (recommended), these will be as follows; 
 
 
 # Default Clients

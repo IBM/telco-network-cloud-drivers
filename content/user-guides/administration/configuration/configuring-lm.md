@@ -7,7 +7,7 @@ weight: 40
 
 To follow this guide you will need:
 
-- an existing installation of the Agile Lifecycle Manager (ALM)
+- an existing installation of the Telco Network Cloud Orchestration (TNCO)
 
 # Vault
 

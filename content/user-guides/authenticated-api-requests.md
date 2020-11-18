@@ -3,11 +3,11 @@ title: Authenticated API Requests
 weight: 100
 ---
 
-This guide details how to connect from a calling system into the Agile Lifecycle Manager (ALM) APIs securely.
+This guide details how to connect from a calling system into the Telco Network Cloud Orchestration (TNCO) APIs securely.
 
 # Pre-requisites
 
-- an existing installation of the ALM
+- an existing installation of the TNCO
 - a valid set of client credentials which can be used for authentication. If not, see [Managing Client Credentials](/user-guides/administration/security/manage-client-credentials)
 
 # Making an API call 

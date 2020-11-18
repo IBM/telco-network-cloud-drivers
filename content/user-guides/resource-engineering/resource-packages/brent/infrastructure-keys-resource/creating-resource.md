@@ -19,7 +19,7 @@ Use [LMCTL](/reference/lmctl) to create the basis of a Resource project
 lmctl project create --type Resource --rm brent
 ```
 
-Each resource requires a resource descriptor in YAML format that is located in the 'Definitions/lm/resource.yaml' file of the resource package. The format of this file is defined by the [ALM Resource Descriptor YAML Specification](/reference/descriptor-specification/resource-descriptor).
+Each resource requires a resource descriptor in YAML format that is located in the 'Definitions/lm/resource.yaml' file of the resource package. The format of this file is defined by the [TNCO Resource Descriptor YAML Specification](/reference/descriptor-specification/resource-descriptor).
 
 # Add Resource Descriptor
 

@@ -3,7 +3,7 @@ title: Enable Error Links
 weight: 40
 ---
 
-## Enabling the dashboard links for a running ALM
+## Enabling the dashboard links for a running TNCO
 
 1. Add the following to the `nimrod` secret in [vault](https://vault.lm:32443/ui/vault/secrets/lm/show/nimrod):
 

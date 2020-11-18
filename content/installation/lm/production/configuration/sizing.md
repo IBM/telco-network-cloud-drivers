@@ -3,16 +3,16 @@ title: Sizing
 weight: 40
 ---
 
-# Configuring Sizing of Agile Lifecycle Manager (ALM)
+# Configuring Sizing of Telco Network Cloud Orchestration (TNCO)
 
 The default install of LM makes use of the default settings, which will deploy the Standard flavour of LM. This includes:
 
 * single instance of Foundation services
 * execution of the LM configurator job to configure default settings
-* single instance of ALM services, with all security features enabled
+* single instance of TNCO services, with all security features enabled
 
 ## Alternative Sizing Flavours
-The flavours directory included in the lm-helm-charts package contains helm values and other useful files for installing alternative recommended deployments of the ALM. These different flavours allows for variations of sizing for LM.
+The flavours directory included in the lm-helm-charts package contains helm values and other useful files for installing alternative recommended deployments of the TNCO. These different flavours allows for variations of sizing for LM.
 
 The following flavours are available:
 

@@ -3,7 +3,7 @@ title: Offline
 weight: 20
 ---
 
-The following guide explains how to pre-prepare the artifacts required by Agile Lifecycle Manager (ALM) during installation so you may complete installation at a later date without internet access.
+The following guide explains how to pre-prepare the artifacts required by Telco Network Cloud Orchestration (TNCO) during installation so you may complete installation at a later date without internet access.
 
 # Preparing Offline Install
 
@@ -21,7 +21,7 @@ mkdir lm-docker-images
 
 2. Identifying Images
 
-Below is a full list of the docker images used by the sub-charts in v2.0.3 of all the ALM helm charts:
+Below is a full list of the docker images used by the sub-charts in v2.0.3 of all the TNCO helm charts:
 
 ```
 # Docker Registry
@@ -67,9 +67,9 @@ Pull each image, identified above, with docker:
 docker pull <image>
 ```
 
-4. Build the ALM Images
+4. Build the TNCO Images
 
-You will need to build the ALM images offline. This should already have been covered in [Getting Started]({{< ref "production-start#build-docker-images" >}})
+You will need to build the TNCO images offline. This should already have been covered in [Getting Started]({{< ref "production-start#build-docker-images" >}})
 
 For each image that was built, it will be necessary to pull it, e.g.
 

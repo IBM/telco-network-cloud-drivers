@@ -3,7 +3,7 @@ title: Getting Started
 weight: 11
 ---
 
-The default installation of Agile Lifecycle Manager (ALM) includes a secure application with protected access and a set of [preconfigured roles](/reference/security/default-security-users#default-roles). It also includes [predefined users](/reference/security/default-security-users#default-users) who are able to perform a variety of the key system roles. These predefined users are suitable for either basic usage of the system in a demonstration capacity, or can act as a template for understanding how to configure users in a more permanent installation. 
+The default installation of Telco Network Cloud Orchestration (TNCO) includes a secure application with protected access and a set of [preconfigured roles](/reference/security/default-security-users#default-roles). It also includes [predefined users](/reference/security/default-security-users#default-users) who are able to perform a variety of the key system roles. These predefined users are suitable for either basic usage of the system in a demonstration capacity, or can act as a template for understanding how to configure users in a more permanent installation. 
 
 {{%note %}}
 NOTE: It is recommended that the set of predefined users should be removed for a production deployment.

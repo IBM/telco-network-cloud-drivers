@@ -3,7 +3,7 @@ title: Language Installation
 weight: 20
 ---
 
-The following steps explain how to alter the installation process to change the language files used by the Agile Lifecycle Manager (ALM) User Interface.
+The following steps explain how to alter the installation process to change the language files used by the Telco Network Cloud Orchestration (TNCO) User Interface.
 
 # Installing a Locale
 

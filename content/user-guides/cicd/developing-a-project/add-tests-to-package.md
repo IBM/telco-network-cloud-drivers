@@ -9,14 +9,14 @@ This section shows how to add VNF functional behaviour tests or Network Service 
 
 ### Pre-requisites
 
-- Development VIM and [CI/CD Hub and ALM](/user-guides/cicd/getting-started) up and running
+- Development VIM and [CI/CD Hub and TNCO](/user-guides/cicd/getting-started) up and running
 - [LMCTL setup on your local machine](/reference/lmctl) with a profile configured for the above development environment
 - VNF design documenting how test scenarios are expected to be run and the metrics and behaviour from all participating VNFs that constitute a successful test run.
 - VNF design includes the additional VNF or Network Service test package versions required to actually run the test software itself (e.g. traffic generators and/or probes etc) and the test software images.
 
 ## Push your project to Lifecycle Manager
 
-If you have not already done so, make sure the project you are working on is loaded to your development environment. This will be required to use the Agile Lifecycle Manager (ALM) tools to design behaviour tests.
+If you have not already done so, make sure the project you are working on is loaded to your development environment. This will be required to use the Telco Network Cloud Orchestration (TNCO) tools to design behaviour tests.
 
 ```
 $ git clone <YOUR PROJECT FROM GOGS>
@@ -30,7 +30,7 @@ The first step is to check the VIM in your development environment and load any 
 
 ## Load dependent packages
 
-Check ALM in your development environment and load any extra VNF or Network Service packages required from the Nexus general repository.
+Check TNCO in your development environment and load any extra VNF or Network Service packages required from the Nexus general repository.
 
 For each extra package:
 
@@ -42,7 +42,7 @@ $ lmctl pkg push <pakage-name>-<package-version>.tgz dev
 
 ## Create Behaviour Tests
 
-Log into the development ALM and [design and run the new VNF behaviour tests](/user-guides/cicd/developing-a-project/developing-new-vnf/#creating-behaviour-tests). When the tests are performing as expected it is time to export the tests into your project and commit back to Gogs.
+Log into the development TNCO and [design and run the new VNF behaviour tests](/user-guides/cicd/developing-a-project/developing-new-vnf/#creating-behaviour-tests). When the tests are performing as expected it is time to export the tests into your project and commit back to Gogs.
 
 ## Export Tests and Commit
 

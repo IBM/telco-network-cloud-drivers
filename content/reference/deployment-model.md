@@ -5,9 +5,9 @@ weight: 0
 
 # Introduction
 
-This section introduces the deployment architecture and main configuration options for Agile Lifecycle Manager (ALM) for a typical CI/CD configuration. It is expected that multiple ALMs will be deployed to automate the various tasks for each stage of the CI/CD process. Each set of LMs are coordinated around a repository of artifacts representing the external resources under management. The picture below shows a typical deployment. [See here for more information on a typical LM CI/CD process.](/user-guides/cicd/introduction)
+This section introduces the deployment architecture and main configuration options for Telco Network Cloud Orchestration (TNCO) for a typical CI/CD configuration. It is expected that multiple ALMs will be deployed to automate the various tasks for each stage of the CI/CD process. Each set of LMs are coordinated around a repository of artifacts representing the external resources under management. The picture below shows a typical deployment. [See here for more information on a typical LM CI/CD process.](/user-guides/cicd/introduction)
 
-![Logical Deployment Architecture](/images/reference/deployment-model/deployment-overview.png "ALM Logical Deployment Architecture")
+![Logical Deployment Architecture](/images/reference/deployment-model/deployment-overview.png "TNCO Logical Deployment Architecture")
 
 The following logical functions are typically deployed together to deliver a complete CI/CD pipeline:
 
@@ -39,7 +39,7 @@ If deploying more than one LM environment to the same kubernetes cluster, consid
 
 For production deployments a kubernetes storage class can be provided or the default will be used. For Development Allinone deployments, no storage class is required. A development Allnone environment ties down the kubernetes version and common options to make the footprint as small as possible.
 
-![Storage](/images/reference/deployment-model/storage.png "ALM Storage configuration")
+![Storage](/images/reference/deployment-model/storage.png "TNCO Storage configuration")
 
 # How to design your Lifecycle Manager Deployment
 
@@ -55,7 +55,7 @@ Binding the individual LM Deployment Environments is the CI/CD Hub. This provide
 
 A typical deployment will have all three environments;
 
-![deploymentEnvs](/images/reference/deployment-model/deploymentEnvs.png "ALM deploymentEnvs")
+![deploymentEnvs](/images/reference/deployment-model/deploymentEnvs.png "TNCO deploymentEnvs")
 
 ### Use of namespaces
 
@@ -100,11 +100,11 @@ A pre-production environment may be either a full replica of Production or a sca
 
 Production is the final environment this should be commensurate with the projected near to medium timescale requirements of the specific deployment. The number of assembler's and their complexity both in terms of the number of resources and ultimately the projected number of LM transactions it will perform will determine how large it should be.
 
-A production environment should leverage the High Availability (HA) in ALM. This will typically mean over provisioning the number of instances deployed for each ALM service.
+A production environment should leverage the High Availability (HA) in TNCO. This will typically mean over provisioning the number of instances deployed for each TNCO service.
 
 ## Resource Managers
 
-The [Resource Manager](/installation/resource-manager/rm-overview/) (RM) acts as an intermediary between LM and the individual VIMs supporting the infrastructure in which LM managed resources are deployed. A resource manager may only service a single ALM instance. That is; An RM should be deployed with access to the Kafka instance used by ALM and Elastic Search filebeat is configured to pull the set of logs for its LM environs. Therefore care must be taken to ensure valid pairing. Failure to do so can result in anomalous behaviour.
+The [Resource Manager](/installation/resource-manager/rm-overview/) (RM) acts as an intermediary between LM and the individual VIMs supporting the infrastructure in which LM managed resources are deployed. A resource manager may only service a single TNCO instance. That is; An RM should be deployed with access to the Kafka instance used by TNCO and Elastic Search filebeat is configured to pull the set of logs for its LM environs. Therefore care must be taken to ensure valid pairing. Failure to do so can result in anomalous behaviour.
 
 At least one RM must be deployed and [onboarded/registered](/reference/resource-manager/attach-to-lm) with LM for any assembly design or instantiation to function.
 

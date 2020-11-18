@@ -2,9 +2,9 @@
 title: End Users
 weight: 60
 ---
-# End Users of Agile Lifecycle Manager (ALM)
+# End Users of Telco Network Cloud Orchestration (TNCO)
 
-The types of users for ALM can be divided into a set of roles based on their main responsibility:
+The types of users for TNCO can be divided into a set of roles based on their main responsibility:
 
 * VNF Engineering
 * Network Service Design
@@ -14,11 +14,11 @@ The types of users for ALM can be divided into a set of roles based on their mai
 
 The main use cases of the user roles are described below.
 
-![Users of ALM](/images/users/user-roles.png "Users of ALM")
+![Users of TNCO](/images/users/user-roles.png "Users of TNCO")
 
 # VNF Engineering
 
-The VNF Engineer is a VNF subject matter expert with responsibility for the creation and/or onboarding of third party VNF software through the creation of an operational package that can be managed by ALM.
+The VNF Engineer is a VNF subject matter expert with responsibility for the creation and/or onboarding of third party VNF software through the creation of an operational package that can be managed by TNCO.
 The VNF Developer creates VNF functional tests and behaviour scenarios
 
 ![VNF Developer](/images/users/vnf-developer.png "VNF Developer")
@@ -44,8 +44,8 @@ The VNF Developer creates VNF functional tests and behaviour scenarios
 
 # Installer and Administrator
 
-* The Administrator configures and administers ALM, tailoring the system to manage their environment.
-* The Administrator models the infrastructure universe that ALM will be deploying to, modeling placement groups and available infrastructure features.    
+* The Administrator configures and administers TNCO, tailoring the system to manage their environment.
+* The Administrator models the infrastructure universe that TNCO will be deploying to, modeling placement groups and available infrastructure features.    
 * The Administrator configures pre-production environments that can run and test network service designs.
 * The Administrator onboards Resource drivers and external resource managers that are required to run a network service.
 

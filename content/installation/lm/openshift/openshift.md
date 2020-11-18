@@ -3,7 +3,7 @@ title: OpenShift Origin
 weight: 10
 ---
 
-This section details how to set up a local OpenShift Origin (community distribution of OpenShift) all-in-one cluster and configure that cluster for installing Agile Lifecycle Manager (ALM).
+This section details how to set up a local OpenShift Origin (community distribution of OpenShift) all-in-one cluster and configure that cluster for installing Telco Network Cloud Orchestration (TNCO).
 
 # Pre-requisites
 - Previous knowledge of [basic installation process with LM Helm charts](../../production/production-start).
@@ -66,7 +66,7 @@ oc login -u system:admin
 ```
 
 ## Helm
-ALM will be installed using Helm charts, so you would need Helm client and server:
+TNCO will be installed using Helm charts, so you would need Helm client and server:
 
 - Go into the project (similar to Kubernetes namespace) meant for Tiller:
 ```
@@ -84,7 +84,7 @@ oc adm policy add-cluster-role-to-user cluster-admin system:serviceaccount:kube-
 - Check that Tiller role is correct by command `helm ls`. There should be an empty output.
 
 ## Security policies for LM's Foundation chart
-These configuration steps only apply to Agile Lifecycle Manager (ALM) `helm-foundation` chart (version 2.1 GA).
+These configuration steps only apply to Telco Network Cloud Orchestration (TNCO) `helm-foundation` chart (version 2.1 GA).
 
 - Grant all authenticated users access to the `anyuid` security context constraint (SCC):
 ```

@@ -9,7 +9,7 @@ The following guide is an extension of [User Configuration with OpenLDAP](/user-
 
 To complete this guide you will need:
 
-- An existing installation of the Agile Lifecycle Manager (ALM)
+- An existing installation of the Telco Network Cloud Orchestration (TNCO)
 - OpenLDAP accessible to your client
 - [LDAP Admin Client](http://www.ldapadmin.org/download/ldapadmin.html) installed on your environment
 
@@ -19,11 +19,11 @@ To complete this guide you will need:
 2. Open the LDAP Admin window, click Start -> Connect -> New Connection and fill in details collected earlier.
 ![LDAP Admin - New Connection](/images/user-guides/administration/security/ldap-admin-new-connection.png "LDAP Admin - Example of new connection")
 3. Click "Test Connection" to make sure it is working before confirming with "OK".
-4. An LDAP server that is configured for ALM will have a layout of organization units `groups` and `people` on the left-hand panel.
+4. An LDAP server that is configured for TNCO will have a layout of organization units `groups` and `people` on the left-hand panel.
 ![LDAP Admin - Organization Units](/images/user-guides/administration/security/ldap-admin-units.png "LDAP Admin - Example of organization units")
 
 
-# Adding new user with access to ALM
+# Adding new user with access to TNCO
 ## To add a new user
 1. Right click on `ou=people` -> New -> Entry 
 2. Add the fields `extendedPerson` and `uidObject` in the left-hand column for `Objectclass`
@@ -39,6 +39,6 @@ To complete this guide you will need:
 4. Save and exit
 ![LDAP Admin - User to Group](/images/user-guides/administration/security/ldap-admin-user-to-group.png "LDAP Admin - Example of adding new user to group")
 
-## Test access with ALM
-1. Go to the [ALM UI](/installation/lm/production/install-lm#accessing-services) and log in with created username and password.
+## Test access with TNCO
+1. Go to the [TNCO UI](/installation/lm/production/install-lm#accessing-services) and log in with created username and password.
 2. Verify that your new user has correct access according to their roles.

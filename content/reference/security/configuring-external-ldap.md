@@ -3,7 +3,7 @@ title: Configuring External LDAP Connections
 weight: 70
 ---
 
-Agile Lifecycle Manager (ALM) makes use of LDAP as its user store for secure access. It is configured by default to connect to the OpenLDAP service which is part of the installation. It is possible to disable this installation of this OpenLDAP service, and to connect to an external LDAP implementation using different mechanisms including support for Active Directory.
+Telco Network Cloud Orchestration (TNCO) makes use of LDAP as its user store for secure access. It is configured by default to connect to the OpenLDAP service which is part of the installation. It is possible to disable this installation of this OpenLDAP service, and to connect to an external LDAP implementation using different mechanisms including support for Active Directory.
 
 # Configuring an External LDAP Server
 
@@ -11,11 +11,11 @@ To use an LDAP Server other than the pre-configured OpenLDAP instance which come
 
 ## Modify LDAP connection configuration
 
-ALM comes with configuration based on the directory structure which exists in the pre-configured install of OpenLDAP.
+TNCO comes with configuration based on the directory structure which exists in the pre-configured install of OpenLDAP.
 
 When using an existing LDAP server which uses a different directory structure, the LDAP directory queries can be configured as below.
 
-ALM supports 2 distinct LDAP authentication strategies which are as follows:
+TNCO supports 2 distinct LDAP authentication strategies which are as follows:
 
 - `ldapBind` - (default) this mechanism binds to LDAP using manager credentials to initially locate the user's DN record using search filters, then attempting to bind this user with their password once found. This method should be selected in order to authenticate against Active Directory.
 - `ldapSimple` - this mechanism binds to LDAP either using manager credentials, or anonymously if this is allowed. Once connected, the user's DN record is located using search filters and a password compare is performed against the password attribute within this record.
@@ -88,7 +88,7 @@ The purpose of each configuration item is as follows:
 - `passwordAttribute` - the attribute in the directory which contains the user password
 - `passwordEncoding` - the encoding on the stored password (only BCRYPT and PLAIN are supported)
 
-If using passwordEncoding of BCRYPT, the user's password must be provided as a BCrypt encoded value. The BCrypt hashing library used in ALM currently only supports hashed passwords with the `$2a` prefix. It should be ensured that any LDAP passwords generated make use of a BCrypt hashing algorithm which only generates password hashes with the `$2a` prefix, otherwise login attempts will fail. An example tool that may be used to convert plain-text passwords to BCrypt is the [bcrypt-cli](https://github.com/bitnami/bcrypt-cli).
+If using passwordEncoding of BCRYPT, the user's password must be provided as a BCrypt encoded value. The BCrypt hashing library used in TNCO currently only supports hashed passwords with the `$2a` prefix. It should be ensured that any LDAP passwords generated make use of a BCrypt hashing algorithm which only generates password hashes with the `$2a` prefix, otherwise login attempts will fail. An example tool that may be used to convert plain-text passwords to BCrypt is the [bcrypt-cli](https://github.com/bitnami/bcrypt-cli).
 
 ## Revoke user access
 
