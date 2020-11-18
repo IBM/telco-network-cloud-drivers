@@ -3,7 +3,7 @@ title: Interface Architecture
 weight: 100
 ---
 
-The Telco Network Cloud Orchestration (TNCO) API is responsible for interactions with the operations available from LM.
+The Telco Network Cloud Orchestration (TNCO) API is responsible for interactions with the operations available from TNCO.
 
 # API Interaction Principles
 
@@ -47,11 +47,11 @@ The following is a table of HTTP response codes that can be returned in various 
 | **400 – Bad Request**              | The request contained   invalid information. This may be an incorrect field, invalid value or an   inconsistent state on a dependent resource. The HTTP response body should   contain a JSON message with further details of the specific issue. |
 | **401 – Not Authorized**           | The   user or Client making the API request is not authorized to do so. Check the   role configuration of the user/Client who is making the request |
 | **404 – Not Found**                | The requested endpoint   could not be found.                or   Requested Entity cannot be   found |
-| **409 - Conflict**                 | LM has been unable to process the request due to a   conflict produced by some of the information supplied. For example, attempting   to create two Resource Managers with the same name. |
-| **415 – Unsupported Media   Type** | The HTTP request payload   has a Content-Type that is not supported by the LM API. |
+| **409 - Conflict**                 | TNCO has been unable to process the request due to a   conflict produced by some of the information supplied. For example, attempting   to create two Resource Managers with the same name. |
+| **415 – Unsupported Media   Type** | The HTTP request payload   has a Content-Type that is not supported by the TNCO API. |
 | **500 – Internal Server   Error**  | An internal error has occurred whilst fulfilling the   request. The HTTP response body should contain a JSON message with further   details. In some situations, it may be necessary for a system administrator   to consult the logs for further information. |
 | **502 – Bad Gateway**              | A remote system has failed   to respond correctly causing this request to fail. The HTTP response body   should contain a JSON message with further details. In some situations, it   may be necessary for a system administrator to consult the logs for further   information. |
-| **503 – Service Unavailable**      | LM is unable to process this request at this time.   The request should not be retried until   the underlying problem is resolved. The   HTTP response body should contain a JSON message with further details. In   some situations, it may be necessary for a system administrator to consult   the logs for further information. |
+| **503 – Service Unavailable**      | TNCO is unable to process this request at this time.   The request should not be retried until   the underlying problem is resolved. The   HTTP response body should contain a JSON message with further details. In   some situations, it may be necessary for a system administrator to consult   the logs for further information. |
 
 
 
@@ -188,7 +188,7 @@ Within TNCO the handling of HTTP 400 & 404 status codes varies depending on what
 
 Generally, the 4xx HTTP Status codes will be produced by the TNCO functionality concerned with validating and verifying the incoming requests.
 
-This table summarizes the internal “rules” StartOSS LM uses regarding when to return an HTTP 400 vs 404 status code:
+This table summarizes the internal “rules” StartOSS TNCO uses regarding when to return an HTTP 400 vs 404 status code:
  
 
 | **Type** | **URL Invalid** | **URL (with variables) refers to an Entity   that does not exist** | **Invalid Body Content** | **Body refers to an Entity that does   not exist** |
@@ -237,17 +237,17 @@ The most usual case will be a simple HTTP 500 status code backed up with a JSON 
 
 # API Sections
 
- The API is divided into four sections.  These provide access to the different functionality provided by LM. This API is expected to be called by external OSS systems to perform both fulfillment tasks and some fault management tasks.
+ The API is divided into four sections.  These provide access to the different functionality provided by TNCO. This API is expected to be called by external OSS systems to perform both fulfillment tasks and some fault management tasks.
 
 ## Assembly Orchestration
 
- LM allows the creation of Assemblies.  These allow services to be created by LM which will interact with resource managers to create and manage virtual resources that need to be provided for the service to work.
+ TNCO allows the creation of Assemblies.  These allow services to be created by TNCO which will interact with resource managers to create and manage virtual resources that need to be provided for the service to work.
 
-This part of the API includes two endpoints; the first allows the External OSS system to request a transition against an assembly instance, including a requesting for a new assembly instance.  The second allows the External OSS to poll LM to find out the state of the request.
+This part of the API includes two endpoints; the first allows the External OSS system to request a transition against an assembly instance, including a requesting for a new assembly instance.  The second allows the External OSS to poll TNCO to find out the state of the request.
 
 ## Asynchronous Events
 
-In response to Assembly Orchestration requests, LM will also place on a Kafka bus messages that describe the key events that occur during the processing of the request and also a message to indicate when the processing has been completed.  It is recommended that the External OSS use this mechanism to check the state of requests rather than using the polling interface defined in the previous section.
+In response to Assembly Orchestration requests, TNCO will also place on a Kafka bus messages that describe the key events that occur during the processing of the request and also a message to indicate when the processing has been completed.  It is recommended that the External OSS use this mechanism to check the state of requests rather than using the polling interface defined in the previous section.
 
 ## Assembly Topology
 
@@ -255,7 +255,7 @@ External OSS may need details of the assembly instances and of the components th
 
 ## Resource Manager Handling
 
-Resource Managers are responsible for managing the actual resources that needed for a service to work.  LM needs to be told which resources managers it will interface to.  This process is known as 'Onboarding a Resource Manager'.  The LM API provides a set of calls that allows a new resource manager instance to be onboarded to LM, and also removed from LM.  When a resource manager is onboarded the set of resource types and locations that they manager will be extracted using the Resource Manager API.  The API also provides an endpoint that will make LM request the associated resource manager for a set of updated resources.  Any existing resources will remain unchanged when this update occurs.
+Resource Managers are responsible for managing the actual resources that needed for a service to work.  TNCO needs to be told which resources managers it will interface to.  This process is known as 'Onboarding a Resource Manager'.  The TNCO API provides a set of calls that allows a new resource manager instance to be onboarded to TNCO, and also removed from TNCO.  When a resource manager is onboarded the set of resource types and locations that they manager will be extracted using the Resource Manager API.  The API also provides an endpoint that will make TNCO request the associated resource manager for a set of updated resources.  Any existing resources will remain unchanged when this update occurs.
 
 
 # Supported Media Types

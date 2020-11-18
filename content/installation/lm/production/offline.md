@@ -109,13 +109,13 @@ This single archive can now be transferred to the target install environment to 
 
 ## Helm Charts
 
-Copy the previously downloaded LM Helm charts to the machine you intend to run the installation from.
+Copy the previously downloaded TNCO Helm charts to the machine you intend to run the installation from.
 
 ## Docker Images
 
 1. Transfer single archive to target
 
-Copy the archive to the machine you intend to install LM on
+Copy the archive to the machine you intend to install TNCO on
 
 2. Extract Archive
 

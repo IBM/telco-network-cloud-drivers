@@ -99,9 +99,9 @@ Accessing Openldap requires an LDAP enabled client tool such as [LDAP Admin](htt
 - Username: `cn=admin,dc=lm,dc=com` (repeat changes to `dc=` as above)
 - Password: `admin` (change to reflect your chosen managerPassword if overridden)
 
-### Configure Openldap with LM Users
+### Configure Openldap with TNCO Users
 
-To make the Openldap installed as part of the CI/CD Hub usable in LM environments, you will need to create the user schema.
+To make the Openldap installed as part of the CI/CD Hub usable in TNCO environments, you will need to create the user schema.
 
 First create a file named `schema.ldif` and add the following contents:
 

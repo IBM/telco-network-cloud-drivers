@@ -1,4 +1,4 @@
 ---
-title: Configure LM
+title: Configure TNCO
 weight: 10
 ---

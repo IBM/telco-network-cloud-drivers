@@ -45,17 +45,17 @@ A deployment location is thus a logical separation of infrastructure that may re
 Resources are created within the context of a single deployment location
 
 # Descriptor (Assembly / Resource)
-A descriptor is the definition of a resource or assembly, used by LM to instantiate instances as requested by the users (or remote systems). A descriptor describes the composition, properties, policies & metrics, relationships and behaviour of an assembly/resource
+A descriptor is the definition of a resource or assembly, used by TNCO to instantiate instances as requested by the users (or remote systems). A descriptor describes the composition, properties, policies & metrics, relationships and behaviour of an assembly/resource
 
-* Resource descriptors are owned and managed externally to LM and are typically onboarded through a resource manager
-* Assembly descriptors can be viewed, edited and managed through the LM UI or the LM API
+* Resource descriptors are owned and managed externally to TNCO and are typically onboarded through a resource manager
+* Assembly descriptors can be viewed, edited and managed through the TNCO UI or the TNCO API
 
 Descriptors have identifiers of the form `type::name::version` (for example: assembly::my_first_assembly::1.0), where
 * *Type* is one of assembly or resource
 * *Name* is the name for the descriptor
 * *Version* is the semantic version of the descriptor (dot-separated)
 
-Descriptors can be imported and exported from LM using the LMCTL command line tool and are represented as YAML documents
+Descriptors can be imported and exported from TNCO using the LMCTL command line tool and are represented as YAML documents
 
 The syntax of the YAML documents can be found for [resources](/reference/descriptor-specification/resource-descriptor) and [assemblies](/reference/descriptor-specification/assembly-descriptor) 
 
@@ -86,7 +86,7 @@ TNCO published intent and status change event onto a Kafka topic.
 # Lifecycle State, State
 TNCO defines a simple but flexible lifecycle which is applicable to both Assemblies and Resources. This lifecycle consists of a number of states and on the transition between each state a `Lifecycle Transition` occurs. 
 
-The set of states are as follows. *Stable* indicates that the component (assembly/resource) can be elected to reside in this state. If a state is not _stable_ then LM will auto-transition through this state and automatically promote the component to the next stable state.
+The set of states are as follows. *Stable* indicates that the component (assembly/resource) can be elected to reside in this state. If a state is not _stable_ then TNCO will auto-transition through this state and automatically promote the component to the next stable state.
 
 Each state transition on a resource can, optionally, be associated with a lifecycle transition action on the Resource Manager. That is, the resource manager is informed of the state transition (more correctly the intent to change state) so that it can take appropriate action.
 
@@ -98,7 +98,7 @@ Each state transition on a resource can, optionally, be associated with a lifecy
 | Inactive | Y |
 | Active | Y | The state which indicates that the component (assembly/resource) is fully functioning and  operational 
 | Broken | N | This is a temporary state which a component (assembly/resource) will be brought to by the system if a heal is required. 
-| Failed | Y | A state which only the system can transition a component (assembly/resource) to. It is a special state TNCO will bring an component to if it detects that additional action by LM is futile. LM will take no active remedial action once a component has transitioned to this state without direction from an administrator.
+| Failed | Y | A state which only the system can transition a component (assembly/resource) to. It is a special state TNCO will bring an component to if it detects that additional action by TNCO is futile. TNCO will take no active remedial action once a component has transitioned to this state without direction from an administrator.
 
 # Lifecycle Transition
 Each component (Assemblies & Resources) flow through a state model during its lifetime. Each state transition represents a Lifecycle Transition and the execution the opportunity to have a lifecycle transition script executed by the appropriate Resource-Manager for the given resource. 
@@ -178,7 +178,7 @@ Relationships is a section of Assembly or Resource Descriptor identifying refere
 In addition to defining components managed by an assembly, an assembly can reference assemblies and resources that are managed independently. Thus a reference is a resource or assembly that has its lifecycle managed externally to the assembly in which the reference is defined though it is likely still managed by TNCO.
 
 When defining a reference, we must specify the `search criteria` used to find this reference component at instantiation time.
-* Assemblies are found by specifying their name, which will be searched within the current LM system
+* Assemblies are found by specifying their name, which will be searched within the current TNCO system
 * Resources are found by specifying their name, deployment location and resource manager, which will be found by searching for the resource within the specified resource manager
 
 Referenced components can be the source for a relationship (but cannot be a target)
@@ -206,7 +206,7 @@ Requirements is a section of Assembly Descriptor or Resource Descriptor explaini
 # Resource 
 A piece of software that can be automatically deployed in a virtual environment and that supports key lifecycle states including install, configure, start, stop, and uninstall.
 
-Resource are managed externally to LM using a Resource Manager and represents the smallest atomic building block available in LM
+Resource are managed externally to TNCO using a Resource Manager and represents the smallest atomic building block available in TNCO
 
 A resource may for example represent a VNF, VNFC or the PNF in an NFV environment or any external entity depending on how the system is modeled
 
@@ -222,7 +222,7 @@ Represents the logical grouping of infrastructure being managed by an external r
 # Resource Manager
 The entity instructing resources (e.g. Brent). TNCO can have a number of bound Resource Managers but must have at least one to function
 
-This system is responsible for transitioning resources through lifecycle states and performing operations on resources under the orchestration of TNCO and returning the result to LM
+This system is responsible for transitioning resources through lifecycle states and performing operations on resources under the orchestration of TNCO and returning the result to TNCO
 
 A resource is managed by one (and only one) resource manager
 

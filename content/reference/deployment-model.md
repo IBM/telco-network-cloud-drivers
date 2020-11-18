@@ -5,35 +5,35 @@ weight: 0
 
 # Introduction
 
-This section introduces the deployment architecture and main configuration options for Telco Network Cloud Orchestration (TNCO) for a typical CI/CD configuration. It is expected that multiple ALMs will be deployed to automate the various tasks for each stage of the CI/CD process. Each set of LMs are coordinated around a repository of artifacts representing the external resources under management. The picture below shows a typical deployment. [See here for more information on a typical LM CI/CD process.](/user-guides/cicd/introduction)
+This section introduces the deployment architecture and main configuration options for Telco Network Cloud Orchestration (TNCO) for a typical CI/CD configuration. It is expected that multiple ALMs will be deployed to automate the various tasks for each stage of the CI/CD process. Each set of LMs are coordinated around a repository of artifacts representing the external resources under management. The picture below shows a typical deployment. [See here for more information on a typical TNCO CI/CD process.](/user-guides/cicd/introduction)
 
 ![Logical Deployment Architecture](/images/reference/deployment-model/deployment-overview.png "TNCO Logical Deployment Architecture")
 
 The following logical functions are typically deployed together to deliver a complete CI/CD pipeline:
 
-- **CI/CD Hub:** This provides a set of source code, image and package repositories required to develop and publish all resource and assembly artifacts. Combining the repositories with a CI server and [LM command line tools](/reference/lmctl) automates the end to end pipeline.
-- **Development LM Environment:** A lightweight flavour of LM can be deployed on a laptop or standalone server. This is designed to accelerate early resource onboarding and development. This flavour is not for production use.
-- **Test LM Environment:** The default flavour of LM deploys a single set of micro service instances, typically used as a build slave or test environment.
-- **Production LM Environment:** HA configuration of LM is provided to deploy multiple micro service instances high performance and availability scenarios.
-- **External LDAP:** All LM instances can be configured to use the same LDAP server, whether it is the OpenLDAP instance provided with the CI/CD Hub an existing LDAP server.
+- **CI/CD Hub:** This provides a set of source code, image and package repositories required to develop and publish all resource and assembly artifacts. Combining the repositories with a CI server and [TNCO command line tools](/reference/lmctl) automates the end to end pipeline.
+- **Development TNCO Environment:** A lightweight flavour of TNCO can be deployed on a laptop or standalone server. This is designed to accelerate early resource onboarding and development. This flavour is not for production use.
+- **Test TNCO Environment:** The default flavour of TNCO deploys a single set of micro service instances, typically used as a build slave or test environment.
+- **Production TNCO Environment:** HA configuration of TNCO is provided to deploy multiple micro service instances high performance and availability scenarios.
+- **External LDAP:** All TNCO instances can be configured to use the same LDAP server, whether it is the OpenLDAP instance provided with the CI/CD Hub an existing LDAP server.
 
-Each LM environment will also require a working [Resource Manager](/reference/resource-manager/interface-architecture).
+Each TNCO environment will also require a working [Resource Manager](/reference/resource-manager/interface-architecture).
 
 # Development and Production
 
-_Production_ LM environments must be installed to an existing kubernetes cluster using Helm. However _Development_ LM environments can either be deployed to an existing kubernetes cluster or using an [Allinone](https://github.com/accanto-systems/lm-allinone) installer a fully working lightweight deployment can be deployed on a minimal linux server or virtual machine.
+_Production_ TNCO environments must be installed to an existing kubernetes cluster using Helm. However _Development_ TNCO environments can either be deployed to an existing kubernetes cluster or using an [Allinone](https://github.com/accanto-systems/lm-allinone) installer a fully working lightweight deployment can be deployed on a minimal linux server or virtual machine.
 
 ![Logical Deployment Architecture](/images/reference/deployment-model/dev-or-prod.png "Development and Production deployments")
 
-The Allinone LM deployments can be run on a standalone server or a laptop and can interact with a CI/CD Hub to do early resource development.
+The Allinone TNCO deployments can be run on a standalone server or a laptop and can interact with a CI/CD Hub to do early resource development.
 
 # Deploying across multiple clusters
 
-The LM environments required to deliver a complete CI/CD pipeline can be deployed to a single kubernetes cluster or individual LM environments can be deployed to separate kubernetes clusters.
+The TNCO environments required to deliver a complete CI/CD pipeline can be deployed to a single kubernetes cluster or individual TNCO environments can be deployed to separate kubernetes clusters.
 
 ![Multiple Clusters](/images/reference/deployment-model/clusters.png "Multiple Clusters")
 
-If deploying more than one LM environment to the same kubernetes cluster, consideration must be take for namespace and port conflicts. Also it is recommended a reverse proxy or a domain name server is used in front of the kubernetes clusters to access each individual LM instance.
+If deploying more than one TNCO environment to the same kubernetes cluster, consideration must be take for namespace and port conflicts. Also it is recommended a reverse proxy or a domain name server is used in front of the kubernetes clusters to access each individual TNCO instance.
 
 # Cluster storage configuration
 
@@ -45,13 +45,13 @@ For production deployments a kubernetes storage class can be provided or the def
 
 When designing your deployment there are a number of things that need to be taken into consideration. Some will be specific to your environment and to corporate policies, as such they may not be covered. Others are more universal and we will consider them here.
 
-Typically an LM deployment will have the following environments:
+Typically an TNCO deployment will have the following environments:
 
 - Design -- One or more design environments
 - Preproduction/Staging -- One or more test environments
 - Production -- The destination for released descriptors
 
-Binding the individual LM Deployment Environments is the CI/CD Hub. This provides a common, secure, resilient and managed repository for all the artifacts of projects from which they can be deployed as required.
+Binding the individual TNCO Deployment Environments is the CI/CD Hub. This provides a common, secure, resilient and managed repository for all the artifacts of projects from which they can be deployed as required.
 
 A typical deployment will have all three environments;
 
@@ -59,10 +59,10 @@ A typical deployment will have all three environments;
 
 ### Use of namespaces
 
-Namespaces can be a useful tool to allow the use of a single cluster to be used to support the deployment of multiple LM environments while maintaining isolation.
+Namespaces can be a useful tool to allow the use of a single cluster to be used to support the deployment of multiple TNCO environments while maintaining isolation.
 This can potentially allow
 
-In some cases customers chose to have a single LM env on the production cluster to ensure full isolation and the provision of the maximum set of cluster resources to the production instance.
+In some cases customers chose to have a single TNCO env on the production cluster to ensure full isolation and the provision of the maximum set of cluster resources to the production instance.
 
 ### LMCTL
 
@@ -70,15 +70,15 @@ LMCTL is typically present on a Jenkins slave to aid the CI/CD environment. Howe
 
 ## Design
 
-When engineers are designing resource and assembly descriptors and packages they will need to have access to an LM instance where they can perform testing. For individual designers the LM environment will ideally need to be connected to a deployment location on which the descriptors can be tested.
+When engineers are designing resource and assembly descriptors and packages they will need to have access to an TNCO instance where they can perform testing. For individual designers the TNCO environment will ideally need to be connected to a deployment location on which the descriptors can be tested.
 
 The advantage of having multiple environments is that designers are able to debug assembly packages and perform destructive testing isolated from other users.
 
-It is possible to spin up a design environment for specific cases and by connecting it to the CI/CD environment publish the results to make it available to other users. This has the advantage of allowing a user to have a repeatable, clean environment in which design and testing is performed. The cost of the LM design deployment is relatively low. The higher cost is likely to be in having an environment to which resources can be deployed during this phase.
+It is possible to spin up a design environment for specific cases and by connecting it to the CI/CD environment publish the results to make it available to other users. This has the advantage of allowing a user to have a repeatable, clean environment in which design and testing is performed. The cost of the TNCO design deployment is relatively low. The higher cost is likely to be in having an environment to which resources can be deployed during this phase.
 
 At the higher end of cost is where each developer has their own deployment location. This provides the most isolation. However typically this is not required and individual developer/designer tenancies/projects in a shared VIM is sufficient allow developers to remain isolated.
 
-The number of design environments required is a function of how many designers an organization has have and the nature of their work and is likely change over time potentially scaling down after the first phase of LM adoption.
+The number of design environments required is a function of how many designers an organization has have and the nature of their work and is likely change over time potentially scaling down after the first phase of TNCO adoption.
 
 A design environment will typically be a small allinone deployment. This is particularly true if an organization chooses to provide designers
 
@@ -92,21 +92,21 @@ The pre-production environment which can be used for a number of functions
     - Production behaviour is reproduced
     - What if testing
 
-In the use cases for LM a mirror of production can be difficult to attain. While the deployment of LM itself can be mirrored without issue the number and type of deployment locations/VIMs can be a prohibitive and impractical cost in many of not most applications.
+In the use cases for TNCO a mirror of production can be difficult to attain. While the deployment of TNCO itself can be mirrored without issue the number and type of deployment locations/VIMs can be a prohibitive and impractical cost in many of not most applications.
 
 A pre-production environment may be either a full replica of Production or a scaled down version. It will be fully functional but may for example omit High Availability and the capacity of a production environment.
 
 ## Production
 
-Production is the final environment this should be commensurate with the projected near to medium timescale requirements of the specific deployment. The number of assembler's and their complexity both in terms of the number of resources and ultimately the projected number of LM transactions it will perform will determine how large it should be.
+Production is the final environment this should be commensurate with the projected near to medium timescale requirements of the specific deployment. The number of assembler's and their complexity both in terms of the number of resources and ultimately the projected number of TNCO transactions it will perform will determine how large it should be.
 
 A production environment should leverage the High Availability (HA) in TNCO. This will typically mean over provisioning the number of instances deployed for each TNCO service.
 
 ## Resource Managers
 
-The [Resource Manager](/installation/resource-manager/rm-overview/) (RM) acts as an intermediary between LM and the individual VIMs supporting the infrastructure in which LM managed resources are deployed. A resource manager may only service a single TNCO instance. That is; An RM should be deployed with access to the Kafka instance used by TNCO and Elastic Search filebeat is configured to pull the set of logs for its LM environs. Therefore care must be taken to ensure valid pairing. Failure to do so can result in anomalous behaviour.
+The [Resource Manager](/installation/resource-manager/rm-overview/) (RM) acts as an intermediary between TNCO and the individual VIMs supporting the infrastructure in which TNCO managed resources are deployed. A resource manager may only service a single TNCO instance. That is; An RM should be deployed with access to the Kafka instance used by TNCO and Elastic Search filebeat is configured to pull the set of logs for its TNCO environs. Therefore care must be taken to ensure valid pairing. Failure to do so can result in anomalous behaviour.
 
-At least one RM must be deployed and [onboarded/registered](/reference/resource-manager/attach-to-lm) with LM for any assembly design or instantiation to function.
+At least one RM must be deployed and [onboarded/registered](/reference/resource-manager/attach-to-lm) with TNCO for any assembly design or instantiation to function.
 
 ## Sizing Guidelines
 

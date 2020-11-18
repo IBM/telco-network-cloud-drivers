@@ -9,7 +9,7 @@ This guide aims to show you how to:
 
 - Create a working Resource with Openstack infrastructure
 - Include an external IP address as part of the infrastructure so the Resource service can be accessed publicly
-- Create Compute instances accessible with SSH keys that are stored securely in LM (Brent), and provided to lifecycle scripts and inventory to be able to connect to the instance.
+- Create Compute instances accessible with SSH keys that are stored securely in TNCO (Brent), and provided to lifecycle scripts and inventory to be able to connect to the instance.
 - Add lifecycle scripts to configure a software function for the Resource
 - Create an instance of the Resource
 

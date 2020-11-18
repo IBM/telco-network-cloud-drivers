@@ -58,7 +58,7 @@ Example:
 
 # Change Assembly State
 
-Request LM to transition an Assembly instance from one state to another.
+Request TNCO to transition an Assembly instance from one state to another.
 
 ## Request
 
@@ -106,7 +106,7 @@ Example of changing state of Assembly instance using id:
 
 # Delete Assembly
 
-Request LM to remove an Assembly instance
+Request TNCO to remove an Assembly instance
 
 ## Request
 

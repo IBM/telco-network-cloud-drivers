@@ -11,7 +11,7 @@ To complete this guide you will need:
 
 - An existing installation of the TNCO
 - A REST client 
-- Understanding of how to [make authenticated requests to LM](/user-guides/authenticated-api-requests)
+- Understanding of how to [make authenticated requests to TNCO](/user-guides/authenticated-api-requests)
 
 # Add client credentials
 
@@ -23,7 +23,7 @@ To create a new set of credentials, send a `POST` request to `https://<your-lm-a
 - clientSecret - a chosen password for the client
 - authorisedGrantTypes - types of authentication allowed
   - `client_credentials` - allows this client to make API requests with just it's own credentials
-  - `password` - allows this client to make API requests with it's own credentials combined with a valid LM username/password 
+  - `password` - allows this client to make API requests with it's own credentials combined with a valid TNCO username/password 
   - `refresh_token` - can only be used with `password`. Allows the client to refresh an expired access token using a refresh token (avoids needing to request a user for their password again)
 - accessTokenValidity - time in seconds an access token remains valid for (defaults to 1200)
 - refreshTokenValidity - time in seconds a refresh token remains valid for (defaults to 30600)
@@ -50,7 +50,7 @@ You may update client credentials with a similar request to a create, but instea
 
 # UI login timeout values
 
-Login sessions to the LM UI have the following behaviour which is are governed by the token validity parameters set for the NimrodClient:
+Login sessions to the TNCO UI have the following behaviour which is are governed by the token validity parameters set for the NimrodClient:
 
 * after a set period (default 20 minutes), the user's session token (access token) will be automatically refreshed. At this point LDAP is consulted to verify the current suspended status and roles of the user 
 * after a longer set period (default 8.5 hours), the user's session is invalidated and they will be forced to login again

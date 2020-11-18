@@ -35,10 +35,10 @@ If installing on ICP we recommend you read through our [ICP Pre-Install Consider
 
 ## TNCO Artifacts
 
-You should already have the lifecycle Manager package which contains the Helm charts and binaries required for the installation of LM. This should contain:
+You should already have the lifecycle Manager package which contains the Helm charts and binaries required for the installation of TNCO. This should contain:
 
 - **lm-helm-charts** - the Helm charts that will install TNCO
-- **lm-docker-source** - the binaries requires to build the LM Docker images
+- **lm-docker-source** - the binaries requires to build the TNCO Docker images
 
 # Configuration
 
@@ -66,7 +66,7 @@ Before making any configuration changes, it is necessary to make the docker imag
 
 # Build Docker Images
 
-Before you can install LM you will need to build the Docker images for all its components.
+Before you can install TNCO you will need to build the Docker images for all its components.
 
 The `lm-docker-source` distribution includes the sources necessary to build docker images for the TNCO applications.
 

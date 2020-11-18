@@ -7,7 +7,7 @@ Telco Network Cloud Orchestration (TNCO) makes use of LDAP as its user store for
 
 # Configuring an External LDAP Server
 
-To use an LDAP Server other than the pre-configured OpenLDAP instance which comes as part of the LM installation, follow these steps.
+To use an LDAP Server other than the pre-configured OpenLDAP instance which comes as part of the TNCO installation, follow these steps.
 
 ## Disable Installation and Set Up of OpenLDAP
 
@@ -24,13 +24,13 @@ configurator:
 
 ## Modify LDAP connection configuration
 
-LM comes with configuration based on the directory structure which exists in the pre-configured install of OpenLDAP.
+TNCO comes with configuration based on the directory structure which exists in the pre-configured install of OpenLDAP.
 
 When using an existing LDAP server which uses a different directory structure, the LDAP directory queries can be configured as per the example below. 
 
 For a full range of configuration options for external LDAP sources, including how to use LDAP Bind mechanisms and Active Directory, see [Configuring External LDAP Connections]({{< ref "configuring-external-ldap" >}}).
 
-In the following example, LM is configured to point to an external LDAP source by changing the configuration within Ishtar. This configuration is imported into Vault to be made available to Ishtar by adding the following to the custom Helm values file during installation:
+In the following example, TNCO is configured to point to an external LDAP source by changing the configuration within Ishtar. This configuration is imported into Vault to be made available to Ishtar by adding the following to the custom Helm values file during installation:
 
 ```yaml
 configurator:

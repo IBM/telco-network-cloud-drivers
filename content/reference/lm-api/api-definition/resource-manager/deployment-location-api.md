@@ -3,7 +3,7 @@ title: Deployment Location
 weight: 70
 ---
 
-The following details the API used to manage Deployment Locations within LM.
+The following details the API used to manage Deployment Locations within TNCO.
 
 Associated with each definition are details of the request parameters and responses. These include the name of each field plus a brief description and whether the field is mandatory. Whether a field is required or not is based on the context of the examples. The underlying API definition may mark a field as optional, but in some contexts, the fields must be supplied.
 
@@ -112,7 +112,7 @@ Example:
 
 # Remove Deployment Location
 
-Remove a Deployment Location from LM. 
+Remove a Deployment Location from TNCO. 
 {{%note %}}
 NOTE: the delete cannot happen if there are currently instantiated Resources at this location.
 {{%/note %}}

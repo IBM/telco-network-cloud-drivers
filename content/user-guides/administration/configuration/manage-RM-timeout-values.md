@@ -40,7 +40,7 @@ These are achieved as follows;
     The general details of how to make a configuration change in vault are detailed [here](/user-guides/administration/configuration/configuring-lm) but the specific details for this setting are as follows  
     
     a. Log in to Vault UI using the appropriate vault security token for your environment.  
-    b. Navigate to the LM secrets ( ui/vault/secrets/lm/list ).  
+    b. Navigate to the TNCO secrets ( ui/vault/secrets/lm/list ).  
     c. If an existing ‘secret’ does not exist for daytona then one must be created. By default a daytona secret does not exist. A new one can be created using the ‘Create Secret’ button on the top right-hand side of the UI. Should a daytona secret already exist then it should be edited.  
     d. Add a key/value to the secret with the new timeout period. The provided value is in milliseconds. 
     ```

@@ -19,7 +19,7 @@ helm install <ansible-rm-helm-chart> --name <your-release-name> --namespace <you
 
 - `ansible-rm-helm-chart` - path to the Ansible RM Helm chart
 - `your-release-name` - unique name used to identify this installation in Helm
-- `your-namespace` - Kubernetes namespace with LM already installed
+- `your-namespace` - Kubernetes namespace with TNCO already installed
 - `your-custom-values-file` - path to the YAML file created with any configuration overrides (if you have any)
 
 For example:
@@ -52,7 +52,7 @@ Execute the POST API named `/database` to initialize the database.
 
 # Next Steps
 
-Now that the RM is installed it needs to be added/registered to the Lifecycle Manager and Deployment Locations/VIMs need to be registered against the RM in LM. [Register RM](/reference/resource-manager/attach-to-lm)
+Now that the RM is installed it needs to be added/registered to the Lifecycle Manager and Deployment Locations/VIMs need to be registered against the RM in TNCO. [Register RM](/reference/resource-manager/attach-to-lm)
 
-This will allow LM to make API calls to the appropriate RM instance when seeking to perform Lifecycle Transitions or Operations against a given deployment location/VIM. It is possible to add as many RM instances as may be required by your deployment. 
+This will allow TNCO to make API calls to the appropriate RM instance when seeking to perform Lifecycle Transitions or Operations against a given deployment location/VIM. It is possible to add as many RM instances as may be required by your deployment. 
 

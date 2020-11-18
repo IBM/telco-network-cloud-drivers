@@ -25,7 +25,7 @@ Execute a Scenario, creating an execution record to view the outcome.
 
 | **Field**         | **Description**                                                 | **Mandatory** |
 | ----------------- | --------------------------------------------------------------- | ------------- |
-| Authorization     | Executing user's authorization token | Yes, if LM is secure otherwise; no |
+| Authorization     | Executing user's authorization token | Yes, if TNCO is secure otherwise; no |
 
 ### Body
 

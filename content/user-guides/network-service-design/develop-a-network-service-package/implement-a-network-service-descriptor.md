@@ -35,7 +35,7 @@ This step is only relevant if you have not created a NS project with LMCTL yet a
 
 5. After filling in the above listed fields, the creation of the new descriptor can be confirmed by clicking the **Create** button in the lower left corner of the dialog box.
 
-As a result, a new *Assembly Descriptor* created in LM environment representing the implemented network service and accessible through **Assembly Descriptors** page within the **Service Designer**.
+As a result, a new *Assembly Descriptor* created in TNCO environment representing the implemented network service and accessible through **Assembly Descriptors** page within the **Service Designer**.
 
 
 ## Add elements

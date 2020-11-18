@@ -1,7 +1,0 @@
-network 1.0
-ip-pbx 1.0
-sip-performance 1.0
-sip-traffic-manager 1.0
-voice-overlay-networks 1.0
-voice-load-generator 1.0
-voip-gateway 1.0

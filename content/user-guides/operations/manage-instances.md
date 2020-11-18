@@ -17,7 +17,7 @@ This section describes the steps required to request an intent on a Network Serv
 
 ###	Recent Assembly Instances
 
-Once Network Services and VNFs are designed, they can be put into production. The Operations section in LM allows for assemblies to be searched, and actions to be taken. To find an assembly, you can go to the Recent Assembly Instances section to see the last Assembly Instances that have changed state.
+Once Network Services and VNFs are designed, they can be put into production. The Operations section in TNCO allows for assemblies to be searched, and actions to be taken. To find an assembly, you can go to the Recent Assembly Instances section to see the last Assembly Instances that have changed state.
 
 ![Recent Assembly Instances](/images/user-guides/operations/manage-instances/recent-assembly-instances.png "Recent Assembly Instances")
 
@@ -25,7 +25,7 @@ You see the name of the assembly instance, the status, descriptor name, and the 
 
 ###	Search for Assembly Instances
 
-You can search for any assembly instance by clicking Search Assembly Instance in the Operations section of LM.
+You can search for any assembly instance by clicking Search Assembly Instance in the Operations section of TNCO.
 
 ![Search Assembly Instances](/images/user-guides/operations/manage-instances/search-assembly-instances.png "Search Assembly Instances")
 

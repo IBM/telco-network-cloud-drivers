@@ -4,7 +4,7 @@ title: Infrastructure Key Management
 
 # Introduction
 
-An Infrastructure Key is a key comprising private and/or public keys (SSH keys) used when provisioning and communicating with infrastructure. Infrastructure keys are managed by LM (Brent), which provides REST APIs to manage them. The keys themselves are not exposed north-bound of Brent, only their names [see resource descriptor key properties](/reference/descriptor-specification/resource-descriptor#key-properties). Brent will dynamically substitute any key names in properties with the real key (public and private portions, if defined) before sending the key material over an SSH HTTP connection to Resource drivers.
+An Infrastructure Key is a key comprising private and/or public keys (SSH keys) used when provisioning and communicating with infrastructure. Infrastructure keys are managed by TNCO (Brent), which provides REST APIs to manage them. The keys themselves are not exposed north-bound of Brent, only their names [see resource descriptor key properties](/reference/descriptor-specification/resource-descriptor#key-properties). Brent will dynamically substitute any key names in properties with the real key (public and private portions, if defined) before sending the key material over an SSH HTTP connection to Resource drivers.
 
 There are two types of infrastructure key:
 
@@ -23,12 +23,12 @@ Note that either or both privateKey and publicKey can be provided.
 
 # Use Cases
 
-LM infrastructure keys support a number of use cases:
+TNCO infrastructure keys support a number of use cases:
 
-* Provisioning (compute) infrastructure, such as VMs, with pre-defined SSH keys from the shared infrastructure key pool at infrastructure instantiation time. Note that this is dependant on the capabilities of the underlying VIM technology, and whether it supports the provisioning of new SSH keys from existing key material provided by LM.
-* Storing SSH keys in LM that have been generated during provisioning of infrastructure (e.g. VMs) by a Resource driver. They can be stored either as per-resource keys, or in the shared infrastructure key pool so that the keys can be used to provision other infrastructure.
+* Provisioning (compute) infrastructure, such as VMs, with pre-defined SSH keys from the shared infrastructure key pool at infrastructure instantiation time. Note that this is dependant on the capabilities of the underlying VIM technology, and whether it supports the provisioning of new SSH keys from existing key material provided by TNCO.
+* Storing SSH keys in TNCO that have been generated during provisioning of infrastructure (e.g. VMs) by a Resource driver. They can be stored either as per-resource keys, or in the shared infrastructure key pool so that the keys can be used to provision other infrastructure.
 
-In both cases, the storage of infrastructure keys in LM allows LM to securely communicate with infrastructure.
+In both cases, the storage of infrastructure keys in TNCO allows TNCO to securely communicate with infrastructure.
 
 # REST API
 

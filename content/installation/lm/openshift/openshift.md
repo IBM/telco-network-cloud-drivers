@@ -6,7 +6,7 @@ weight: 10
 This section details how to set up a local OpenShift Origin (community distribution of OpenShift) all-in-one cluster and configure that cluster for installing Telco Network Cloud Orchestration (TNCO).
 
 # Pre-requisites
-- Previous knowledge of [basic installation process with LM Helm charts](../../production/production-start).
+- Previous knowledge of [basic installation process with TNCO Helm charts](../../production/production-start).
 - Linux machine (or Linux VM running on another platform) to install OpenShift cluster.
 
 # OpenShift all-in-one set-up
@@ -14,7 +14,7 @@ This guide follows [OpenShift Origin (version 3.11) documentation](https://githu
 
 ## Docker
 - Install [Docker](https://docs.docker.com/install/) (version 1.13 or later) onto your Linux machine.
-- Configure the Docker daemon with an insecure registry parameter of `172.30.0.0/16`. Also include the Docker registry from which you will get your LM Docker images  (read more about registry of your Docker images [here](../../production/production-start/#push-to-docker-registry)). Edit file `/etc/docker/daemon.json`:
+- Configure the Docker daemon with an insecure registry parameter of `172.30.0.0/16`. Also include the Docker registry from which you will get your TNCO Docker images  (read more about registry of your Docker images [here](../../production/production-start/#push-to-docker-registry)). Edit file `/etc/docker/daemon.json`:
 
 ```json
 {
@@ -83,14 +83,14 @@ oc adm policy add-cluster-role-to-user cluster-admin system:serviceaccount:kube-
 ```
 - Check that Tiller role is correct by command `helm ls`. There should be an empty output.
 
-## Security policies for LM's Foundation chart
+## Security policies for TNCO's Foundation chart
 These configuration steps only apply to Telco Network Cloud Orchestration (TNCO) `helm-foundation` chart (version 2.1 GA).
 
 - Grant all authenticated users access to the `anyuid` security context constraint (SCC):
 ```
 oc adm policy add-scc-to-group anyuid system:authenticated
 ```
-- Go to the project (namespace) that you plan to install LM Helm charts in:
+- Go to the project (namespace) that you plan to install TNCO Helm charts in:
 ```
 oc project myproject
 ```
@@ -105,10 +105,10 @@ oc adm policy add-scc-to-user privileged system:serviceaccount:myproject:foundat
 ```
 
 ## Local HostPath storage
-OpenShift supports many [Persistent Volume Types](https://docs.openshift.com/container-platform/3.11/architecture/additional_concepts/storage.html#types-of-persistent-volumes) but in this case we'll be looking at `hostPath` Persistent Volumes created by helm-foundation. Read more about LM storage set-up [here](../../production/storage) and `helm inspect` command on your helm-foundation chart.
+OpenShift supports many [Persistent Volume Types](https://docs.openshift.com/container-platform/3.11/architecture/additional_concepts/storage.html#types-of-persistent-volumes) but in this case we'll be looking at `hostPath` Persistent Volumes created by helm-foundation. Read more about TNCO storage set-up [here](../../production/storage) and `helm inspect` command on your helm-foundation chart.
 Default path on the host will be determined by the location from which you run the `oc cluster up` command, most likely `$HOME/openshift.local.clusterup/openshift.local.pv/`.
 
-- Create a sub-directory for LM volumes:
+- Create a sub-directory for TNCO volumes:
 ```
 sudo mkdir -p $HOME/openshift.local.clusterup/openshift.local.pv/lm
 sudo chmod -R 666 $HOME/openshift.local.clusterup/openshift.local.pv/lm
@@ -124,6 +124,6 @@ volumesInit:
 
 
 # Notes and next steps
-- The OpenShift cluster is now ready for installing LM Helm charts. Start your installation by reviewing the [Getting Started guide](../../production/production-start).
-- Since this OpenShift cluster is a single-node set-up for development purposes, it is not suitable for production deployment of LM. Choose `minimal` flavour in [the sizing section](../../production/sizing)
+- The OpenShift cluster is now ready for installing TNCO Helm charts. Start your installation by reviewing the [Getting Started guide](../../production/production-start).
+- Since this OpenShift cluster is a single-node set-up for development purposes, it is not suitable for production deployment of TNCO. Choose `minimal` flavour in [the sizing section](../../production/sizing)
 - Remember to run `helm install` with `--namespace` option pointing to the project that you configured earlier.

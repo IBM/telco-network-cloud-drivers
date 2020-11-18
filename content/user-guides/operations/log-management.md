@@ -49,7 +49,7 @@ As referenced earlier, the default logging level for TNCO defaults to _INFO_, th
 * Alter the runtime setting on a per service _instance_/pod level
 
 ### Setting default logging
-Default Logging Level is set on a per TNCO microservice level by configuring the preferred level in the service configuration (secret) in Vault. The Default Logging Level for the service is persisted such that on startup, the individual LM service instances read this value and set the log level accordingly. 
+Default Logging Level is set on a per TNCO microservice level by configuring the preferred level in the service configuration (secret) in Vault. The Default Logging Level for the service is persisted such that on startup, the individual TNCO service instances read this value and set the log level accordingly. 
 
 
 ```

@@ -8,12 +8,12 @@ weight: 20
 To complete this guide you will need:
 
 - An existing installation of the Telco Network Cloud Orchestration (TNCO)
-- An understanding of how to [configure LM using the Vault UI](/user-guides/administration/configuration/configuring-lm)
-- [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) client with access to the Kubernetes cluster LM is installed on
+- An understanding of how to [configure TNCO using the Vault UI](/user-guides/administration/configuration/configuring-lm)
+- [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) client with access to the Kubernetes cluster TNCO is installed on
 
 # Find Role Configuration
 
-1. Login to the Vault UI for your LM system and navigate to the secrets engine named `lm`
+1. Login to the Vault UI for your TNCO system and navigate to the secrets engine named `lm`
 
 2. Navigate to the secret named `ishtar`
 

@@ -257,7 +257,7 @@ Add the following content to the playbook
 
 # Enabling Lifecycle Transitions
 
-To indicate to LM that the Resource supports additional transitions we must update the Resource descriptor (`Definitions/lm/resource.yaml`). Open this file and add "Install", "Configure", "Start" and "Stop" to the list of supported lifecycle:
+To indicate to TNCO that the Resource supports additional transitions we must update the Resource descriptor (`Definitions/lm/resource.yaml`). Open this file and add "Install", "Configure", "Start" and "Stop" to the list of supported lifecycle:
 
 ```
 infrastructure:

@@ -9,7 +9,7 @@ The recommended installation of Lifecycle Manager is with security enabled. This
 
 * HTTPS access to services
 * Role-based Access Control to the Lifecycle Manager user interface
-* Protected access to LM APIs
+* Protected access to TNCO APIs
 
 ## Disabling Security
 
@@ -17,17 +17,17 @@ The easiest way to disable security during installation is by including the No S
 
 ### No Security Flavour
 Directory: no-security
-This flavour disables LM security and is intended for development/testing purposes. To be more precise, this flavour disables:
+This flavour disables TNCO security and is intended for development/testing purposes. To be more precise, this flavour disables:
 
-* HTTPS access to the LM UI and API
+* HTTPS access to the TNCO UI and API
 * inclusion of Openldap
-* LM UI authenticated access
-* LM API authenticated access
+* TNCO UI authenticated access
+* TNCO API authenticated access
 
-This flavour may be used in combination with other flavours included in the LM package.
+This flavour may be used in combination with other flavours included in the TNCO package.
 
 ### Installation
-To install LM with this flavour, ensure the following values file from the lm-helm-charts package is provided during the Helm install process which is described later in this guide:
+To install TNCO with this flavour, ensure the following values file from the lm-helm-charts package is provided during the Helm install process which is described later in this guide:
 `./flavours/no-security/no-security-values.yaml
 
 ## Changing default passwords
@@ -44,9 +44,9 @@ global:
     managerPassword: lmadmin # modify this with your custom password
 ```
 
-### LM API Administration User
+### TNCO API Administration User
 
-In order to administer Client Credentials in LM, the system is setup with some default Client Credential. These can be modified or added to by declaring values in the custom Helm values file as follows (change only the clientId and clientSecret, leaving grantTypes and roles as shown below):
+In order to administer Client Credentials in TNCO, the system is setup with some default Client Credential. These can be modified or added to by declaring values in the custom Helm values file as follows (change only the clientId and clientSecret, leaving grantTypes and roles as shown below):
 
 ```yaml
 configurator: 
@@ -61,7 +61,7 @@ configurator:
 
 ### Internal Clients
 
-LM installs with some clients configured to allow secure communication internally. These clients are mandatory, but their default passwords can be changed. Additionally their respective token validitity periods can also be configured (all values in seconds). Their meanings are as follows: 
+TNCO installs with some clients configured to allow secure communication internally. These clients are mandatory, but their default passwords can be changed. Additionally their respective token validitity periods can also be configured (all values in seconds). Their meanings are as follows: 
 
 - the value `configurator.security.lm.nimrod.accessTokenValidity` represents the frequency with which the Lifecycle Manager user interface will refresh its authentication session. A refresh involves a seamless reconfirmation of the user's validity and available roles with the LDAP user store. 
 - the value `configurator.security.lm.nimrod.refreshTokenValidity` represents the period of time over which the access token can be automatically refreshed. After this has expired, the user will be forced to login again.
@@ -86,7 +86,7 @@ configurator:
 
 ### Keystore Password
 
-Some of the services within LM host SSL certificates used for secure internal communications. To configure the password used for this certificate keystore, modify this value:
+Some of the services within TNCO host SSL certificates used for secure internal communications. To configure the password used for this certificate keystore, modify this value:
 
 ```yaml
 configurator: 
@@ -97,13 +97,13 @@ configurator:
 
 ### Vault Access Token
 
-In order to lookup application configuration, the services of LM will need to connect to Vault. They require use of an access token to facilitate this. To modify this from the default value, generate a new UUID and replace it in the following Helm value into your custom values file.
+In order to lookup application configuration, the services of TNCO will need to connect to Vault. They require use of an access token to facilitate this. To modify this from the default value, generate a new UUID and replace it in the following Helm value into your custom values file.
 
 ```yaml
 vaultInit:
   vaultToken:  # insert your new generated UUID
 ```
-This access token will be automatically setup in Vault during installation, and the services of LM will use this for authentication with Vault. This token can be used to login to the Vault UI after installation in order to modify application configuration. 
+This access token will be automatically setup in Vault during installation, and the services of TNCO will use this for authentication with Vault. This token can be used to login to the Vault UI after installation in order to modify application configuration. 
 
 {{%note %}}
 NOTE: Vault tokens do not have an indefinite expiry and will need to be renewed or regenerated after their expiration.

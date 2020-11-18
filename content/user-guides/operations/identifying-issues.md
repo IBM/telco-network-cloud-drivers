@@ -11,11 +11,11 @@ When viewing logs it is important to first ensure that the log level has the lev
 ### Tracing Contexts and Transaction Ids
 All actions taken by TNCO have an associated `Tracing Context`. This is a collection of Ids (min 1) which can be used to collate information in a log stream to the set of logs specific to the initiating event.
 
-A Tracing Context can be provided in any API call to the API gateway as a header. Likewise in any external API call, such as that to a Resource Manager is passed this tracing context. This allows end-to-end tracing both within the LM application and in those which it communicates. 
+A Tracing Context can be provided in any API call to the API gateway as a header. Likewise in any external API call, such as that to a Resource Manager is passed this tracing context. This allows end-to-end tracing both within the TNCO application and in those which it communicates. 
 
-Should an application on TNCO's northbound interface not provide a tracing context then LM will create one on the API gateway so that it is available for the remainder of the transaction.
+Should an application on TNCO's northbound interface not provide a tracing context then TNCO will create one on the API gateway so that it is available for the remainder of the transaction.
 
-When an external system provides a tracing context it must at a minimum provide a `Transaction Id`. This Id should be unique from the perspective of the LM system. It is incumbent on the calling system to ensure that this is the case. The calling system may not be the only API client and when selecting an Id, it is encouraged (but not enforced) to use a UUID/GUID if it is not possible to ensure the id is not unique. As this is a Transaction Id, it is not sufficient to use an assit id or a customer id as it is possible to have multiple transactions for each within a time window. The TNCO UI generates its own Transaction Ids when communicating with the _'core LM microservices'_,
+When an external system provides a tracing context it must at a minimum provide a `Transaction Id`. This Id should be unique from the perspective of the TNCO system. It is incumbent on the calling system to ensure that this is the case. The calling system may not be the only API client and when selecting an Id, it is encouraged (but not enforced) to use a UUID/GUID if it is not possible to ensure the id is not unique. As this is a Transaction Id, it is not sufficient to use an assit id or a customer id as it is possible to have multiple transactions for each within a time window. The TNCO UI generates its own Transaction Ids when communicating with the _'core TNCO microservices'_,
 
 ### API transaction id Header
 | Key | Value |

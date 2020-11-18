@@ -12,7 +12,7 @@ This guide details how to connect from a calling system into the Telco Network C
 
 # Making an API call 
 
-LM uses the standard OAuth 2.0 mechanism to authenticate incoming API requests. This requires some additional tokens to be setup in the headers of any HTTPS request that is made. 
+TNCO uses the standard OAuth 2.0 mechanism to authenticate incoming API requests. This requires some additional tokens to be setup in the headers of any HTTPS request that is made. 
 
 The following steps make use of the Postman Client to demonstrate how to make authenticated API calls.
 
@@ -45,7 +45,7 @@ Enter the following values into these fields:
 | Scope                 | `all`                        |
 | Client Authentication | `Send as Basic Auth Header`  |
 
-The “Client Secret” is the value setup as part of the initial installation of LM matching the “Client ID” you have chosen 
+The “Client Secret” is the value setup as part of the initial installation of TNCO matching the “Client ID” you have chosen 
 
 Click the **[Get New Access Token]** button. If your request is successful, then you will get a JSON response similar to this: 
 

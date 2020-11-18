@@ -9,13 +9,13 @@ Brent handles Resource Manager transition and operation requests for Resources u
 
 The following diagram shows the interactions between Brent and a resource driver ![Brent and resource driver](/images/user-guides/resource-engineering/brent/BrentArchitecture-v2_2.png "Brent and resource driver")
 
-Resource Driver is a combination of [VIM](http://servicelifecyclemanager.com/2.1.0/user-guides/resource-engineering/drivers/vim/overview/) and [Lifecycle](http://servicelifecyclemanager.com/2.1.0/user-guides/resource-engineering/drivers/lifecycle/overview/) drivers of LM version 2.1 into a single driver concept. 
+Resource Driver is a combination of [VIM](http://servicelifecyclemanager.com/2.1.0/user-guides/resource-engineering/drivers/vim/overview/) and [Lifecycle](http://servicelifecyclemanager.com/2.1.0/user-guides/resource-engineering/drivers/lifecycle/overview/) drivers of TNCO version 2.1 into a single driver concept. 
 
 Unlike in v2.1.0 where a VIM Driver handles infrastructure creation/deletion while Lifecycle Driver executes resource transitions once the resource has been created; a Resource Manager handles both infrastructure and lifecycles by serving Create/Delete as lifecycle requests.
 
-## Version compability between LM and drivers
+## Version compability between TNCO and drivers
 
-| LM Version | lmctl    | Ansible Lifecycle Driver | SOL 003 Lifecycle Driver | Openstack VIM Driver | Kubernetes Resource Driver |
+| TNCO Version | lmctl    | Ansible Lifecycle Driver | SOL 003 Lifecycle Driver | Openstack VIM Driver | Kubernetes Resource Driver |
 |------------|----------|--------------------------|--------------------------|----------------------|----------------------------|
 | 2.0.3      | 2.0.7.1  | none                     | none                     | none                 | none                       |
 | 2.1.0      | 2.4.1    | 0.5.0 - 1.1.0            | 0.0.3 - 0.0.5            | 0.4.0 - 1.0.0        | none                       |
@@ -30,4 +30,4 @@ If you want to create your own Resource Driver, check out [how to create custom 
 
 # Next Steps
 
-Once you understand the basics of the drivers and have installed some for your own testing, you should continue to [onboard the drivers](/user-guides/resource-engineering/drivers/onboarding/) in LM.
+Once you understand the basics of the drivers and have installed some for your own testing, you should continue to [onboard the drivers](/user-guides/resource-engineering/drivers/onboarding/) in TNCO.

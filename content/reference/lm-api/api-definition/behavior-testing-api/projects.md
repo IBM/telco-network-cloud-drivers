@@ -3,7 +3,7 @@ title: Projects
 weight: 0
 ---
 
-The following details the API to manage Projects within LM. A Project is auto-created for every Assembly descriptor added to LM.
+The following details the API to manage Projects within TNCO. A Project is auto-created for every Assembly descriptor added to TNCO.
 
 Associated with each definition are details of the request parameters and responses. These include the name of each field plus a brief description and whether the field is mandatory. Whether a field is required or not is based on the context of the examples. The underlying API definition may mark a field as optional, but in some contexts, the fields must be supplied.
 

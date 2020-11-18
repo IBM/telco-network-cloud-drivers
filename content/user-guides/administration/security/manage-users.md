@@ -9,7 +9,7 @@ TNCO provides no built-in mechanism for managing users. There are many available
 
 If your environment is connecting to an LDAP managed outside of TNCO, then the system administrator is expected to already understand the connection and user model in use.
 
-If your LDAP server is installed along with LM helm-foundation and you are a first-time user of any LDAP Client, skip to our example [instructions for LDAP Admin](/user-guides/administration/security/users-ldap-admin).
+If your LDAP server is installed along with TNCO helm-foundation and you are a first-time user of any LDAP Client, skip to our example [instructions for LDAP Admin](/user-guides/administration/security/users-ldap-admin).
 
 # Pre-requisites
 

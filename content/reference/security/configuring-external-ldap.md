@@ -7,7 +7,7 @@ Telco Network Cloud Orchestration (TNCO) makes use of LDAP as its user store for
 
 # Configuring an External LDAP Server
 
-To use an LDAP Server other than the pre-configured OpenLDAP instance which comes as part of the LM installation, follow these steps.
+To use an LDAP Server other than the pre-configured OpenLDAP instance which comes as part of the TNCO installation, follow these steps.
 
 ## Modify LDAP connection configuration
 
@@ -24,7 +24,7 @@ Once the most appropriate strategy is selected, follow the relevant configuratio
 
 ### LDAP Bind (default)
 
-The `ldapBind` authentication strategy is the default during an installation of LM. It can be customised with the following configuration, which can be set in Vault:
+The `ldapBind` authentication strategy is the default during an installation of TNCO. It can be customised with the following configuration, which can be set in Vault:
 
 ```yaml
 alm:
@@ -55,7 +55,7 @@ The purpose of each configuration item is as follows:
 
 ### LDAP Simple
 
-The `ldapSimple` authentication strategy relies on LM using a manager password to bind to LDAP, upon which it queries the user’s DN record and compares the password.  The following configuration is required, which can be set in Vault:
+The `ldapSimple` authentication strategy relies on TNCO using a manager password to bind to LDAP, upon which it queries the user’s DN record and compares the password.  The following configuration is required, which can be set in Vault:
 
 ```yaml
 alm:
@@ -107,7 +107,7 @@ member: uid=TestUserA,ou=people,dc=lm,dc=com
 
 ### Suspension using Password Policy
 
-The default installation of LM, which comes with an instance of OpenLDAP, will have a password policy installed and enforced. This meachanism can be used to lockout users. The easiest way to lockout a user is to set a value within the pwdAccountLockedTime attribute under the user's DN record. An example of this is shown below:
+The default installation of TNCO, which comes with an instance of OpenLDAP, will have a password policy installed and enforced. This meachanism can be used to lockout users. The easiest way to lockout a user is to set a value within the pwdAccountLockedTime attribute under the user's DN record. An example of this is shown below:
 
 #### Lock User
 

@@ -96,7 +96,7 @@ Fails when:
 
 ## Description
 
-Start recording the load metric for a given Resource. The message of a load metric is standard to LM, so has a pre-determined message format which means there is not requirement for a metric definition. 
+Start recording the load metric for a given Resource. The message of a load metric is standard to TNCO, so has a pre-determined message format which means there is not requirement for a metric definition. 
 
 Passes when:
 
@@ -121,7 +121,7 @@ Fails when:
 
 ## Description
 
-Start recording the integrity metric for a given Resource. The message of a integrity metric is standard to LM, so has a pre-determined message format which means there is not requirement for a metric definition. 
+Start recording the integrity metric for a given Resource. The message of a integrity metric is standard to TNCO, so has a pre-determined message format which means there is not requirement for a metric definition. 
 
 Passes when:
 

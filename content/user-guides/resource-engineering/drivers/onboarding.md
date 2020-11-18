@@ -48,4 +48,4 @@ lmctl resourcedriver delete --type openstack dev-env
 
 You should now have an understanding of Resource packages and drivers. You should also have an understanding of how to install and onboard drivers for usage in your environment.
 
-Now is a great time to run through an example of creating a Resource and using it as part of an Assembly in LM. See the [example resource](/user-guides/resource-engineering/example-resource/get-started).
+Now is a great time to run through an example of creating a Resource and using it as part of an Assembly in TNCO. See the [example resource](/user-guides/resource-engineering/example-resource/get-started).

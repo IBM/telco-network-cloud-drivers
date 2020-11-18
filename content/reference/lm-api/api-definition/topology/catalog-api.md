@@ -3,7 +3,7 @@ title: Descriptors
 weight: 0
 ---
 
-The following details the API to manage descriptors within LM. Assembly descriptors can be added, listed, updated and deleted. Resource descriptors can be listed and deleted but can only be added or updated through the Resource Manager API.
+The following details the API to manage descriptors within TNCO. Assembly descriptors can be added, listed, updated and deleted. Resource descriptors can be listed and deleted but can only be added or updated through the Resource Manager API.
 
 Associated with each definition are details of the request parameters and responses. These include the name of each field plus a brief description and whether the field is mandatory. Whether a field is required or not is based on the context of the examples. The underlying API definition may mark a field as optional, but in some contexts, the fields must be supplied.
 
@@ -55,7 +55,7 @@ Example:
 
 # Remove Assembly Descriptor
 
-Removes an Assembly descriptor from LM.
+Removes an Assembly descriptor from TNCO.
 
 ## Request
 
@@ -80,7 +80,7 @@ The descriptor name is the full name of the descriptor, e.g. assembly::t_single:
 
 # Update Assembly Descriptor
 
-Updates an existing Assembly descriptor in LM.
+Updates an existing Assembly descriptor in TNCO.
 
 ## Request
 
@@ -126,7 +126,7 @@ Example:
 
 # Get a summary of all Descriptors
 
-This request returns a summary of the descriptors known to LM.
+This request returns a summary of the descriptors known to TNCO.
 
 ## Request
 
@@ -181,7 +181,7 @@ Example:
 
 # Get Descriptor by Name
 
-Returns an existing descriptor from LM.
+Returns an existing descriptor from TNCO.
 
 ## Request
 

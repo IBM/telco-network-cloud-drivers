@@ -19,7 +19,7 @@ This pipeline will be triggered when there is a check-in to the master branch. I
 1. Check that all packages this project depends on in release have also been released (i.e. not SNAPSHOT versions)
 1. Check this version of the project has not already been released
 1. Rename the package in nexus (remove the SNAPSHOT)
-1. If the project is a NS, then deploy it's package, and all the packages it depends on for release to the production LM.
+1. If the project is a NS, then deploy it's package, and all the packages it depends on for release to the production TNCO.
 
 
 

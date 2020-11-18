@@ -60,7 +60,7 @@ lifecycle:
 
 The descriptor includes 3 input properties, each correspond to an input in our HEAT template: `key_name`, `image_id`, `flavor`. The descriptor also includes 2 read-only properties, which correspond to outputs in our HEAT template: `internal_ip` and `public_ip`. 
 
-`infrastructure` defines the infrastructure type as that of Openstack. `infrastructure-type` property for drivers of lifecycles can then use a wildcard value `'*'` and the default resource infrastructure will be automatically registered by LM.
+`infrastructure` defines the infrastructure type as that of Openstack. `infrastructure-type` property for drivers of lifecycles can then use a wildcard value `'*'` and the default resource infrastructure will be automatically registered by TNCO.
 
 Under `lifecycle` section are 2 basic lifecycle transitions for the resource: Create and Delete. These will be handled by the [Openstack VIM Driver](https://github.com/accanto-systems/openstack-vim-driver) to manage infrastructure (e.g create VMs with compute, storage and network infrastructure required on Openstack) to fulfill the resource's function.
 

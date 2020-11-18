@@ -29,8 +29,8 @@ The [CI/CD Hub](https://github.com/accanto-systems/lm-cicdhub) wraps the core TN
 
 The CI/CD Hub provides a set of tools that manage VNF and Network Services artifacts across the following NFV orchestration systems:
 
-- **LM NFVO**: Packages of assembly descriptors and behaviour tests for network service versions are packaged and deployed to TNCO instances .
-- **LM Generic VNFM**: Software Images, resource descriptors, lifecycle scripts and behaviour tests that wrap a VNF or PNF are packaged and deployed to TNCO and its resource managers.
+- **TNCO NFVO**: Packages of assembly descriptors and behaviour tests for network service versions are packaged and deployed to TNCO instances .
+- **TNCO Generic VNFM**: Software Images, resource descriptors, lifecycle scripts and behaviour tests that wrap a VNF or PNF are packaged and deployed to TNCO and its resource managers.
 - **3rd Party VNFMs**: External VNF artifacts are packaged and deployed to 3rd party VNFMs.
 - **Virtual Infrastructure Managers**: VNF component software image versions are deployed to VIMs.
 
@@ -38,7 +38,7 @@ The CI/CD Hub provides a set of tools that manage VNF and Network Services artif
 
 The picture above shows a complete TNCO CI/CD Environment. TNCO design tools create VNF/Network Service descriptors and behaviour test scripts, using a Git repository as their source version control. Supplemental artifacts such as VIM software images are stored in a general repository such as Nexus.
 
-Versions of VNF and Network Service packages are taken from these repositories and built and tested in development and pre-production environments. A CI server, such as Jenkins, pulls TNCO artifacts from Git and deploys to LM build slaves, the CI server also pushes software images to the appropriate development or pre-production VIMs attached to the LM build slaves. Any included behaviour tests in the VNF or Network Service project are run by the CI server to validate this versions expected behaviour.
+Versions of VNF and Network Service packages are taken from these repositories and built and tested in development and pre-production environments. A CI server, such as Jenkins, pulls TNCO artifacts from Git and deploys to TNCO build slaves, the CI server also pushes software images to the appropriate development or pre-production VIMs attached to the TNCO build slaves. Any included behaviour tests in the VNF or Network Service project are run by the CI server to validate this versions expected behaviour.
 
 On successful completion of VNF or Network Service behaviour tests, the CI server uses TNCO tools to package a version of a binary VNF and Network Service package and stores it in the general repository.
 
@@ -52,7 +52,7 @@ The CI/CD Hub reference implementation provides installer scripts to stand up an
 
 A basic getting started guide and instructions how to run a "hello world" demo is also installed to the Gogs server. You can learn more about the CI/CD Hub software [here](/user-guides/cicd/software).
 
-As stated above, development and build slave TNCO instances need to be in place and attached to the CI/CD Hub as appropriate, please follow LM installation guide and additional configuration detailed in the CI/CD Hub guide to "connect" LM instances:
+As stated above, development and build slave TNCO instances need to be in place and attached to the CI/CD Hub as appropriate, please follow TNCO installation guide and additional configuration detailed in the CI/CD Hub guide to "connect" TNCO instances:
 
 - **TNCO Design Tools**: TNCO instances for designing descriptors combined with the [LMCTL command line tool](/reference/lmctl) push/pull VNF or Network Service projects to the CI/CD Hub Git repository.
 
@@ -64,7 +64,7 @@ The CI/CD Hub extends "standard" Cloud software toolchains with the [LMCTL tool]
 
 ![VNF & NS packages](/images/user-guides/cicd/overview/packages.png "VNF & NS Packages")
 
-The following packages need to be managed by the LM CI/CD process and tools:
+The following packages need to be managed by the TNCO CI/CD process and tools:
 
 - **Network Service Package**: Network service descriptors that organize VNFs are combined with behaviour tests.
 - **Native VNF Packages**: VNF artifacts designed and built to be run in the TNCO VNFM.

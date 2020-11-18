@@ -3,7 +3,7 @@ title: Resource Packages
 weight: 110
 ---
 
-The following section details the APIs used to manage Resource packages intended for the Brent (carrier-grade Resource Manager included with LM).
+The following section details the APIs used to manage Resource packages intended for the Brent (carrier-grade Resource Manager included with TNCO).
 
 Associated with each definition are details of the request parameters and responses. These include the name of each field plus a brief description and whether the field is mandatory. Whether a field is required or not is based on the context of the examples. The underlying API definition may mark a field as optional, but in some contexts, the fields must be supplied.
 

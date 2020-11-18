@@ -26,18 +26,18 @@ Intent Based Automation is comparable to a satellite navigation system. In order
 
 TNCO works in a similar way. Rather than programming all individual lifecycles for all possible lifecycle scenarios such as upgrade and migrate, the engine automatically generates and executes all lifecycles for VNF and Network Services.
 
-The Intent Engine (one of the TNCO core microservices) in the heart of TNCO has the responsibility for driving Network Service (NS) instances through their lifecycles according to intent requests it receives. With support from other TNCO services, like catalog and topology, intent engine resolves the necessary network service level actions, breaks them down to VNF and eventually to VNFC level lifecycle transitions, and figures out the correct order to execute the steps. The exact sequence of execution steps depends on the model of the network service, the current state of the service, and the requested target state and shape of the service. Finally, the Intent Engine pushes the corresponding requests to responsible resource managers to complete through LM's southbound APIs.
+The Intent Engine (one of the TNCO core microservices) in the heart of TNCO has the responsibility for driving Network Service (NS) instances through their lifecycles according to intent requests it receives. With support from other TNCO services, like catalog and topology, intent engine resolves the necessary network service level actions, breaks them down to VNF and eventually to VNFC level lifecycle transitions, and figures out the correct order to execute the steps. The exact sequence of execution steps depends on the model of the network service, the current state of the service, and the requested target state and shape of the service. Finally, the Intent Engine pushes the corresponding requests to responsible resource managers to complete through TNCO's southbound APIs.
 
 Also, the detailed execution plans are stored by TNCO to enable real-time monitoring of the progress of currently active intents as well as browsing the intent history for a specific network service instance. The following is a screenshot illustrating an intent execution on the TNCO GUI.
 
 ![Intent Execution Flow](/images/key-concepts/intent-execution.png "Intent Execution Flow")
 
-Intents can be requested through a set of API endpoints on the TNCO northbound API. Requests can be triggered by an external northbound system, by LM itself for policy driven intents (such as auto-healing or scaling for example) or they can be manually requested through the LM User Interface which then calls the corresponding API end point.
+Intents can be requested through a set of API endpoints on the TNCO northbound API. Requests can be triggered by an external northbound system, by TNCO itself for policy driven intents (such as auto-healing or scaling for example) or they can be manually requested through the TNCO User Interface which then calls the corresponding API end point.
 
 # Behaviour Driven Testing
 TNCO has in-built Behaviour Driven Testing capability functioning as an automated test framework for VNF and Network Service (NS) testing. While [Intent Based Automation](/key-concepts/#intent-based-automation "Intent Based Automation") automates the production lifecycle of your Network Services and associated resources, Behaviour Driven Testing, together with [CI/CD Hub](/key-concepts/#ci-cd-hub "CI/CD Hub Introduction"), helps you to automate your service development processes. Automated Behaviour Driven Testing reduces manual effort and errors in production. 
 
-In development and pre-production phase, LM's Behaviour Driven Testing can automatically spin up test environments, Network Service under test, and additional test VNFs such as probes and traffic generators, and run through full test scenario of all lifecycle states.
+In development and pre-production phase, TNCO's Behaviour Driven Testing can automatically spin up test environments, Network Service under test, and additional test VNFs such as probes and traffic generators, and run through full test scenario of all lifecycle states.
 
 While services are deployed in production environment, Ready for Service testing can be invoked automatically so that the Network Service is first tested in full, before being released to the customer.
 

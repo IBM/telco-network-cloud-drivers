@@ -17,9 +17,9 @@ TNCO software is deployed as separated distinct component sets which can be cons
 
 ![TNCO Software Architecture](/images/architecture/lm-software-architecture.png "TNCO Software Architecture")
 
-TNCO Core application is realized by a number of microservices deployed on Kubernetes environment. Each microservice has a specific role/function within LM application and communicate with each other via RESTful APIs and through a Kafka message bus.
+TNCO Core application is realized by a number of microservices deployed on Kubernetes environment. Each microservice has a specific role/function within TNCO application and communicate with each other via RESTful APIs and through a Kafka message bus.
 
-Each LM microservice is realized as a Kubernetes service and implemented as a set of service instances which are reachable via a load balancer. Every service operates in a fully active instance set. That is, all service instances within the set are fully operational and capable of servicing any request made of it concurrent to its peers within the service.
+Each TNCO microservice is realized as a Kubernetes service and implemented as a set of service instances which are reachable via a load balancer. Every service operates in a fully active instance set. That is, all service instances within the set are fully operational and capable of servicing any request made of it concurrent to its peers within the service.
 
 # Solution Architecture
 
