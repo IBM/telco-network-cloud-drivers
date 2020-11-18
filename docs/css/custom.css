@@ -1,0 +1,316 @@
+/* Hide the body until javascript has loaded to stop a flash of unstyled content */
+body {
+  display: none;
+  font-family: "Source Sans Pro", Helvetica, Arial, Lucida, sans-serif;
+  font-weight: 200;
+  color: #808080;
+  line-height: 2em;
+}
+
+/* Header */
+header {
+  background-position: center;
+  height: 80px;
+  box-shadow: 0 1px 2px #4c4c4c;
+}
+
+header:after {
+  background: none;
+}
+header > nav.shortcuts > li > a:hover,
+header > nav.shortcuts > li > a:focus,
+header > nav.shortcuts > li > a:active {
+  background-color: transparent;
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  margin: 0 0 0 20vw;
+}
+
+/* Dropdown Button */
+.dropbtn {
+  color: white !important;
+  font-weight: 400;
+  background-color: transparent;
+  border: 2px solid white;
+
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 3.5rem;
+  padding: 0 1rem;
+  font-size: 1.05rem;
+  width: 130px;
+}
+
+header nav.shortcuts .dropbtn > .fa {
+  font-weight: normal;
+  font-size: 0.8rem;
+  margin-right: 0;
+  margin-left: 10px;
+  pointer-events: none;
+}
+
+ul + pre {
+  margin: 0 1.5rem;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover,
+.dropbtn:focus {
+  /* background-color: #f9f9f9; */
+  outline: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  color: white;
+  font-weight: 400;
+  border-width: 0 2px 2px 2px;
+  border-style: solid;
+  border-color: white;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  height: 100px;
+  width: 130px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #f9f9f9;
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+  display: block;
+}
+
+.chevrons {
+  display: none;
+}
+
+/* Main body of articles */
+article {
+  margin-top: 80px;
+  width: 85vw;
+}
+article section.page {
+  margin-left: 20vw;
+}
+article section.page h1 {
+  font-size: 1.75rem;
+  font-weight: 400;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  color: #808080;
+}
+article section.page h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  color: #808080;
+}
+article section.page h3 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #808080;
+}
+article section.page h4 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #808080;
+}
+article section.page h1:first-of-type {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #808080;
+  font-family: "Source Sans Pro", Helvetica, Arial, Lucida, sans-serif;
+}
+
+/* Left hand panel */
+article > aside {
+  width: 20vw;
+  padding-right: 10px;
+  min-width: 200px;
+}
+article > aside ul > li {
+  padding-left: 8px;
+}
+article > aside .menu .dd-item.active > div * {
+  border-bottom: 0px;
+  color: #2661a6;
+}
+article > aside .menu .dd-item.active > div {
+  background-color: transparent;
+}
+article > aside .menu .dd-item.active {
+  background-color: #eee;
+}
+article > aside .menu .dd-item div a:hover,
+article > aside .menu .dd-item div a:focus,
+article > aside .menu .dd-item div a:active,
+article > aside > ul > li:nth-child(1) > a:hover,
+article > aside .menu .dd-item div i.category-icon:hover {
+  background-color: transparent;
+}
+article > aside .menu div:hover,
+article > aside > ul > li:nth-child(1):hover {
+  color: #2661a6;
+  font-weight: bold;
+}
+article > aside .menu .dd-item.haschildren div {
+  padding-left: 8px;
+}
+article section.page table th {
+  font-weight: 400;
+  color: #808080;
+  text-transform: none;
+}
+article section.page table td {
+  color: #808080;
+  text-transform: none;
+}
+
+/* Table of Contents */
+#table-contents-container {
+  position: fixed;
+  right: 0;
+  top: 180px;
+  width: 15vw;
+  max-height: calc(100% - 180px);
+  overflow-y: scroll;
+  padding: 0 20px;
+  border-color: #ccc;
+  border-left-style: solid;
+  border-left-width: 1px;
+}
+#table-contents-container li {
+  padding: 7px 0 7px 7px;
+}
+#table-contents-container ul {
+  margin: 0;
+  color: #0594cb;
+  list-style: none;
+}
+#table-contents-container h1 {
+  margin: 0 0 5px 0;
+  font-size: 1.05rem;
+}
+
+#TableOfContents > ul > li > ul > li > ul {
+  display: none;
+}
+
+/* Tweaks for the Product Overview page */
+#product-overview-body #product-overview {
+  display: inline-block;
+  margin-bottom: 0;
+}
+#product-overview-body article {
+  margin-top: 80px;
+  width: 100vw;
+}
+#product-overview-body article section.page table,
+#product-overview-body article section.page table tr {
+  border: none;
+  text-align: left;
+}
+#product-overview-body article section.page table td {
+  border: none;
+  text-align: left;
+  padding-top: 0;
+  padding-bottom: 0;
+  color: #808080;
+}
+#product-overview-body article section.page table th {
+  background: none;
+  border: none;
+  text-align: left;
+  vertical-align: top;
+  font-size: 1.5rem;
+  padding-bottom: 20px;
+}
+#product-overview-body #table-contents-container {
+  display: none;
+}
+#product-overview-body .searchbox {
+  position: static;
+  width: 100%;
+}
+#product-overview-body > article > aside > ul > li:nth-child(1) {
+  font-weight: bold;
+  color: #2661a6;
+  background-color: #eee;
+}
+
+.searchbox {
+  position: fixed;
+  right: 0;
+  top: 100px;
+  width: 15vw;
+}
+
+article section.page p > code,
+article section.page li code,
+article section.page table code {
+  padding: 0.3rem;
+  background-color: #eee;
+}
+
+.fa.fa-clipboard {
+  cursor: pointer; 
+}
+
+@media (max-width: 768px) {
+  .nav-select {
+    display: none;
+  }
+  footer {
+    display: block;
+  }
+  article > aside {
+    display: block;
+  }
+  .nav-select {
+    padding: 15px 0 1px 0;
+  }
+  #product-overview-body article section.page table th {
+    font-size: 1.25rem;
+  }
+  #table-contents-container {
+    display: none;
+  }
+  .searchbox {
+    position: static;
+    width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  article section.page {
+    margin-left: 200px;
+  }
+}

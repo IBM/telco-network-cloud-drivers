@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Themes on Telco Network Cloud Orchestration Learning Center</title><link>https://ibm.github.io/telco-network-cloud-drivers/user-guides/administration/configuration/themes/</link><description>Recent content in Themes on Telco Network Cloud Orchestration Learning Center</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://ibm.github.io/telco-network-cloud-drivers/user-guides/administration/configuration/themes/index.xml" rel="self" type="application/rss+xml"/><item><title>Themes Overview</title><link>https://ibm.github.io/telco-network-cloud-drivers/user-guides/administration/configuration/themes/theme-overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ibm.github.io/telco-network-cloud-drivers/user-guides/administration/configuration/themes/theme-overview/</guid><description>Changing the look of the Telco Network Cloud Orchestration (TNCO) User Interface UI is supported via Theme Packages. A theme can be provided for each unique look that is needed for the TNCO UI.
+Changing the Theme of the TNCO UI To change the theme of the UI you need to produce a theme.tar containing the necessary elements. The TAR should include a directory for each potential theme. Each theme is represented by a directory which should include the favicon, stylesheet and images to be used: +-- mytheme (change to your Theme name)
+| +-- favicon.</description></item><item><title>Theme Installation</title><link>https://ibm.github.io/telco-network-cloud-drivers/user-guides/administration/configuration/themes/theme-installation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ibm.github.io/telco-network-cloud-drivers/user-guides/administration/configuration/themes/theme-installation/</guid><description>The following steps explain how to alter the installation process to change the theme used by the Telco Network Cloud Orchestration (TNCO) User Interface.
+Installing a Theme Follow the steps in theme overview before doing the following.
+When installing the lm-configurator helm chart you must include the following values, changing the value of theme.name to be the name of theme to be used:
+configurator:
+lmConfigImport:
+nimrod:
+alm.</description></item><item><title>Theme Updates</title><link>https://ibm.github.io/telco-network-cloud-drivers/user-guides/administration/configuration/themes/theme-running/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ibm.github.io/telco-network-cloud-drivers/user-guides/administration/configuration/themes/theme-running/</guid><description>The following steps explain how to change the theme used by the Telco Network Cloud Orchestration (TNCO) User Interface when it is running.
+Updating a Theme Follow the steps in theme overview before doing the following.
+Add the following configuration to vault for lm/nimrod, changing the value of theme.name to be the name of the theme to be used:
+&amp;quot;alm.nimrod.theme.name&amp;quot;: &amp;quot;mytheme&amp;quot;
+Create a values file with the following configuration: nimrod:
+app:
+config:
+themesConfigMap: lm-themes
+Run a helm upgrade of the TNCO helm chart with the custom values file above.</description></item></channel></rss>
