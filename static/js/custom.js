@@ -1,6 +1,6 @@
 function setIdOnBody() {
     var bodyId = "";
-    if (window.location.pathname === "/TNC/alm-docs.github.io/" || window.location.pathname === "/") {
+    if (window.location.pathname === "/telco-network-cloud-drivers/" || window.location.pathname === "/TNC/alm-docs.github.io/" || window.location.pathname === "/") {
         bodyId = "product-overview";
     } else {
         bodyId = window.location.pathname.replace(/\//g, "-");
