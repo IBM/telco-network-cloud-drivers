@@ -35,7 +35,7 @@ function showVersionDropdown() {
 function addVersionDropdown() {
     var versionDropdown =
         '<div class="dropdown">'
-            + 'Version 2.2.0 (latest)'
+            + 'Version 2.2.0'
         + '</div>';
     $( "header > nav.shortcuts > li:last-child" ).html(versionDropdown);
 }
