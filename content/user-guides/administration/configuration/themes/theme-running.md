@@ -3,7 +3,7 @@ title: Theme Updates
 weight: 30
 ---
 
-The following steps explain how to change the theme used by the Telco Network Cloud Orchestration (TNCO) User Interface when it is running.
+The following steps explain how to change the theme used by the Telco Network Cloud Orchestration (TNC-O) User Interface when it is running.
 
 # Updating a Theme
 
@@ -24,7 +24,7 @@ The following steps explain how to change the theme used by the Telco Network Cl
           themesConfigMap: lm-themes
 ```
 
-4. Run a `helm upgrade` of the TNCO helm chart with the custom values file above.
+4. Run a `helm upgrade` of the TNC-O helm chart with the custom values file above.
 
 
 

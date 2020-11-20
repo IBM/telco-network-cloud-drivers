@@ -20,9 +20,9 @@ In addition, you will need the following client tools, pre-configured with acces
 - [Helm](https://helm.sh/)
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 
-## Telco Network Cloud Orchestration (TNCO)
+## Telco Network Cloud Orchestration (TNC-O)
 
-We recommend installing a TNCO environment first so the Ansible RM may share the existing Kafka cluster.
+We recommend installing a TNC-O environment first so the Ansible RM may share the existing Kafka cluster.
 
 ## Ansible RM Helm Chart
 

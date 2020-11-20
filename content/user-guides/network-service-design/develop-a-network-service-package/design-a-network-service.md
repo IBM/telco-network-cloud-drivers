@@ -12,7 +12,7 @@ This section describes the steps to design and model a Network Service. A Networ
 ## Pre-requisites
 * An understanding of the customer requirements for the Network Service in terms of composition, location, relationships, networking, testing, and underlying infrastructure requirements.
 * Understanding of the Network Service components, use cases, and relationships. This information is usually gathered during the Requirements phase of a project.
-* An understanding of Telco Network Cloud Orchestration (TNCO) programming model.
+* An understanding of Telco Network Cloud Orchestration (TNC-O) programming model.
 
 ## Steps to Design a Network Service
 Once the pre-requisites are met, and you have a good understanding of the Network Service components and use cases, we can continue with the design, as follows:

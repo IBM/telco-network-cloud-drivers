@@ -9,7 +9,7 @@ Develop VNF or Network Service project artifacts that, when complete, will const
 
 ### Pre-requisites
 
-* CI/CD Hub and a development environment with a dedicated Telco Network Cloud Orchestration (TNCO) and VIM
+* CI/CD Hub and a development environment with a dedicated Telco Network Cloud Orchestration (TNC-O) and VIM
 * A [VNF or Network Service project already exists](/user-guides/cicd/developing-a-project/create-new-vnf-project).
 
 ## Developing a VNF or Network Service Descriptor
@@ -23,7 +23,7 @@ $ lmctl project push dev
 
 Design the VNF or Network Service  Descriptor
 
-- Log into the TNCO UI
+- Log into the TNC-O UI
 - Go to the 'Assembly Designer' and open the descriptor with your project name.
 - **Select Add Element** and add resource elements that should be contained in your design. For a Network Service this can be VNFs or other Network Services. For VNFs this will be VNFCs/resource descriptors.  
 - Edit the descriptors:
@@ -54,7 +54,7 @@ Commit changes to the develop branch as you go.
 
 ## Creating behaviour Tests
 
-In the TNCO designer, you can add Behaviour Tests to your project by performing the following tasks:
+In the TNC-O designer, you can add Behaviour Tests to your project by performing the following tasks:
 
    * Design a behaviour test for the VNF or Network Services that installs it to it's active state. 
    * Now run the test above.

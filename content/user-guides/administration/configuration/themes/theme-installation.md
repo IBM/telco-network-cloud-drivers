@@ -3,7 +3,7 @@ title: Theme Installation
 weight: 20
 ---
 
-The following steps explain how to alter the installation process to change the theme used by the Telco Network Cloud Orchestration (TNCO) User Interface.
+The following steps explain how to alter the installation process to change the theme used by the Telco Network Cloud Orchestration (TNC-O) User Interface.
 
 # Installing a Theme
 
@@ -18,7 +18,7 @@ The following steps explain how to alter the installation process to change the 
           alm.nimrod.theme.name: mytheme
 ```
 
-3. When installing the `lm-helm` helm chart you must include the following values so the ConfigMap with `theme.tar` can be loaded by TNCO:
+3. When installing the `lm-helm` helm chart you must include the following values so the ConfigMap with `theme.tar` can be loaded by TNC-O:
 
 ```
     nimrod:
@@ -27,4 +27,4 @@ The following steps explain how to alter the installation process to change the 
           themesConfigMap: lm-themes
 ```
 
-4. Once TNCO has started you will be able to view the UI with your chosen theme.
+4. Once TNC-O has started you will be able to view the UI with your chosen theme.

@@ -1,5 +1,5 @@
 ---
-title: Installing TNCO
+title: Installing TNC-O
 weight: 40
 ---
 
@@ -12,7 +12,7 @@ This section assumes you have followed the configuration steps and now have:
 
 # Installing with Helm
 
-You can now install the various TNCO Helm charts in the order listed above, using the `helm install` command
+You can now install the various TNC-O Helm charts in the order listed above, using the `helm install` command
 
 ```
 helm install <your-helm-chart> --name <your-release-name> --namespace <your-namespace> -f <your-custom-values-file> -f <your-additional-flavour-files>
@@ -57,9 +57,9 @@ foundation-zookeeper-0                                  1/1       Running     0 
 
 Once the installation of Foundation is complete, you can proceed to the installation of lm-configurator.
 
-## TNCO Configurator Install
+## TNC-O Configurator Install
 
-Next, install TNCO Configurator.
+Next, install TNC-O Configurator.
 
 For example, to install with a namespace of lm and again using the flavour of Basic HA:
 
@@ -74,11 +74,11 @@ NAME                                                    READY     STATUS      RE
 lm-configurator-qw5wd                                   0/1       Completed   0          10m
 ```
 
-Once this is complete, proceed to the installation of TNCO
+Once this is complete, proceed to the installation of TNC-O
 
-## TNCO Install
+## TNC-O Install
 
-Finally, the TNCO Helm chart can be installed.
+Finally, the TNC-O Helm chart can be installed.
 
 For example, to install with a namespace of lm and again using the flavour of Basic HA:
 
@@ -108,16 +108,16 @@ Once all pods are shown with at least one ready instance, you may continue to [A
 
 Be sure to update any ports, hostnames, usernames and passwords shown if you provided overrides in your `custom values` file.
 
-## TNCO 
+## TNC-O 
 
 ### No Host
 
-If you kept the `noHost` Ingress rules enabled for TNCO, then the UI and API will be accessible at:
+If you kept the `noHost` Ingress rules enabled for TNC-O, then the UI and API will be accessible at:
 
 - UI - https://<your-host-ip>:32443/ui (non-secure http://<your-host-ip>:32080/ui)
 - API - https://<your-host-ip>:32443 (non-secure http://<your-host-ip>:32080)
 
-The ports shown above are the default for the Ingress controller installed as part of TNCO, so adjust them if you configured alternative values. 
+The ports shown above are the default for the Ingress controller installed as part of TNC-O, so adjust them if you configured alternative values. 
 
 ### Host Based 
 
@@ -209,7 +209,7 @@ The default client credentials for API access is:
 
 ## Vault
 
-To modify or inspect system configuration, access the Vault UI at `https://vault.lm:32443`. As mentioned in [accessing TNCO](#lm), Ingress uses the hostname to route traffic to the desired service, so you will need to either add the hostname to your hosts file or configure a proxy/nameserver to route traffic to it.
+To modify or inspect system configuration, access the Vault UI at `https://vault.lm:32443`. As mentioned in [accessing TNC-O](#lm), Ingress uses the hostname to route traffic to the desired service, so you will need to either add the hostname to your hosts file or configure a proxy/nameserver to route traffic to it.
 
 The configured access token will be needed to login to Vault. The value will be output within the logs of the vault-int job, and can be found by inspecting them, for example (replace with correct name of vault-init pod):
 
@@ -227,5 +227,5 @@ To view or configure available system users, access OpenLDAP by determining the 
 
 Kibana can be accessed at `http://kibana.lm:32080` (or `http://<your-host-ip>:31001` to use NodePort access).
 
-As mentioned in [accessing TNCO](#lm), Ingress uses the hostname to route traffic to the desired service, so you will need to either add the hostname to your hosts file or configure a proxy/nameserver to route traffic to it.
+As mentioned in [accessing TNC-O](#lm), Ingress uses the hostname to route traffic to the desired service, so you will need to either add the hostname to your hosts file or configure a proxy/nameserver to route traffic to it.
 

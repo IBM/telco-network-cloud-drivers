@@ -11,13 +11,13 @@ This section describes the steps required to request an intent on a Network Serv
 
 ## Pre-requisites
 * An existing Network Service Design
-* Access to the UI of a running instance of Telco Network Cloud Orchestration (TNCO)
+* Access to the UI of a running instance of Telco Network Cloud Orchestration (TNC-O)
 
 ## Assembly Instances
 
 ###	Recent Assembly Instances
 
-Once Network Services and VNFs are designed, they can be put into production. The Operations section in TNCO allows for assemblies to be searched, and actions to be taken. To find an assembly, you can go to the Recent Assembly Instances section to see the last Assembly Instances that have changed state.
+Once Network Services and VNFs are designed, they can be put into production. The Operations section in TNC-O allows for assemblies to be searched, and actions to be taken. To find an assembly, you can go to the Recent Assembly Instances section to see the last Assembly Instances that have changed state.
 
 ![Recent Assembly Instances](/images/user-guides/operations/manage-instances/recent-assembly-instances.png "Recent Assembly Instances")
 
@@ -25,7 +25,7 @@ You see the name of the assembly instance, the status, descriptor name, and the 
 
 ###	Search for Assembly Instances
 
-You can search for any assembly instance by clicking Search Assembly Instance in the Operations section of TNCO.
+You can search for any assembly instance by clicking Search Assembly Instance in the Operations section of TNC-O.
 
 ![Search Assembly Instances](/images/user-guides/operations/manage-instances/search-assembly-instances.png "Search Assembly Instances")
 
@@ -39,7 +39,7 @@ Once you press Create, the Assembly Instance will show up on the Recent Assembly
 
 ##	Intent Execution Graph
 
-TNCO includes intent based orchestration capabilities. Once you have onboarded and designed your VNF and Network Services, the Intent Engine automatically calculates and executes the best path to get an assembly from the current state to the desired state without having to manually program any of the tasks. The Intent Execution graph is a view all the tasks that the Intent Engine is executing to bring the Network Service or VNF into its intended state.
+TNC-O includes intent based orchestration capabilities. Once you have onboarded and designed your VNF and Network Services, the Intent Engine automatically calculates and executes the best path to get an assembly from the current state to the desired state without having to manually program any of the tasks. The Intent Execution graph is a view all the tasks that the Intent Engine is executing to bring the Network Service or VNF into its intended state.
 
 When an Intent is being executed, you can view all the tasks the Intent Engine is performing in real-time in a moving graph. You can see what task is performed first, and what lifecycle action or operation is being performed.
 

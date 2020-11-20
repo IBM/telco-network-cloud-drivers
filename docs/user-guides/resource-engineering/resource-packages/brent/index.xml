@@ -13,4 +13,4 @@ Install.yaml
 Start.yaml
 openstack/
 heat.yaml
-The Definitions directory contains the TNCO descriptor file. The Lifecycle directory should be populated with scripts and templates required by the chosen driver(s).</description></item></channel></rss>
+The Definitions directory contains the TNC-O descriptor file. The Lifecycle directory should be populated with scripts and templates required by the chosen driver(s).</description></item></channel></rss>

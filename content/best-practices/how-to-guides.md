@@ -3,7 +3,7 @@ title: How-to Guides
 weight: 20
 ---
 
-This section discusses common Telco Network Cloud Orchestration (TNCO) use cases and provides examples to help illustrate how to best apply to what you are working on. 
+This section discusses common Telco Network Cloud Orchestration (TNC-O) use cases and provides examples to help illustrate how to best apply to what you are working on. 
 
 # VNFs
 

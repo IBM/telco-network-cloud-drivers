@@ -14,7 +14,7 @@ In addition to specifying the minimum state, we can also define a modifier for t
 * By default, source components have the _post_ modifier and target components have the _pre_ modifier
 * If the target component has the _post_ modifier, the relationship will be created once both the source and target are at their minimum states (or higher)
 * If the target component has the _pre_ modifier, the relationship will be created prior to the target component transitioning to its minimum state
-  *    TNCO will ensure that the source component will also be in its minimum state
+  *    TNC-O will ensure that the source component will also be in its minimum state
   *    This can result in the source component having its state artificially raised to a higher state than that of the  parent assembly
   *    In this way, relationships can be used (in addition to properties) to introduce dependencies into how the processes are built and executed
 

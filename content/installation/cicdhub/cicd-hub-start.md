@@ -8,7 +8,7 @@ This section details how to install the CI/CD Hub using Helm on an existing Kube
 - **Gogs**: Lightweight self-hosted Git service
 - **Nexus**: Artifact repository manager
 - **Jenkins**: Automation server to enable continuous integration and continuous delivery
-- **Openldap**: Open-source implementation of the Lightweight Directory Access Protocol, for user management of Telco Network Cloud Orchestration (TNCO) environments
+- **Openldap**: Open-source implementation of the Lightweight Directory Access Protocol, for user management of Telco Network Cloud Orchestration (TNC-O) environments
 - **Docker Registry**: Registry for hosting docker images
 - **Nginx Ingress**: Ingress controller to support accessing some services with Ingress
 

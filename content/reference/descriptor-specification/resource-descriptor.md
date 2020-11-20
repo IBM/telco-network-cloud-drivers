@@ -5,7 +5,7 @@ weight: 20
 
 # Introduction
 
-This document describes the descriptors that are used by the Telco Network Cloud Orchestration (TNCO). TNCO needs to have descriptions of the building blocks of applications that it is going to manage. The basic building blocks are described in resource descriptors. Sets of these are composed into assembly descriptors to allow designers to describe a complete application/service that they need TNCO to manage.  
+This document describes the descriptors that are used by the Telco Network Cloud Orchestration (TNC-O). TNC-O needs to have descriptions of the building blocks of applications that it is going to manage. The basic building blocks are described in resource descriptors. Sets of these are composed into assembly descriptors to allow designers to describe a complete application/service that they need TNC-O to manage.  
 
 ## Naming
 
@@ -17,7 +17,7 @@ The resource descriptor name field will contain the following string:
 
 This consists of three components, each separated by a `::` (double colon). 
 
-* **Descriptor Type:**  TNCO supports two descriptor types `assembly` and `resource` identifying the two core descriptor types.
+* **Descriptor Type:**  TNC-O supports two descriptor types `assembly` and `resource` identifying the two core descriptor types.
 * **Name:**  Each descriptor is uniquely identified by its name for a given descriptor type. The name must match the following rules
   * Must start with a letter (either case)
   * Can include letters, digits, _non-consecutive_ underscores (single) and hyphens (minus sign).
@@ -112,7 +112,7 @@ properties:
 
 * `name` - each property name must be unique within its property section (scope). The name cannot contain dot (period) character but has limited additional restrictions.
 
-* `type` - currently, the _type_ field has restricted use. As of TNCO 2.1 two additional supported types of `resourceKeyId` and `key` are supported over the previously supported `string`. The default type is `string`.
+* `type` - currently, the _type_ field has restricted use. As of TNC-O 2.1 two additional supported types of `resourceKeyId` and `key` are supported over the previously supported `string`. The default type is `string`.
 
 _type_ will in future allow active handling of different types of data (for example: dates, IP addresses, etc…). It is recommended users omit this field or use the supported values of “string” and "key" to avoid compatibility issues in the future.
 
@@ -122,7 +122,7 @@ Properties marked as read-only: true will not be overridden by values mapped in 
 
 Properties may be declared with a default value or a specific value or neither. Where the value field is used it may either be an explicit value or it may reference to another property within the descriptor. When referencing another property, the reference will look as follows: value: ‘${max_connections}’ 
 
-The TNCO will assign an internal name and identifier for each resource instance it creates. It also supplies the index number of a resource in a cluster. These values can be useful to give unique names for servers etc. To access them a property may have its value set to ${instance.name}, ${instance.id} or ${instance.index}. These should be placed in the value field of a property. The TNCO will then replace the placeholders with the appropriate value. 
+The TNC-O will assign an internal name and identifier for each resource instance it creates. It also supplies the index number of a resource in a cluster. These values can be useful to give unique names for servers etc. To access them a property may have its value set to ${instance.name}, ${instance.id} or ${instance.index}. These should be placed in the value field of a property. The TNC-O will then replace the placeholders with the appropriate value. 
 
 {{%note %}}
 NOTE: It is essential that there is a space between the “value:” and the quoted property value string. If you fail to put a space between these two items then it will be treated as a single string.
@@ -133,14 +133,14 @@ NOTE: It is essential that there is a space between the “value:” and the quo
 Properties can have a type `key`. For non-read-only properties, the value of a key property is the `name` of a [shared infrastructure key](/user-guides/operations/infrastructure-key-management) managed by Brent. The actual key will be substituted at runtime before being sent to Brent drivers. For read-only properties, the value of a key property is the name of a shared infrastructure key.
 
 ### Volatile Properties
-New to TNCO 2.1 is an additonal property attribute 'volatile' which identifies a property as being a runtime modifiable property. 
+New to TNC-O 2.1 is an additonal property attribute 'volatile' which identifies a property as being a runtime modifiable property. 
 
-A volatile property is one which the designer has actively identified as being modifiable for an instantiated, active assembly/resource without the need for TNCO to _'reinstall'_ the assembly/resource. Rather, where the set of property changes to individual resources within an assembly, wholly consists of changes to the values of volatile properties, TNCO will execute a [Reconfigure operation](/user-guides/operations/manage-instances/) on those resources rather than follow the default resource 'reinstall' procedure which would otherwise be followed.
+A volatile property is one which the designer has actively identified as being modifiable for an instantiated, active assembly/resource without the need for TNC-O to _'reinstall'_ the assembly/resource. Rather, where the set of property changes to individual resources within an assembly, wholly consists of changes to the values of volatile properties, TNC-O will execute a [Reconfigure operation](/user-guides/operations/manage-instances/) on those resources rather than follow the default resource 'reinstall' procedure which would otherwise be followed.
 
 It is important to note that while it can be identified as an attribute of a property at both the assembly and resource level it only meaning at the resource level. However it is good practice to flag properties as being volatile through the assembly hierarchy 
 
 #### Identifying a property as Volatile
-A property is identified as being volatile by adding the following attribute to its descriptor. This is achieved through the TNCO UI by selecting the _Volatile_ tick box on the property. 
+A property is identified as being volatile by adding the following attribute to its descriptor. This is achieved through the TNC-O UI by selecting the _Volatile_ tick box on the property. 
 
 ```
   volatile: true
@@ -278,7 +278,7 @@ default-driver:
 
 The lifecycle section defines the lifecycle transitions that the resource supports. 
 
-Resource descriptors must support the Create lifecycle transition. However, they may implement the other lifecycle transitions which are: Install, Configure, Reconfigure, Start, Stop, Integrity, Delete and Uninstall. Where the transition is not provided by the resource, TNCO will be free to change the state of the associated component instances without calling any underlying transition.
+Resource descriptors must support the Create lifecycle transition. However, they may implement the other lifecycle transitions which are: Install, Configure, Reconfigure, Start, Stop, Integrity, Delete and Uninstall. Where the transition is not provided by the resource, TNC-O will be free to change the state of the associated component instances without calling any underlying transition.
 
 For each lifecycle transition one can configure in the "drivers" section which Resource Driver to use based on property values. The key is the type of a [Resource Driver](/user-guides/resource-engineering/drivers/onboarding/). 
 
@@ -323,7 +323,7 @@ A metric is defined as having a name, type and an optional publication-period.
 
 If no publication period is given at all, a default of 60 seconds is assumed.  The publication period is in seconds.  A value of 0 means no metrics will be published.  The value must be +integer
 
-There are two reserved types that are used by TNCO to monitor the health of the associated resource instances.:
+There are two reserved types that are used by TNC-O to monitor the health of the associated resource instances.:
  
 
 * `metric::integrity`
@@ -371,7 +371,7 @@ Example of smoothing:
 
 ### Example Integrity Metric (on Kafka)
 
-TNCO expects integrity metrics on the `alm__integrity` Kafka topic to have the following JSON form:
+TNC-O expects integrity metrics on the `alm__integrity` Kafka topic to have the following JSON form:
 
 ```
 {
@@ -393,7 +393,7 @@ TNCO expects integrity metrics on the `alm__integrity` Kafka topic to have the f
 
 ### Example Load Metric (on Kafka)
 
-TNCO expects load metrics on the `alm__load` Kafka topic to have the following JSON form:
+TNC-O expects load metrics on the `alm__load` Kafka topic to have the following JSON form:
 
 ```
 {
@@ -830,7 +830,7 @@ operations:
 
 #### Metrics in the Resource Descriptor
 
-Each resource may emit metric information to help in its management. TNCO is expecting all collected metrics from resources to be made available on Kafka. TNCO listens to specific Kafka topics for events containing metrics. Metrics should be associated with necessary identifiers including timestamps, names of the metric and “Metric Identifiers” specifying the source resource of the metrics. 
+Each resource may emit metric information to help in its management. TNC-O is expecting all collected metrics from resources to be made available on Kafka. TNC-O listens to specific Kafka topics for events containing metrics. Metrics should be associated with necessary identifiers including timestamps, names of the metric and “Metric Identifiers” specifying the source resource of the metrics. 
 
 Metrics for Integrity and Load are defined in the resource Descriptor. The Integrity metric is used to heal a broken resource. The Load metric is used in the VNF or Network Service to scale a VNF:
 ```
@@ -876,7 +876,7 @@ NOTE: the policy for Scaling is defined in the VNF or Network Service Descriptor
 
 ### An Example of a Resource Descriptor
 
-Below is an example of an TNCO resource descriptor:
+Below is an example of an TNC-O resource descriptor:
 
 ```
 name: resource::simple_resource::1.0.0
@@ -989,6 +989,6 @@ policies:
 ```
 
 {{%note %}}
-NOTE: The resource_id property that has a value set to “$\{instance.id\}”. When the resource is created this will have the ID for the resource that the TNCO has assigned it. Other options are “$\{instance.id\}” that will have the TNCO name for the resource and “$\{instance.index\}” which will have the unique index number for a resource when more than one can be created by the TNCO within an assembly.
+NOTE: The resource_id property that has a value set to “$\{instance.id\}”. When the resource is created this will have the ID for the resource that the TNC-O has assigned it. Other options are “$\{instance.id\}” that will have the TNC-O name for the resource and “$\{instance.index\}” which will have the unique index number for a resource when more than one can be created by the TNC-O within an assembly.
 {{%/note %}}
  

@@ -2,9 +2,9 @@
 title: Business Case
 weight: 20
 ---
-# The Telco Network Cloud Orchestration (TNCO) Business case
+# The Telco Network Cloud Orchestration (TNC-O) Business case
 
-TNCO helps service providers effectively streamline service delivery, minimize complexity, and deliver innovative new services to customers at significant speed and lower cost of operations. 
+TNC-O helps service providers effectively streamline service delivery, minimize complexity, and deliver innovative new services to customers at significant speed and lower cost of operations. 
 
 The problem our product solves and our value proposition are explained as follows:
 

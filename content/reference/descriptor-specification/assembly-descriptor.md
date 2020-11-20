@@ -5,9 +5,9 @@ weight: 11
 
 # Introduction
 
-This document describes the assembly descriptors that are used by the Telco Network Cloud Orchestration (TNCO). TNCO needs to have descriptions of the building blocks of applications that it is going to manage. The basic building blocks are described in resource descriptors (resource descriptors are described in separate document). Sets of these are composed into assembly descriptors to allow designers to describe a complete application/service that they need TNCO to manage.  
+This document describes the assembly descriptors that are used by the Telco Network Cloud Orchestration (TNC-O). TNC-O needs to have descriptions of the building blocks of applications that it is going to manage. The basic building blocks are described in resource descriptors (resource descriptors are described in separate document). Sets of these are composed into assembly descriptors to allow designers to describe a complete application/service that they need TNC-O to manage.  
 
-Within the assembly will be a description of the relationships between resources that allow configuration to be applied to the actual instances of the components that TNCO will manage.  Assemblies may also reference assemblies and existing infrastructure items, such as network instantiated outside of TNCO.
+Within the assembly will be a description of the relationships between resources that allow configuration to be applied to the actual instances of the components that TNC-O will manage.  Assemblies may also reference assemblies and existing infrastructure items, such as network instantiated outside of TNC-O.
 
 ## Naming
 
@@ -85,11 +85,11 @@ If the reference is to a property within the assemblies other sections the refer
 
 This references the property publicIp within the balancer section of the composition section.  
 
-`deploymentLocation` is a special property that is used by the TNCO to place the resultant resource in the correct location.  It will only appear in an assembly descriptor.  The contents of the property will be specific to the resource manager that handles the resource.
+`deploymentLocation` is a special property that is used by the TNC-O to place the resultant resource in the correct location.  It will only appear in an assembly descriptor.  The contents of the property will be specific to the resource manager that handles the resource.
 
 `resourceManager` is another special property that passes the name of the resource manager instance that will be used to manage the resource.
 
-TNCO will assign an internal name and identifier for each resource and assembly instance it creates.  These values can be useful to give unique names for servers etc. To access them a property may have its value set to `${instance.name}` or `${instance.id}`. 
+TNC-O will assign an internal name and identifier for each resource and assembly instance it creates.  These values can be useful to give unique names for servers etc. To access them a property may have its value set to `${instance.name}` or `${instance.id}`. 
 
 {{%note %}}
 NOTE: It is essential that there is a space between the “value:” and the quoted property value string. If you fail to put a space between these two items then it will be treated as a single string.
@@ -149,9 +149,9 @@ operations:
 
 _Definition_:Components - A component is a resource or assembly that is included within an assembly composition section and will be instantiated as a result of requesting a new instance of the enclosing assembly
 
-Assemblies allow a designer to group a set of resources and assemblies, collectively known as components, into an assembly to create a new application/service. Those used within the composition section will be instantiated and managed by TNCO. 
+Assemblies allow a designer to group a set of resources and assemblies, collectively known as components, into an assembly to create a new application/service. Those used within the composition section will be instantiated and managed by TNC-O. 
 
-When TNCO has already instantiated an assembly it is possible for another assembly to share the instance by referencing it within the references section. The references section can also refer to existing objects that may have been created outside TNCO. TNCO will resolve both of these types of references from the properties supplied and access to the instances properties and operations is then available to the referencing assembly.
+When TNC-O has already instantiated an assembly it is possible for another assembly to share the instance by referencing it within the references section. The references section can also refer to existing objects that may have been created outside TNC-O. TNC-O will resolve both of these types of references from the properties supplied and access to the instances properties and operations is then available to the referencing assembly.
 
 ### Composition
 
@@ -239,17 +239,17 @@ composition:
 
 ## References
 
-The reference section is similar to the composition section except that the items referenced in this section must be pre-existing before TNCO will instantiate any of the items in the assembly’s composition section.  
+The reference section is similar to the composition section except that the items referenced in this section must be pre-existing before TNC-O will instantiate any of the items in the assembly’s composition section.  
 
-Two types of references can be resolved by TNCO
+Two types of references can be resolved by TNC-O
 1. existing assembly instances 
 2. external resources that are managed directly by a resource manager.
 
-Assembly references require the full name of the assembly within type field. The example below shows using the semantic versioning to allow more flexibility when resolving to instances of the assembly. The properties are used to help TNCO find the instance of the item required by the current assembly. With items that have been created through TNCO the referencing assembly can refer to any of the instance’s properties from the items property section. Referenced assemblies can be used by the enclosing assembly to establish relationships.
+Assembly references require the full name of the assembly within type field. The example below shows using the semantic versioning to allow more flexibility when resolving to instances of the assembly. The properties are used to help TNC-O find the instance of the item required by the current assembly. With items that have been created through TNC-O the referencing assembly can refer to any of the instance’s properties from the items property section. Referenced assemblies can be used by the enclosing assembly to establish relationships.
 
 Resource instances managed directly by a resource manager may be referenced.  These will have resource descriptors as any resource, however they will not include the Install or Uninstall lifecycle steps.
 
-To read the references section each item has a local name used to refer to the item with in the assembly. The type directs TNCO to fetch the required resource type. The properties are then used by TNCO to narrow down to a single instance of the resource type that can be used by the enclosing assembly. If TNCO finds more than one resource that fits the information provided an error occurs and the assembly will not be instantiated.
+To read the references section each item has a local name used to refer to the item with in the assembly. The type directs TNC-O to fetch the required resource type. The properties are then used by TNC-O to narrow down to a single instance of the resource type that can be used by the enclosing assembly. If TNC-O finds more than one resource that fits the information provided an error occurs and the assembly will not be instantiated.
 
 ```
 references:
@@ -264,7 +264,7 @@ references:
 ​      name:
 ​        value: '${storage-name}'
 
-  management-network: # reference to a neutron network not created by the Telco Network Cloud Orchestration (TNCO) 
+  management-network: # reference to a neutron network not created by the Telco Network Cloud Orchestration (TNC-O) 
 ​    type: resource::ucd_network::1.0
 ​    properties:
 ​      deploymentLocation:
@@ -434,9 +434,9 @@ Like the overall assembly and resources relationships have a set of properties t
 
 ## Placement
 
-To deploy components to the correct location TNCO will use two properties called deploymentLocation and resourceManager.  The resourceManager property will be used to find the correct Resource Manager that manages the resource for the location defined in the deploymentLocation property. The combination of these two uniquely identifies where and how a resource will be managed.
+To deploy components to the correct location TNC-O will use two properties called deploymentLocation and resourceManager.  The resourceManager property will be used to find the correct Resource Manager that manages the resource for the location defined in the deploymentLocation property. The combination of these two uniquely identifies where and how a resource will be managed.
 
-A Placement is also involved when trying to resolve the instances defined in the references section. Before a reference can be resolved any associated placement rules will have been applied. This will then allow TNCO to find the appropriate instance of the reference required. The two properties will also be needed on each reference.
+A Placement is also involved when trying to resolve the instances defined in the references section. Before a reference can be resolved any associated placement rules will have been applied. This will then allow TNC-O to find the appropriate instance of the reference required. The two properties will also be needed on each reference.
 
 ## Metrics and Policies
 

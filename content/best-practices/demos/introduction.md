@@ -3,9 +3,9 @@ title: Introduction
 weight: 110
 ---
 
-# Telco Network Cloud Orchestration (TNCO) Demonstrations
+# Telco Network Cloud Orchestration (TNC-O) Demonstrations
 
-This section introduces a set of working TNCO demonstrations. With working code and scripted scenarios to help you get up and running quickly. 
+This section introduces a set of working TNC-O demonstrations. With working code and scripted scenarios to help you get up and running quickly. 
 
 ## CI/CD Automated Pipeline
 * **Description**: Setup and use an automated CI/CD Pipeline to automate on-boarding, test, and deployment of an example Voice Service.

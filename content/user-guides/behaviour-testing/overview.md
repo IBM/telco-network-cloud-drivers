@@ -9,7 +9,7 @@ Behaviour testing allows you to simulate scenarios that will test the lifecycle 
 
 Each scenario can be executed independently to confirm a particular aspect or feature of your service is working. The full collection of the scenarios related to a service can also be executed as a test suite, useful in a CI/CD process to re-test the service after a change has been made. 
 
-To begin using the behaviour testing feature of the Telco Network Cloud Orchestration (TNCO) open one of your Assembly designs and click on the "Behaviour Testing" tab at the bottom of the design.
+To begin using the behaviour testing feature of the Telco Network Cloud Orchestration (TNC-O) open one of your Assembly designs and click on the "Behaviour Testing" tab at the bottom of the design.
 
 ![Design Tabs](/images/user-guides/behaviour-testing/design-tabs.png "Design Tabs")
 

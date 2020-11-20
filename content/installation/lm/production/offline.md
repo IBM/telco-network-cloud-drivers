@@ -3,7 +3,7 @@ title: Offline
 weight: 20
 ---
 
-The following guide explains how to pre-prepare the artifacts required by Telco Network Cloud Orchestration (TNCO) during installation so you may complete installation at a later date without internet access.
+The following guide explains how to pre-prepare the artifacts required by Telco Network Cloud Orchestration (TNC-O) during installation so you may complete installation at a later date without internet access.
 
 # Preparing Offline Install
 
@@ -21,7 +21,7 @@ mkdir lm-docker-images
 
 2. Identifying Images
 
-Below is a full list of the docker images used by the sub-charts in v2.0.3 of all the TNCO helm charts:
+Below is a full list of the docker images used by the sub-charts in v2.0.3 of all the TNC-O helm charts:
 
 ```
 # Docker Registry
@@ -67,9 +67,9 @@ Pull each image, identified above, with docker:
 docker pull <image>
 ```
 
-4. Build the TNCO Images
+4. Build the TNC-O Images
 
-You will need to build the TNCO images offline. This should already have been covered in [Getting Started]({{< ref "production-start#build-docker-images" >}})
+You will need to build the TNC-O images offline. This should already have been covered in [Getting Started]({{< ref "production-start#build-docker-images" >}})
 
 For each image that was built, it will be necessary to pull it, e.g.
 
@@ -109,13 +109,13 @@ This single archive can now be transferred to the target install environment to 
 
 ## Helm Charts
 
-Copy the previously downloaded TNCO Helm charts to the machine you intend to run the installation from.
+Copy the previously downloaded TNC-O Helm charts to the machine you intend to run the installation from.
 
 ## Docker Images
 
 1. Transfer single archive to target
 
-Copy the archive to the machine you intend to install TNCO on
+Copy the archive to the machine you intend to install TNC-O on
 
 2. Extract Archive
 

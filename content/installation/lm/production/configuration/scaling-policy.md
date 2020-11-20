@@ -1,19 +1,19 @@
 ---
-title: Scaling TNCO
+title: Scaling TNC-O
 weight: 80
 ---
 
-The following guide explains how to prepare Telco Network Cloud Orchestration (TNCO) to scale with CPU usage.
+The following guide explains how to prepare Telco Network Cloud Orchestration (TNC-O) to scale with CPU usage.
 
 # Pre-requisites:
 
-- The [Kubernetes metrics server](https://kubernetes.io/docs/tasks/debug-application-cluster/resource-metrics-pipeline/#metrics-server) must be running in your Kubernetes environment for scaling of TNCO to work.
+- The [Kubernetes metrics server](https://kubernetes.io/docs/tasks/debug-application-cluster/resource-metrics-pipeline/#metrics-server) must be running in your Kubernetes environment for scaling of TNC-O to work.
 
-# Configure TNCO
+# Configure TNC-O
 
-TNCO services can be setup to scale from the point they are installed by setting some custom helm values. Each service has configurable options for resources and autoscaling thresholds.
+TNC-O services can be setup to scale from the point they are installed by setting some custom helm values. Each service has configurable options for resources and autoscaling thresholds.
 
-Before running a [helm install of TNCO](/installation/lm/production/install-lm/#lm-install) you can create a custom values file with content like the following for each service:
+Before running a [helm install of TNC-O](/installation/lm/production/install-lm/#lm-install) you can create a custom values file with content like the following for each service:
 ```
 <service name>:
   app:
@@ -56,7 +56,7 @@ kubectl get hpa
 ```
 
 {{%note %}}
-NOTE: the names of TNCO services can be viewed by inspecting Kubernetes deployments (kubectl get deployments)
+NOTE: the names of TNC-O services can be viewed by inspecting Kubernetes deployments (kubectl get deployments)
 {{%/note %}}
 
 Continue to [Installing Error Links](/installation/lm/production/configuration/error-links-install).

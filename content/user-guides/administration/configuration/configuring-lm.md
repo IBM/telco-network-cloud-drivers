@@ -7,7 +7,7 @@ weight: 40
 
 To follow this guide you will need:
 
-- an existing installation of the Telco Network Cloud Orchestration (TNCO)
+- an existing installation of the Telco Network Cloud Orchestration (TNC-O)
 
 # Vault
 
@@ -21,7 +21,7 @@ Application configuration is persisted using a secrets engine named `lm` in Vaul
 
 ![Vault UI](/images/user-guides/administration/configuration/VaultUI.png "Vault UI")
 
-A secret will exist for each TNCO service inside the `lm` engine, with configuration properties stored as JSON content. Any configuration stored under the secret named `application` will be shared among all services.
+A secret will exist for each TNC-O service inside the `lm` engine, with configuration properties stored as JSON content. Any configuration stored under the secret named `application` will be shared among all services.
 
 ![Vault Backend](/images/user-guides/administration/configuration/vault-backend.png "Vault Backend")
 

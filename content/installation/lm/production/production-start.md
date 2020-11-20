@@ -3,11 +3,11 @@ title: Getting Started
 weight: 10
 ---
 
-This section details how to install Telco Network Cloud Orchestration (TNCO) using Helm on an existing Kubernetes cluster. This will install the following Helm charts:
+This section details how to install Telco Network Cloud Orchestration (TNC-O) using Helm on an existing Kubernetes cluster. This will install the following Helm charts:
 
-- helm-foundation - reference Helm Chart for deploying the third-party components required by TNCO.
-- lm-configurator - Helm Chart executing a Kubernetes job to create relevant schemas and other configuration required by TNCO.
-- lm-helm - Helm Chart for deploying the TNCO Microservices
+- helm-foundation - reference Helm Chart for deploying the third-party components required by TNC-O.
+- lm-configurator - Helm Chart executing a Kubernetes job to create relevant schemas and other configuration required by TNC-O.
+- lm-helm - Helm Chart for deploying the TNC-O Microservices
 
 {{%note %}}
 NOTE: If following the IBM Installation Guide, please skip the preparation of the environment and proceed to "Next Steps"
@@ -17,7 +17,7 @@ NOTE: If following the IBM Installation Guide, please skip the preparation of th
 
 ## Kubernetes
 
-A Kubernetes cluster is required to install TNCO. This environment must be configured with:
+A Kubernetes cluster is required to install TNC-O. This environment must be configured with:
 
 - a [Storage Class](https://kubernetes.io/docs/concepts/storage/storage-classes/) to provision persistent volumes in your cluster
 - a [Namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/) to install into (you may use the `default`)
@@ -33,16 +33,16 @@ The nodes in your cluster should have synchronized clocks. To synchronize your c
 
 If installing on ICP we recommend you read through our [ICP Pre-Install Considerations](/reference/icp-pre-install) before continuing.
 
-## TNCO Artifacts
+## TNC-O Artifacts
 
-You should already have the lifecycle Manager package which contains the Helm charts and binaries required for the installation of TNCO. This should contain:
+You should already have the lifecycle Manager package which contains the Helm charts and binaries required for the installation of TNC-O. This should contain:
 
-- **lm-helm-charts** - the Helm charts that will install TNCO
-- **lm-docker-source** - the binaries requires to build the TNCO Docker images
+- **lm-helm-charts** - the Helm charts that will install TNC-O
+- **lm-docker-source** - the binaries requires to build the TNC-O Docker images
 
 # Configuration
 
-TNCO is configured through [Helm chart values](https://helm.sh/docs/using_helm/#using-helm).
+TNC-O is configured through [Helm chart values](https://helm.sh/docs/using_helm/#using-helm).
 
 You may check the default configuration values of the chart using `helm inspect`:
 
@@ -66,9 +66,9 @@ Before making any configuration changes, it is necessary to make the docker imag
 
 # Build Docker Images
 
-Before you can install TNCO you will need to build the Docker images for all its components.
+Before you can install TNC-O you will need to build the Docker images for all its components.
 
-The `lm-docker-source` distribution includes the sources necessary to build docker images for the TNCO applications.
+The `lm-docker-source` distribution includes the sources necessary to build docker images for the TNC-O applications.
 
 ## Pre-requisites
 
@@ -79,7 +79,7 @@ Before proceeding with the installation you will need:
 
 ## Build Docker Images
 
-If the TNCO Docker images already exist in a registry, skip to [Using a Docker Registry](#using-a-docker-registry)
+If the TNC-O Docker images already exist in a registry, skip to [Using a Docker Registry](#using-a-docker-registry)
 
 From a shell, navigate to the root of the `lm-docker-source` and use `docker-compose` to build the images from the `docker-compose.yml` file included in the distribution:
 
@@ -139,7 +139,7 @@ docker-compose push
 
 ## Using a Docker Registry
 
-Once docker images exist in the Docker Registry, you will be able to configure the helm charts to pull the images from it when installing TNCO with `lm-helm-charts`. 
+Once docker images exist in the Docker Registry, you will be able to configure the helm charts to pull the images from it when installing TNC-O with `lm-helm-charts`. 
 
 If you skipped the build steps above and are hosting an insecure registry, see [Insecure Registry](#insecure-registry)
 
@@ -166,7 +166,7 @@ For information on creating an imagePullSecret, see the ICP documentation [here]
 
 # Offline Install
 
-If you need to install TNCO in an environment without internet access, please read through the [Offline Install Instructions]({{< ref "offline" >}}) to pre-pull additional artifacts required during the install.
+If you need to install TNC-O in an environment without internet access, please read through the [Offline Install Instructions]({{< ref "offline" >}}) to pre-pull additional artifacts required during the install.
 
 
 # Next Steps

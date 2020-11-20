@@ -14,11 +14,11 @@ In addition to the five transitions shown below, resources can implement the Int
 
 Since assemblies are logical entities, an assembly is transitioned by transitioning each of its child components to the same state. More correctly it is that all of the assemblies child components have reached _at least_ the same state. There will be cases where due to property dependencies in order transition all of the child components to a target state it may be necessary to transition some to a `'higher'` state.
 
-![TNCO State Model](/images/reference/state-model/state-model.png "TNCO State Model")
+![TNC-O State Model](/images/reference/state-model/state-model.png "TNC-O State Model")
 
 ## Lifecycle Transitions
 
-TNCO performs lifecycle transitions as a component transitions from one state to another. More correctly a transition occurs while a component is in the source state and the transition to the target state occurs on the successful execution the Lifecycle transition script in the case of a resource and on the successful transition of all child components in the case of an assembly. TNCO supports the following transitions;
+TNC-O performs lifecycle transitions as a component transitions from one state to another. More correctly a transition occurs while a component is in the source state and the transition to the target state occurs on the successful execution the Lifecycle transition script in the case of a resource and on the successful transition of all child components in the case of an assembly. TNC-O supports the following transitions;
 
 
 | Transition | Source State | Target State | On error  | Comment |
@@ -37,7 +37,7 @@ TNCO performs lifecycle transitions as a component transitions from one state to
 ## Relationship State Model
 A relationship has its own lifecycle. It is much simpler as there is only a single state for a relationship and two transitions. On each transition a zero or more Operations are executed against either the source or the target components
 
-![TNCO State Model](/images/reference/state-model/relationship-model.png "TNCO State Model")
+![TNC-O State Model](/images/reference/state-model/relationship-model.png "TNC-O State Model")
 
 ### Relationship State Transitions
 

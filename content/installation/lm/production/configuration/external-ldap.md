@@ -3,11 +3,11 @@ title: External LDAP
 weight: 70
 ---
 
-Telco Network Cloud Orchestration (TNCO) makes use of LDAP as its user store for secure access. It is configured by default to connect to the OpenLDAP service which is part of installation. Is is possible to disable this installation of this OpenLDAP service, and to connect to an external LDAP implementation. This includes support for Active Directory.
+Telco Network Cloud Orchestration (TNC-O) makes use of LDAP as its user store for secure access. It is configured by default to connect to the OpenLDAP service which is part of installation. Is is possible to disable this installation of this OpenLDAP service, and to connect to an external LDAP implementation. This includes support for Active Directory.
 
 # Configuring an External LDAP Server
 
-To use an LDAP Server other than the pre-configured OpenLDAP instance which comes as part of the TNCO installation, follow these steps.
+To use an LDAP Server other than the pre-configured OpenLDAP instance which comes as part of the TNC-O installation, follow these steps.
 
 ## Disable Installation and Set Up of OpenLDAP
 
@@ -24,13 +24,13 @@ configurator:
 
 ## Modify LDAP connection configuration
 
-TNCO comes with configuration based on the directory structure which exists in the pre-configured install of OpenLDAP.
+TNC-O comes with configuration based on the directory structure which exists in the pre-configured install of OpenLDAP.
 
 When using an existing LDAP server which uses a different directory structure, the LDAP directory queries can be configured as per the example below. 
 
 For a full range of configuration options for external LDAP sources, including how to use LDAP Bind mechanisms and Active Directory, see [Configuring External LDAP Connections]({{< ref "configuring-external-ldap" >}}).
 
-In the following example, TNCO is configured to point to an external LDAP source by changing the configuration within Ishtar. This configuration is imported into Vault to be made available to Ishtar by adding the following to the custom Helm values file during installation:
+In the following example, TNC-O is configured to point to an external LDAP source by changing the configuration within Ishtar. This configuration is imported into Vault to be made available to Ishtar by adding the following to the custom Helm values file during installation:
 
 ```yaml
 configurator:
@@ -70,4 +70,4 @@ The purpose of each configuration item is as follows:
 
 # Next Steps
 
-Continue to [Scaling TNCO](/installation/lm/production/configuration/scaling-policy).
+Continue to [Scaling TNC-O](/installation/lm/production/configuration/scaling-policy).

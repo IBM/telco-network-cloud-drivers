@@ -5,7 +5,7 @@ weight: 30
 
 ## Introduction
 
-Telco Network Cloud Orchestration (TNCO) can communicate with a number of Resource Managers (RM) when executing the set of tasks of an intent. This communication is through the OSSLM API. There are three timers and three associated timer configurations values which govern this relationship. 
+Telco Network Cloud Orchestration (TNC-O) can communicate with a number of Resource Managers (RM) when executing the set of tasks of an intent. This communication is through the OSSLM API. There are three timers and three associated timer configurations values which govern this relationship. 
 
 *  `alm.http.clientReadTimeout`
 *  `alm.daytona.resource-manager.default-timeout-duration`
@@ -22,7 +22,7 @@ Telco Network Cloud Orchestration (TNCO) can communicate with a number of Resour
 
  IntentEng-ResourceMgr-timers
 
-Once a request has been accepted by the RM, TNCO gives it a finite amount of time to complete the task. During this time, the Intent Engine will poll the RM at intervals to determine if the task has been completed. Once the RM responds to the poll indicating that the Task has completed (be it successfully or unsuccessfully), the Intent Engine will cease polling and cancel The default-timeout-duration timer.
+Once a request has been accepted by the RM, TNC-O gives it a finite amount of time to complete the task. During this time, the Intent Engine will poll the RM at intervals to determine if the task has been completed. Once the RM responds to the poll indicating that the Task has completed (be it successfully or unsuccessfully), the Intent Engine will cease polling and cancel The default-timeout-duration timer.
 
 
 All three of these timer values can be set to specific values in Vault following the same procedure should the default values not meet the needs of a specific deployment. They can be set collectively or individually as required. There is no requirement to set all three. In the following example we look at setting `clientReadTimeout` but this can be applied to all three timers.
@@ -40,7 +40,7 @@ These are achieved as follows;
     The general details of how to make a configuration change in vault are detailed [here](/user-guides/administration/configuration/configuring-lm) but the specific details for this setting are as follows  
     
     a. Log in to Vault UI using the appropriate vault security token for your environment.  
-    b. Navigate to the TNCO secrets ( ui/vault/secrets/lm/list ).  
+    b. Navigate to the TNC-O secrets ( ui/vault/secrets/lm/list ).  
     c. If an existing ‘secret’ does not exist for daytona then one must be created. By default a daytona secret does not exist. A new one can be created using the ‘Create Secret’ button on the top right-hand side of the UI. Should a daytona secret already exist then it should be edited.  
     d. Add a key/value to the secret with the new timeout period. The provided value is in milliseconds. 
     ```

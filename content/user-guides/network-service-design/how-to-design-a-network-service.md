@@ -7,7 +7,7 @@ There are a number of tasks involved in designing a Network Service (NS). In ord
 
 ## What is a Network Service?
 
-A Network Service, is a collection of VNF and/or PNF that will be used by Telco Network Cloud Orchestration (TNCO) to instantiate either a complete end-to-end service for a customer or, a significant portion of a customer’s service.  A network service (NS) is created by using a TNCO Assembly Descriptor. The descriptor will compose and reference other Network Services, VNF or PNF. Generally, the Network Service will not refer directly to VNFC.
+A Network Service, is a collection of VNF and/or PNF that will be used by Telco Network Cloud Orchestration (TNC-O) to instantiate either a complete end-to-end service for a customer or, a significant portion of a customer’s service.  A network service (NS) is created by using a TNC-O Assembly Descriptor. The descriptor will compose and reference other Network Services, VNF or PNF. Generally, the Network Service will not refer directly to VNFC.
 
 
 ![Anatomy of a NS](/images/user-guides/network-service-design/how-to-design-a-network-service/anatomy.png "Anatomy of a NS")
@@ -32,11 +32,11 @@ The Continuous Integration / Continuous Delivery Hub, or CI/CD Hub, provides a s
 
 More information about the tools in the CI/CD Hub can be found [here](/user-guides/cicd/introduction) .
 
-### TNCO environment
-Designing a NS is done through the Designer section of TNCO. This is typically done on a local or dedicated development environment. The Designer has a graphical User Interface with which you can drag and drop VNF and other elements, establish relationships, modify properties, etc.
+### TNC-O environment
+Designing a NS is done through the Designer section of TNC-O. This is typically done on a local or dedicated development environment. The Designer has a graphical User Interface with which you can drag and drop VNF and other elements, establish relationships, modify properties, etc.
 
 ### LMCTL
-LMCTL is a command line tool that allows you to create, pull, push and test Network Service projects to a TNCO environment. LMCTL is also used by the automation server to issue these commands and execute the automated pipeline. The LMCTL tool can be installed from the CI/CD Hub.
+LMCTL is a command line tool that allows you to create, pull, push and test Network Service projects to a TNC-O environment. LMCTL is also used by the automation server to issue these commands and execute the automated pipeline. The LMCTL tool can be installed from the CI/CD Hub.
 
 
 

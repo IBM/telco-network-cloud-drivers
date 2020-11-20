@@ -46,8 +46,8 @@ Check the status of a process
 | intentType       | The type of lifecycle change will be/has been performed by the process (CreateAssembly, DeleteAssembly, ChangeAssemblyState, HealAssembly, ScaleInAssembly, ScaleOutAssembly, HealAssembly, UpgradeAssembly) |
 | status           | Current state of the process. (Planned, Pending, In Progress, Completed, Cancelled, Failed |
 | statusReason | Reason for the status (e.g. a reason for failure) |
-| startTime        | Time the process started expressed in ISO 1806 format. This time is taken from the server on which TNCO is running. If the process is yet to start then this property will not be present |
-| endTime          | Time the process finished expressed in ISO 1806 format. This time is taken from the server on which TNCO is running. If the process has not completed or been cancelled, then this property will not be present |
+| startTime        | Time the process started expressed in ISO 1806 format. This time is taken from the server on which TNC-O is running. If the process is yet to start then this property will not be present |
+| endTime          | Time the process finished expressed in ISO 1806 format. This time is taken from the server on which TNC-O is running. If the process has not completed or been cancelled, then this property will not be present |
 | assemblyProperties | Properties passed in with the request |
 | context          | Any additional contextual parameters required by the process (typically empty) |
 | previousInstance | The state of the Assembly instance that the Process shall start with |
@@ -127,8 +127,8 @@ The body includes a single list of matching processes, each with the following f
 | intentType       | The type of lifecycle change will be/has been performed by the process (CreateAssembly, DeleteAssembly, ChangeAssemblyState, HealAssembly, ScaleInAssembly, ScaleOutAssembly, HealAssembly, UpgradeAssembly) |
 | status           | Current state of the process. (Planned, Pending, In Progress, Completed, Cancelled, Failed |
 | statusReason | Reason for the status (e.g. a reason for failure) |
-| startTime        | Time the process started expressed in ISO 1806 format. This time is taken from the server on which TNCO is running. If the process is yet to start then this property will not be present |
-| endTime          | Time the process finished expressed in ISO 1806 format. This time is taken from the server on which TNCO is running. If the process has not completed or been cancelled, then this property will not be present |
+| startTime        | Time the process started expressed in ISO 1806 format. This time is taken from the server on which TNC-O is running. If the process is yet to start then this property will not be present |
+| endTime          | Time the process finished expressed in ISO 1806 format. This time is taken from the server on which TNC-O is running. If the process has not completed or been cancelled, then this property will not be present |
 | assemblyProperties | Properties passed in with the request |
 | context          | Any additional contextual parameters required by the process (typically empty) |
 | previousInstance | The state of the Assembly instance that the Process shall start with |

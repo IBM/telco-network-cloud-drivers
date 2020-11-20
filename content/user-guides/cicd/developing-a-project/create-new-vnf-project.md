@@ -22,7 +22,7 @@ For a sample set of network service and virtual network function examples: [Mark
 To create a new project, a directory containing the package structure will be crated first on your local machine. For convenience the local directory structure can be created with the LMCTL command line tool and filled in later with the VNF or Network Service artifacts.
 
 {{%note %}}
-NOTE: The project name should NOT  contain '-' as a separator in the name (this is not a restriction on Telco Network Cloud Orchestration (TNCO), but simplifies pipeline automation later)
+NOTE: The project name should NOT  contain '-' as a separator in the name (this is not a restriction on Telco Network Cloud Orchestration (TNC-O), but simplifies pipeline automation later)
 {{%/note %}}
 
 To create a new VNF run the following **LMCTL** command: 

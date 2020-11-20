@@ -9,7 +9,7 @@ weight: 200
 
  ![resource_manager_onbording](/images/reference/lm-api/resource_manager_onbording.png)
 
-When a resource manager is onboarded, Telco Network Cloud Orchestration (TNCO) invokes a set of calls to the Resource Manager detailed in the Resource Manager API document.
+When a resource manager is onboarded, Telco Network Cloud Orchestration (TNC-O) invokes a set of calls to the Resource Manager detailed in the Resource Manager API document.
 
 
 ## Delete Resource Manager
@@ -26,7 +26,7 @@ When a resource manager is onboarded, Telco Network Cloud Orchestration (TNCO) i
 
  ![update_resource_manager](/images/reference/lm-api/update_resource_manager.png)
 
-The resource manager returns the details of the resources and locations, and TNCO will store any new details. TNCO will not remove any existing details.
+The resource manager returns the details of the resources and locations, and TNC-O will store any new details. TNC-O will not remove any existing details.
 
 
 # Assembly Creation and State Transition

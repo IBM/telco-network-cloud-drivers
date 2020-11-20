@@ -3,9 +3,9 @@ title: Themes Overview
 weight: 10
 ---
 
-Changing the look of the Telco Network Cloud Orchestration (TNCO) User Interface UI is supported via _Theme Packages_. A theme can be provided for each unique look that is needed for the TNCO UI.
+Changing the look of the Telco Network Cloud Orchestration (TNC-O) User Interface UI is supported via _Theme Packages_. A theme can be provided for each unique look that is needed for the TNC-O UI.
 
-# Changing the Theme of the TNCO UI
+# Changing the Theme of the TNC-O UI
 
 1. To change the theme of the UI you need to produce a `theme.tar` containing the necessary elements. The TAR should include a directory for each potential theme. Each theme is represented by a directory which should include the favicon, stylesheet and images to be used:
 
@@ -36,4 +36,4 @@ tar -cvzf theme.tar mytheme myothertheme
 kubectl create configmap lm-themes --from-file theme.tar
 ```
 
-4. The theme can be enabled [during TNCO installation](/user-guides/administration/configuration/themes/theme-installation/) or for an [already running TNCO](/user-guides/administration/configuration/themes/theme-running/).
+4. The theme can be enabled [during TNC-O installation](/user-guides/administration/configuration/themes/theme-installation/) or for an [already running TNC-O](/user-guides/administration/configuration/themes/theme-running/).

@@ -3,19 +3,19 @@ title: Manage Users and Groups
 weight: 30
 ---
 
-The following guide details how to configure users in the default OpenLDAP installed as part of Telco Network Cloud Orchestration (TNCO). 
+The following guide details how to configure users in the default OpenLDAP installed as part of Telco Network Cloud Orchestration (TNC-O). 
 
-TNCO provides no built-in mechanism for managing users. There are many available LDAP clients which can be used for such purposes which makes the management much easier and a lot more visual.
+TNC-O provides no built-in mechanism for managing users. There are many available LDAP clients which can be used for such purposes which makes the management much easier and a lot more visual.
 
-If your environment is connecting to an LDAP managed outside of TNCO, then the system administrator is expected to already understand the connection and user model in use.
+If your environment is connecting to an LDAP managed outside of TNC-O, then the system administrator is expected to already understand the connection and user model in use.
 
-If your LDAP server is installed along with TNCO helm-foundation and you are a first-time user of any LDAP Client, skip to our example [instructions for LDAP Admin](/user-guides/administration/security/users-ldap-admin).
+If your LDAP server is installed along with TNC-O helm-foundation and you are a first-time user of any LDAP Client, skip to our example [instructions for LDAP Admin](/user-guides/administration/security/users-ldap-admin).
 
 # Pre-requisites
 
 To complete this guide you will need:
 
-- An existing installation of TNCO
+- An existing installation of TNC-O
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) configured with access to your Kubernetes cluster
 
 # Connecting to OpenLDAP

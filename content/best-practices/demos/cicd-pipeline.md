@@ -5,7 +5,7 @@ weight: 120
 
 # Objectives
 
-This working demonstration showcases Telco Network Cloud Orchestration (TNCO) automated CI/CD capabilities. The demo will show the following
+This working demonstration showcases Telco Network Cloud Orchestration (TNC-O) automated CI/CD capabilities. The demo will show the following
 
 - Automated triggering of Network Service or VNF build from a Git project source change.
 - Creation of a pre-production environment and all VNF or test dependencies required to run the updated Network Service.
@@ -15,13 +15,13 @@ This working demonstration showcases Telco Network Cloud Orchestration (TNCO) au
 ## Pre-requisites
 
 - [Have read the CI/CD Hub Introduction](/user-guides/cicd/introduction)
-- [Working CI/CD Hub and TNCO environment](/installation/installation/)
+- [Working CI/CD Hub and TNC-O environment](/installation/installation/)
 - [Install local LMCTL](/reference/lmctl)
 - [Working Docker Environment to run VNFs](https://github.com/accanto-systems/docker-environment)
 
 # Installing the Demo
 
-1. Clone the Telco Network Cloud Orchestration (TNCO) demo artifacts from GitHub to your local machine
+1. Clone the Telco Network Cloud Orchestration (TNC-O) demo artifacts from GitHub to your local machine
 
 2. On your local machine run the following commands:
 
@@ -54,7 +54,7 @@ function upload {
 	name=${1}
 	version=${2}
 	package=${name}-${version}.tgz
-	echo uploading ${package}-${version} package to nexus and push to TNCO environment named ${TEST_ENV}
+	echo uploading ${package}-${version} package to nexus and push to TNC-O environment named ${TEST_ENV}
 	curl -v -u ${NEXUS_CREDENTIALS} --upload-file ./packages/${package} ${NEXUS_URL}/${name}/${package}
 
 }
@@ -167,7 +167,7 @@ You should now be ready to run the demo. Installing the demo has:
 
 ### Look at environment before CI pipeline triggered
 
-1. Log into the pre-production/test TNCO UI and see there are no designs, TNCO is 'clean' and ready to test
+1. Log into the pre-production/test TNC-O UI and see there are no designs, TNC-O is 'clean' and ready to test
 2. Log into Nexus and browse to raw/packages. You will see the dependent VNF and Network Service packages, but there is no 'voice-service' package.
 3. Log into Gogs and browse to marketplace/voice-service. Note there are no 'releases' yet.
 
@@ -192,10 +192,10 @@ git push
 
 4. Monitor pipeline automation
 	- Log into Jenkins dashboard, you will see the voice-service job has been triggered. Click on the job and you will see the process stepping through the stages.
-	- Log into TNCO UI and see the designs appear, 'including assembly::voice-service::1.0'
-	- When the pipeline gets to the testing step in Jenkins, go back to TNCO's UI and open the assembly::voice-service::1.0 design, then the 'Behaviour Testing' tab at the bottom of the screen. Open the 'Results' and you will see the testing in progress.
+	- Log into TNC-O UI and see the designs appear, 'including assembly::voice-service::1.0'
+	- When the pipeline gets to the testing step in Jenkins, go back to TNC-O's UI and open the assembly::voice-service::1.0 design, then the 'Behaviour Testing' tab at the bottom of the screen. Open the 'Results' and you will see the testing in progress.
 	- When the test completes, the pipeline will build the binary package for 'voice-service' and upload it to nexus. On the nexus UI, look in raw/packages/voice-service. You will the voice-service-1.0-SNAPSHOT.tgz. In Gogs browse to the project and you will see there is now a '1.0' release.
 
 5. Clean up after demo (ready to run demo again)
-	- On TNCO UI, delete all assemblies from the Assembly Designer.
+	- On TNC-O UI, delete all assemblies from the Assembly Designer.
 	- Log into Nexus as admin and delete raw/packages/voice-service

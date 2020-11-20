@@ -1,6 +1,6 @@
 ## Telco Network Cloud Orchestration Learning Center
 
-This repository contains the source code for the github pages site describing usage of Telco Network Cloud Orchestration (TNCO) drivers.
+This repository contains the source code for the github pages site describing usage of Telco Network Cloud Orchestration (TNC-O) drivers.
 
 For the github pages site see: https://ibm.github.io/telco-network-cloud-drivers/
 

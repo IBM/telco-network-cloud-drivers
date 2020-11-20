@@ -3,23 +3,23 @@ title: Access Configuration
 weight: 30
 ---
 
-# Configuring Access to Telco Network Cloud Orchestration (TNCO)
+# Configuring Access to Telco Network Cloud Orchestration (TNC-O)
 
-The installation of TNCO includes an Ingress Controller which exposes the key services externally. This needs to be configured so that access to these services will be on the required hostnames and ports.
+The installation of TNC-O includes an Ingress Controller which exposes the key services externally. This needs to be configured so that access to these services will be on the required hostnames and ports.
 
-If your environment already has an Ingress Controller available, then disable the one that comes with the TNCO installation. You can check the status of your ingress controller with:
+If your environment already has an Ingress Controller available, then disable the one that comes with the TNC-O installation. You can check the status of your ingress controller with:
 
 `kubectl get service --all-namespaces | grep ingress`
 
 Otherwise proceed to [Configuring the Ingress Controller](#configuring-the-ingress-controller)
 
 {{%note %}}
-NOTE: we recommend installing an Ingress dedicated to TNCO to avoid hostname and/or subpath clashes.
+NOTE: we recommend installing an Ingress dedicated to TNC-O to avoid hostname and/or subpath clashes.
 {{%/note %}}
 
 ## Disabling the Ingress Controller
 
-To use an existing Ingress Controller, disable the one that comes with the TNCO installation by adding a custom Helm value as follows:
+To use an existing Ingress Controller, disable the one that comes with the TNC-O installation by adding a custom Helm value as follows:
 
 ```yaml
 nginx-ingress:
@@ -38,7 +38,7 @@ HTTP | 32080
 
 ### Configuring the Access Port
 
-The Ingress port value, on which TNCO is exposed externally, can be set via the Helm values for the helm-foundation chart. The value should be set as follows:
+The Ingress port value, on which TNC-O is exposed externally, can be set via the Helm values for the helm-foundation chart. The value should be set as follows:
 
 ```yaml
 nginx-ingress:
@@ -50,7 +50,7 @@ nginx-ingress:
 ```
 
 {{%note %}}
-NOTE: the choice of HTTPS vs HTTP protocol depends on whether TNCO is installed with security enabled. This will be covered later in the configuration steps.
+NOTE: the choice of HTTPS vs HTTP protocol depends on whether TNC-O is installed with security enabled. This will be covered later in the configuration steps.
 {{%/note %}}
 
 ### Configuring SSL Certificate
@@ -78,7 +78,7 @@ nginx-ingress:
       default-ssl-certificate: "<target-install-namespace>/ingress-tls"
 ```
 
-For example, if installing TNCO into the default namespace, you would add:
+For example, if installing TNC-O into the default namespace, you would add:
 
 ```yaml
 nginx-ingress:
@@ -89,7 +89,7 @@ nginx-ingress:
 
 ## Configuring the Ingress Rules
 
-The rules applied to the Ingress controller decide how the TNCO services can be accessed. 
+The rules applied to the Ingress controller decide how the TNC-O services can be accessed. 
 
 ### Hostname rule
 
@@ -125,7 +125,7 @@ global:
           certSecretName: ishtar-host-tls
 ```
 
-This will allow access to TNCO at:
+This will allow access to TNC-O at:
 
 | Service | Secure Endpoint        | Insecure Endpoint     |
 | ------- | ---------------------- | --------------------- |
@@ -170,7 +170,7 @@ global:
           certSecretName: ishtar-nohost-tls
 ```
 
-This will allow access to TNCO at:
+This will allow access to TNC-O at:
 
 | Service | Secure Endpoint                  | Insecure Endpoint               |
 | ------- | -------------------------------- | ------------------------------- |
@@ -198,7 +198,7 @@ vault:
 
 ### Kibana
 
-An Ingress rule is created to allow access to Kibana, the logging dashboard service provided with TNCO. 
+An Ingress rule is created to allow access to Kibana, the logging dashboard service provided with TNC-O. 
 
 By default, Kibana is accessible at `https://kibana.lm:32080` or via NodePort at `http://<Kubernetes IP>:31001`. To configure the Kibana hostname or NodePort you should include the following configuration values and modify them:
 
@@ -212,7 +212,7 @@ kibana:
     - kibana.lm
 ```
 
-If you update the values above then you also need to update the logging-dashboard configuration, so the TNCO UI may include hyperlinks to the dashboard when an error has occurred. Set the endpoint to your new hostname or set it the Kubernetes IP (and change the port to the NodePort) if preferred.
+If you update the values above then you also need to update the logging-dashboard configuration, so the TNC-O UI may include hyperlinks to the dashboard when an error has occurred. Set the endpoint to your new hostname or set it the Kubernetes IP (and change the port to the NodePort) if preferred.
 
 ```yaml
 configurator:

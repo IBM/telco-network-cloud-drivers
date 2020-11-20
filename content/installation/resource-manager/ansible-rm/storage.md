@@ -10,7 +10,7 @@ Ansible RM requires a connection to Cassandra and Kafka. By default the Helm cha
 - Cassandra - expects a Cassandra service in the same namespace with labels `app=cassandra` and `release=foundation`
 - Kafka - expects a Kafka service in the same namespace with labels `app=kafka` and `release=foundation`
 
-Check your existing Cassandra and Kafka have the given labels. If you did not install foundation services from Telco Network Cloud Orchestration (TNCO) with the Helm release name of `foundation`, then the `release` label may have an alternative value. If this is the case, update the labels by adding the following to your `custom values`:
+Check your existing Cassandra and Kafka have the given labels. If you did not install foundation services from Telco Network Cloud Orchestration (TNC-O) with the Helm release name of `foundation`, then the `release` label may have an alternative value. If this is the case, update the labels by adding the following to your `custom values`:
 
 ```
 app:

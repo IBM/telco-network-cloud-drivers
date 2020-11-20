@@ -14,7 +14,7 @@ A newly installed CI/CD Hub will require some additional configuration to setup 
 
 ## Add users to OpenLDAP
 
-To add users to the to the OpenLDAP installed with the CI/CD Hub. You can follow the [instructions](/user-guides/administration/security/) to add users to a standalone Telco Network Cloud Orchestration (TNCO). 
+To add users to the to the OpenLDAP installed with the CI/CD Hub. You can follow the [instructions](/user-guides/administration/security/) to add users to a standalone Telco Network Cloud Orchestration (TNC-O). 
 
 Slave ALMs can be [configured at installation time](/installation/lm/production/configuration/external-ldap/) to use the OpenLDAP instance deployed with the CI/CD Hub. Users configured in the CI/CD OpenLDAP will then have access to any slave LMs.
 
@@ -106,7 +106,7 @@ kubectl create configmap lmctl-slave-config -n lm --from-file <your-updated-lmct
 
 There are very few use cases for configuring additional LMCTL slave templates to Jenkins as the existing template will be used any time a slave with LMCTL is required.
 
-If you need to use different Telco Network Cloud Orchestration (TNCO) environments in each Jenkins job, you can update the configmap with an updated LMCTL configuration file featuring all of the potential environments.
+If you need to use different Telco Network Cloud Orchestration (TNC-O) environments in each Jenkins job, you can update the configmap with an updated LMCTL configuration file featuring all of the potential environments.
 
 It may be reasonable to configure an additional slave if you need an alternative version of LMCTL (or want to try out a new version without losing your old slave template). If this is the case, follow the [Configure Slave](#configure-slave) instructions for the additional template, changing the names of the configmap and JNLP template name to a unique value.
 

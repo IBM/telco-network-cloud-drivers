@@ -3,16 +3,16 @@ title: Authenticated API Requests
 weight: 100
 ---
 
-This guide details how to connect from a calling system into the Telco Network Cloud Orchestration (TNCO) APIs securely.
+This guide details how to connect from a calling system into the Telco Network Cloud Orchestration (TNC-O) APIs securely.
 
 # Pre-requisites
 
-- an existing installation of the TNCO
+- an existing installation of the TNC-O
 - a valid set of client credentials which can be used for authentication. If not, see [Managing Client Credentials](/user-guides/administration/security/manage-client-credentials)
 
 # Making an API call 
 
-TNCO uses the standard OAuth 2.0 mechanism to authenticate incoming API requests. This requires some additional tokens to be setup in the headers of any HTTPS request that is made. 
+TNC-O uses the standard OAuth 2.0 mechanism to authenticate incoming API requests. This requires some additional tokens to be setup in the headers of any HTTPS request that is made. 
 
 The following steps make use of the Postman Client to demonstrate how to make authenticated API calls.
 
@@ -45,7 +45,7 @@ Enter the following values into these fields:
 | Scope                 | `all`                        |
 | Client Authentication | `Send as Basic Auth Header`  |
 
-The “Client Secret” is the value setup as part of the initial installation of TNCO matching the “Client ID” you have chosen 
+The “Client Secret” is the value setup as part of the initial installation of TNC-O matching the “Client ID” you have chosen 
 
 Click the **[Get New Access Token]** button. If your request is successful, then you will get a JSON response similar to this: 
 

@@ -13,7 +13,7 @@ lmctl project push example-env
 
 ## Add Resource to design
 
-Create a new Assembly in the Telco Network Cloud Orchestration (TNCO) UI
+Create a new Assembly in the Telco Network Cloud Orchestration (TNC-O) UI
 
 ![Create Assembly](/images/user-guides/resource-engineering/basic-resource/instantiate-resource/create-assembly.png "Create Assembly")
 

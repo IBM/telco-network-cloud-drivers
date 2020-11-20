@@ -17,7 +17,7 @@ This guide aims to show you how to:
 To follow this guide you will need: 
 
 - [LMCTL v2.5.0+](/reference/lmctl)
-- A ready-to-use Telco Network Cloud Orchestration (TNCO) environment
+- A ready-to-use Telco Network Cloud Orchestration (TNC-O) environment
 - An Openstack environment (for testing we recommend installing [DevStack](https://docs.openstack.org/devstack/latest/). Playbooks to setup a DevStack VM can be found on [GitHub](https://github.com/accanto-systems/devstack-environment))
 
 ## Openstack
@@ -28,13 +28,13 @@ Your Openstack environment will need:
 - A public network (should be included with a standard DevStack install)
 - A key-pair named `default` of type `SSH Key` to be used by compute instances (create one through the Openstack dashboard)
 
-## Telco Network Cloud Orchestration (TNCO)
+## Telco Network Cloud Orchestration (TNC-O)
 
-Your TNCO environment must have the following: 
+Your TNC-O environment must have the following: 
 
 - [Openstack VIM Driver](https://github.com/accanto-systems/openstack-vim-driver) installed and onboarded
 - [Ansible Lifecycle Driver](https://github.com/accanto-systems/ansible-lifecycle-driver) installed and onboarded
-- A valid Deployment Location onboarded to TNCO with the necessary properties required by the Openstack VIM Driver and Ansible Lifecycle Driver
+- A valid Deployment Location onboarded to TNC-O with the necessary properties required by the Openstack VIM Driver and Ansible Lifecycle Driver
 
 # Get Started
 

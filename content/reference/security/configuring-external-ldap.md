@@ -3,19 +3,19 @@ title: Configuring External LDAP Connections
 weight: 70
 ---
 
-Telco Network Cloud Orchestration (TNCO) makes use of LDAP as its user store for secure access. It is configured by default to connect to the OpenLDAP service which is part of the installation. It is possible to disable this installation of this OpenLDAP service, and to connect to an external LDAP implementation using different mechanisms including support for Active Directory.
+Telco Network Cloud Orchestration (TNC-O) makes use of LDAP as its user store for secure access. It is configured by default to connect to the OpenLDAP service which is part of the installation. It is possible to disable this installation of this OpenLDAP service, and to connect to an external LDAP implementation using different mechanisms including support for Active Directory.
 
 # Configuring an External LDAP Server
 
-To use an LDAP Server other than the pre-configured OpenLDAP instance which comes as part of the TNCO installation, follow these steps.
+To use an LDAP Server other than the pre-configured OpenLDAP instance which comes as part of the TNC-O installation, follow these steps.
 
 ## Modify LDAP connection configuration
 
-TNCO comes with configuration based on the directory structure which exists in the pre-configured install of OpenLDAP.
+TNC-O comes with configuration based on the directory structure which exists in the pre-configured install of OpenLDAP.
 
 When using an existing LDAP server which uses a different directory structure, the LDAP directory queries can be configured as below.
 
-TNCO supports 2 distinct LDAP authentication strategies which are as follows:
+TNC-O supports 2 distinct LDAP authentication strategies which are as follows:
 
 - `ldapBind` - (default) this mechanism binds to LDAP using manager credentials to initially locate the user's DN record using search filters, then attempting to bind this user with their password once found. This method should be selected in order to authenticate against Active Directory.
 - `ldapSimple` - this mechanism binds to LDAP either using manager credentials, or anonymously if this is allowed. Once connected, the user's DN record is located using search filters and a password compare is performed against the password attribute within this record.
@@ -24,7 +24,7 @@ Once the most appropriate strategy is selected, follow the relevant configuratio
 
 ### LDAP Bind (default)
 
-The `ldapBind` authentication strategy is the default during an installation of TNCO. It can be customised with the following configuration, which can be set in Vault:
+The `ldapBind` authentication strategy is the default during an installation of TNC-O. It can be customised with the following configuration, which can be set in Vault:
 
 ```yaml
 alm:
@@ -55,7 +55,7 @@ The purpose of each configuration item is as follows:
 
 ### LDAP Simple
 
-The `ldapSimple` authentication strategy relies on TNCO using a manager password to bind to LDAP, upon which it queries the user’s DN record and compares the password.  The following configuration is required, which can be set in Vault:
+The `ldapSimple` authentication strategy relies on TNC-O using a manager password to bind to LDAP, upon which it queries the user’s DN record and compares the password.  The following configuration is required, which can be set in Vault:
 
 ```yaml
 alm:
@@ -88,7 +88,7 @@ The purpose of each configuration item is as follows:
 - `passwordAttribute` - the attribute in the directory which contains the user password
 - `passwordEncoding` - the encoding on the stored password (only BCRYPT and PLAIN are supported)
 
-If using passwordEncoding of BCRYPT, the user's password must be provided as a BCrypt encoded value. The BCrypt hashing library used in TNCO currently only supports hashed passwords with the `$2a` prefix. It should be ensured that any LDAP passwords generated make use of a BCrypt hashing algorithm which only generates password hashes with the `$2a` prefix, otherwise login attempts will fail. An example tool that may be used to convert plain-text passwords to BCrypt is the [bcrypt-cli](https://github.com/bitnami/bcrypt-cli).
+If using passwordEncoding of BCRYPT, the user's password must be provided as a BCrypt encoded value. The BCrypt hashing library used in TNC-O currently only supports hashed passwords with the `$2a` prefix. It should be ensured that any LDAP passwords generated make use of a BCrypt hashing algorithm which only generates password hashes with the `$2a` prefix, otherwise login attempts will fail. An example tool that may be used to convert plain-text passwords to BCrypt is the [bcrypt-cli](https://github.com/bitnami/bcrypt-cli).
 
 ## Revoke user access
 
@@ -107,7 +107,7 @@ member: uid=TestUserA,ou=people,dc=lm,dc=com
 
 ### Suspension using Password Policy
 
-The default installation of TNCO, which comes with an instance of OpenLDAP, will have a password policy installed and enforced. This meachanism can be used to lockout users. The easiest way to lockout a user is to set a value within the pwdAccountLockedTime attribute under the user's DN record. An example of this is shown below:
+The default installation of TNC-O, which comes with an instance of OpenLDAP, will have a password policy installed and enforced. This meachanism can be used to lockout users. The easiest way to lockout a user is to set a value within the pwdAccountLockedTime attribute under the user's DN record. An example of this is shown below:
 
 #### Lock User
 

@@ -17,7 +17,7 @@ Use [LMCTL](/reference/lmctl) to create the basis of a Resource project
 lmctl project create --type Resource --rm brent
 ```
 
-Each resource requires a resource descriptor in YAML format that is located in the 'Definitions/lm/resource.yaml' file of the resource package. The format of this file is defined by the [TNCO Resource Descriptor YAML Specification](/reference/descriptor-specification/resource-descriptor).
+Each resource requires a resource descriptor in YAML format that is located in the 'Definitions/lm/resource.yaml' file of the resource package. The format of this file is defined by the [TNC-O Resource Descriptor YAML Specification](/reference/descriptor-specification/resource-descriptor).
 
 # Add Resource Descriptor
 
@@ -60,7 +60,7 @@ lifecycle:
 
 The descriptor includes 3 input properties, each correspond to an input in our HEAT template: `key_name`, `image_id`, `flavor`. The descriptor also includes 2 read-only properties, which correspond to outputs in our HEAT template: `internal_ip` and `public_ip`. 
 
-`infrastructure` defines the infrastructure type as that of Openstack. `infrastructure-type` property for drivers of lifecycles can then use a wildcard value `'*'` and the default resource infrastructure will be automatically registered by TNCO.
+`infrastructure` defines the infrastructure type as that of Openstack. `infrastructure-type` property for drivers of lifecycles can then use a wildcard value `'*'` and the default resource infrastructure will be automatically registered by TNC-O.
 
 Under `lifecycle` section are 2 basic lifecycle transitions for the resource: Create and Delete. These will be handled by the [Openstack VIM Driver](https://github.com/accanto-systems/openstack-vim-driver) to manage infrastructure (e.g create VMs with compute, storage and network infrastructure required on Openstack) to fulfill the resource's function.
 

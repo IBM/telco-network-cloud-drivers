@@ -18,7 +18,7 @@ function upload {
 	name=${1}
 	version=${2}
 	package=${name}-${version}.tgz
-	echo uploading ${package}-${version} package to nexus and push to TNCO environment named ${TEST_ENV}
+	echo uploading ${package}-${version} package to nexus and push to TNC-O environment named ${TEST_ENV}
 	curl -v -u ${NEXUS_CREDENTIALS} --upload-file ./packages/${package} ${NEXUS_URL}/${name}/${package}
 	
 }

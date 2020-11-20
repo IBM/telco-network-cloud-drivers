@@ -1,4 +1,4 @@
 ---
-title: Configure TNCO
+title: Configure TNC-O
 weight: 10
 ---

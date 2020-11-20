@@ -11,7 +11,7 @@ The scripts may be implemented using any scripting language of choice, as long a
 
 A resource package does not need to implement all lifecycle scripts, only those defined in the resource descriptor.
 
-In addition to the standard lifecycle scripts, specific operations may also be added. Operations are bespoke transitions that are invoked by the Resource manager when Telco Network Cloud Orchestration (TNCO) is establishing relationships between two resources. These allow for action to take place between the resources to enable a Network Service to work. Operations and their definitions are part of the public interface of a resource. 
+In addition to the standard lifecycle scripts, specific operations may also be added. Operations are bespoke transitions that are invoked by the Resource manager when Telco Network Cloud Orchestration (TNC-O) is establishing relationships between two resources. These allow for action to take place between the resources to enable a Network Service to work. Operations and their definitions are part of the public interface of a resource. 
 
 Create an operation by adding the operation script in the 'Lifecycle/ansible/scripts' folder where the name of the operation is the name of the script. For example, the "deleteNetworkInterface" script should be located in the file 'Lifecycle/ansible/scripts/deleteNetworkInterface.yml' or 'Lifecycle/ansible/scripts/deleteNetworkInterface.yaml' (note, case is important).
 
@@ -257,7 +257,7 @@ Add the following content to the playbook
 
 # Enabling Lifecycle Transitions
 
-To indicate to TNCO that the Resource supports additional transitions we must update the Resource descriptor (`Definitions/lm/resource.yaml`). Open this file and add "Install", "Configure", "Start" and "Stop" to the list of supported lifecycle:
+To indicate to TNC-O that the Resource supports additional transitions we must update the Resource descriptor (`Definitions/lm/resource.yaml`). Open this file and add "Install", "Configure", "Start" and "Stop" to the list of supported lifecycle:
 
 ```
 infrastructure:

@@ -3,7 +3,7 @@ title: Glossary of Terms
 weight: 0
 ---
 
-Telco Network Cloud Orchestration (TNCO) uses a number of terms which have very specific meaning in its context. In some cases these terms are used in other products or industries to mean slightly different things. It is important that the user understand these terms in the context of TNCO
+Telco Network Cloud Orchestration (TNC-O) uses a number of terms which have very specific meaning in its context. In some cases these terms are used in other products or industries to mean slightly different things. It is important that the user understand these terms in the context of TNC-O
 
 # Assembly
 Assembly is a definition of a service and may comprise of one or more resources and/or other assemblies. It is defined in an Assembly Descriptor and can be instantiated as an Assembly Instance.
@@ -12,7 +12,7 @@ Assembly is a definition of a service and may comprise of one or more resources 
 Assembly descriptor is a computer readable definition of an Assembly implemented as a Yaml-file, see Descriptor for further details.
 
 # Assembly Designer, Service Designer
-An Actor or end user role designing services using TNCO. Assembly designer takes informal service design artifacts defined by service designers and translates them to a set of formal computer readable descriptors that model the target service
+An Actor or end user role designing services using TNC-O. Assembly designer takes informal service design artifacts defined by service designers and translates them to a set of formal computer readable descriptors that model the target service
 
 # Assembly Instance
 Instantiation of an Assembly Descriptor which is comprised of resource instances or assembly instances
@@ -21,7 +21,7 @@ Instantiation of an Assembly Descriptor which is comprised of resource instances
 Capabilities is a section of Assembly Descriptor or Resource Descriptor defining what functions the Resources or Assemblies are implementing.
 
 # Catalog, Assembly Catalog
-The repository within TNCO storing published Assembly Descriptors and Resources Descriptors.
+The repository within TNC-O storing published Assembly Descriptors and Resources Descriptors.
 
 # Cloud
 The cloud is a common term referring to accessing computer, information technology (IT), and software applications through a network connection, often by accessing data centers using wide area networking (WAN) or Internet connectivity.
@@ -45,17 +45,17 @@ A deployment location is thus a logical separation of infrastructure that may re
 Resources are created within the context of a single deployment location
 
 # Descriptor (Assembly / Resource)
-A descriptor is the definition of a resource or assembly, used by TNCO to instantiate instances as requested by the users (or remote systems). A descriptor describes the composition, properties, policies & metrics, relationships and behaviour of an assembly/resource
+A descriptor is the definition of a resource or assembly, used by TNC-O to instantiate instances as requested by the users (or remote systems). A descriptor describes the composition, properties, policies & metrics, relationships and behaviour of an assembly/resource
 
-* Resource descriptors are owned and managed externally to TNCO and are typically onboarded through a resource manager
-* Assembly descriptors can be viewed, edited and managed through the TNCO UI or the TNCO API
+* Resource descriptors are owned and managed externally to TNC-O and are typically onboarded through a resource manager
+* Assembly descriptors can be viewed, edited and managed through the TNC-O UI or the TNC-O API
 
 Descriptors have identifiers of the form `type::name::version` (for example: assembly::my_first_assembly::1.0), where
 * *Type* is one of assembly or resource
 * *Name* is the name for the descriptor
 * *Version* is the semantic version of the descriptor (dot-separated)
 
-Descriptors can be imported and exported from TNCO using the LMCTL command line tool and are represented as YAML documents
+Descriptors can be imported and exported from TNC-O using the LMCTL command line tool and are represented as YAML documents
 
 The syntax of the YAML documents can be found for [resources](/reference/descriptor-specification/resource-descriptor) and [assemblies](/reference/descriptor-specification/assembly-descriptor) 
 
@@ -81,24 +81,24 @@ The entity responsible for generating the assembly deployment plan and instructi
 Apache Kafka™ is a distributed streaming platform.
 
 # Lifecycle Event, Event
-TNCO published intent and status change event onto a Kafka topic.
+TNC-O published intent and status change event onto a Kafka topic.
 
 # Lifecycle State, State
-TNCO defines a simple but flexible lifecycle which is applicable to both Assemblies and Resources. This lifecycle consists of a number of states and on the transition between each state a `Lifecycle Transition` occurs. 
+TNC-O defines a simple but flexible lifecycle which is applicable to both Assemblies and Resources. This lifecycle consists of a number of states and on the transition between each state a `Lifecycle Transition` occurs. 
 
-The set of states are as follows. *Stable* indicates that the component (assembly/resource) can be elected to reside in this state. If a state is not _stable_ then TNCO will auto-transition through this state and automatically promote the component to the next stable state.
+The set of states are as follows. *Stable* indicates that the component (assembly/resource) can be elected to reside in this state. If a state is not _stable_ then TNC-O will auto-transition through this state and automatically promote the component to the next stable state.
 
 Each state transition on a resource can, optionally, be associated with a lifecycle transition action on the Resource Manager. That is, the resource manager is informed of the state transition (more correctly the intent to change state) so that it can take appropriate action.
 
 | State | Stable | Comment |
 |---|---|---|
 | null | Y | This state indicates that the component (assembly/resource) does not yet exist
-| Created | N | `Created` is a transitional state. That is, it is a temporary state which an component (assembly/resource) exists in between `null` and `Installed`. It is not possible to direct TNCO to bring an component to this state.
+| Created | N | `Created` is a transitional state. That is, it is a temporary state which an component (assembly/resource) exists in between `null` and `Installed`. It is not possible to direct TNC-O to bring an component to this state.
 | Installed | Y |
 | Inactive | Y |
 | Active | Y | The state which indicates that the component (assembly/resource) is fully functioning and  operational 
 | Broken | N | This is a temporary state which a component (assembly/resource) will be brought to by the system if a heal is required. 
-| Failed | Y | A state which only the system can transition a component (assembly/resource) to. It is a special state TNCO will bring an component to if it detects that additional action by TNCO is futile. TNCO will take no active remedial action once a component has transitioned to this state without direction from an administrator.
+| Failed | Y | A state which only the system can transition a component (assembly/resource) to. It is a special state TNC-O will bring an component to if it detects that additional action by TNC-O is futile. TNC-O will take no active remedial action once a component has transitioned to this state without direction from an administrator.
 
 # Lifecycle Transition
 Each component (Assemblies & Resources) flow through a state model during its lifetime. Each state transition represents a Lifecycle Transition and the execution the opportunity to have a lifecycle transition script executed by the appropriate Resource-Manager for the given resource. 
@@ -121,9 +121,9 @@ The set of transitions are fixed as are the set of states
 
 
 ## Lifecycle Transition Scripts
-Strictly speaking the role of `Lifecycle Transition Scripts` is outside the remit of TNCO. They represent a  set of scripts which are executed by the Resource Manager as a result of it receiving corresponding notifications of resource lifecycle state changes (intent). As TNCO supports the binding of external Resource Managers the existence of Lifecycle Transition Scripts is not mandated but the flexibility they provide is the suggested method of realizing state transitions by a Resource Manager. 
+Strictly speaking the role of `Lifecycle Transition Scripts` is outside the remit of TNC-O. They represent a  set of scripts which are executed by the Resource Manager as a result of it receiving corresponding notifications of resource lifecycle state changes (intent). As TNC-O supports the binding of external Resource Managers the existence of Lifecycle Transition Scripts is not mandated but the flexibility they provide is the suggested method of realizing state transitions by a Resource Manager. 
 
-Further to this, with the productized Resource Manager shipped with TNCO in v2.1 for the first time Lifecycle Transition scripts are prescribed for all transition bar `null` to `Created` where an associated action is performed by the Resource Manager.  The associated Lifecycle Transition Script is provided to the Resource Driver to enact the transition. For `null` to `Created` transitions a *Heat* or *TOSCA* template can be provided.
+Further to this, with the productized Resource Manager shipped with TNC-O in v2.1 for the first time Lifecycle Transition scripts are prescribed for all transition bar `null` to `Created` where an associated action is performed by the Resource Manager.  The associated Lifecycle Transition Script is provided to the Resource Driver to enact the transition. For `null` to `Created` transitions a *Heat* or *TOSCA* template can be provided.
 
 # Microservice
 Microservices is a variant of the service-oriented architecture (SOA) architectural style that structures an application as a collection of loosely coupled services. The benefit of decomposing an application into different smaller services is that it improves modularity and makes the application easier to understand, develop and test. It also parallelizes development by enabling small autonomous teams to develop, deploy and scale their respective services independently.
@@ -144,7 +144,7 @@ Network functions virtualization (NFV) is an initiative to virtualise network se
 OASIS is a non-profit consortium that drives the development, convergence and adoption of open standards for the global information society.
 
 # Operation
-When a relationship is created or destroyed (ceased), TNCO has the capacity to cause side-effects by executing one or more operations on the components on either end of the relationship (pre and post)
+When a relationship is created or destroyed (ceased), TNC-O has the capacity to cause side-effects by executing one or more operations on the components on either end of the relationship (pre and post)
 
 When an operation is called on a resource manager, the set of properties of the relationship are passed as opposed to the properties of the resource on which it is executing. 
 
@@ -155,7 +155,7 @@ Ultimately all Operations are defined within resource descriptors, but they can 
 `Operations` is a section of a Assembly or Resource Descriptor defining sets of operations that can be called to enable relationships to be created between resources and/or assemblies.
 
 # Operational UI
-TNCO User Interface
+TNC-O User Interface
 
 # Opinionated patterns 
 Group of lifecycle transitions to achieve a particular task. Examples of tasks include: heal, reconfigure, and upgrade.
@@ -175,10 +175,10 @@ Quality Monitoring is a process to monitor the health of deployed Resources and 
 # Reference 
 Relationships is a section of Assembly or Resource Descriptor identifying referenced components. 
 
-In addition to defining components managed by an assembly, an assembly can reference assemblies and resources that are managed independently. Thus a reference is a resource or assembly that has its lifecycle managed externally to the assembly in which the reference is defined though it is likely still managed by TNCO.
+In addition to defining components managed by an assembly, an assembly can reference assemblies and resources that are managed independently. Thus a reference is a resource or assembly that has its lifecycle managed externally to the assembly in which the reference is defined though it is likely still managed by TNC-O.
 
 When defining a reference, we must specify the `search criteria` used to find this reference component at instantiation time.
-* Assemblies are found by specifying their name, which will be searched within the current TNCO system
+* Assemblies are found by specifying their name, which will be searched within the current TNC-O system
 * Resources are found by specifying their name, deployment location and resource manager, which will be found by searching for the resource within the specified resource manager
 
 Referenced components can be the source for a relationship (but cannot be a target)
@@ -206,7 +206,7 @@ Requirements is a section of Assembly Descriptor or Resource Descriptor explaini
 # Resource 
 A piece of software that can be automatically deployed in a virtual environment and that supports key lifecycle states including install, configure, start, stop, and uninstall.
 
-Resource are managed externally to TNCO using a Resource Manager and represents the smallest atomic building block available in TNCO
+Resource are managed externally to TNC-O using a Resource Manager and represents the smallest atomic building block available in TNC-O
 
 A resource may for example represent a VNF, VNFC or the PNF in an NFV environment or any external entity depending on how the system is modeled
 
@@ -214,15 +214,15 @@ A resource may for example represent a VNF, VNFC or the PNF in an NFV environmen
 The list of resource attributes and properties written in Yaml, see Descriptor for further details.
 
 # Resource Health, Component Health
-Resource Health is a Microservice within TNCO responsible for monitoring health related messages and initiating recovering actions related to deployed Resources. For instance, the Resource Health may send a heal message to the Intent Engine if a certain event indicating health issues is detected.
+Resource Health is a Microservice within TNC-O responsible for monitoring health related messages and initiating recovering actions related to deployed Resources. For instance, the Resource Health may send a heal message to the Intent Engine if a certain event indicating health issues is detected.
 
 # Resource Instance
 Represents the logical grouping of infrastructure being managed by an external resource manager
 
 # Resource Manager
-The entity instructing resources (e.g. Brent). TNCO can have a number of bound Resource Managers but must have at least one to function
+The entity instructing resources (e.g. Brent). TNC-O can have a number of bound Resource Managers but must have at least one to function
 
-This system is responsible for transitioning resources through lifecycle states and performing operations on resources under the orchestration of TNCO and returning the result to TNCO
+This system is responsible for transitioning resources through lifecycle states and performing operations on resources under the orchestration of TNC-O and returning the result to TNC-O
 
 A resource is managed by one (and only one) resource manager
 
@@ -250,7 +250,7 @@ Virtual Network Functions (VNFs) are virtualized tasks formerly carried out by p
 # Virtual Network Function Component, VNFC
 Virtual Network Function Components (VNFs) are virtualized internal component of a VNF in the NFV architecture which provides a defined subfunction of a VNF. VNFCs map N:1 with their VNF and a single instance of a component maps 1:1 with a Virtualization Container. 
 
-In the TNCO model a VNFC is realized as a Resource.
+In the TNC-O model a VNFC is realized as a Resource.
 
 
 
