@@ -62,7 +62,7 @@ The descriptor includes 3 input properties, each correspond to an input in our H
 
 `infrastructure` defines the infrastructure type as that of Openstack. `infrastructure-type` property for drivers of lifecycles can then use a wildcard value `'*'` and the default resource infrastructure will be automatically registered by TNC-O.
 
-Under `lifecycle` section are 2 basic lifecycle transitions for the resource: Create and Delete. These will be handled by the [Openstack VIM Driver](https://github.com/accanto-systems/openstack-vim-driver) to manage infrastructure (e.g create VMs with compute, storage and network infrastructure required on Openstack) to fulfill the resource's function.
+Under `lifecycle` section are 2 basic lifecycle transitions for the resource: Create and Delete. These will be handled by the [Openstack VIM Driver](https://github.com/IBM/openstack-vim-driver) to manage infrastructure (e.g create VMs with compute, storage and network infrastructure required on Openstack) to fulfill the resource's function.
 
 Note that "Openstack" under `infrastructure` is the infrastructure type by default for all lifecycles, while "openstack" under `lifecycle.Create.drivers` is the [Resource Driver type](/user-guides/resource-engineering/drivers/onboarding) used by a particular lifecycle. 
 

@@ -21,10 +21,10 @@ Unlike in v2.1.0 where a VIM Driver handles infrastructure creation/deletion whi
 | 2.1.0      | 2.4.1    | 0.5.0 - 1.1.0            | 0.0.3 - 0.0.5            | 0.4.0 - 1.0.0        | none                       |
 | 2.2.x      | >= 2.5.0 | >= 2.0.0                 | 0.1.0                    | >= 2.0.0             | >= 0.0.3a1                 |
 
-- [Ansible Lifecycle Driver](https://github.com/accanto-systems/ansible-lifecycle-driver/blob/master/docs/index.md)
-- [SOL 003 Lifecycle Driver](https://github.com/accanto-systems/sol003-lifecycle-driver)
-- [Openstack VIM Driver](https://github.com/accanto-systems/openstack-vim-driver/blob/master/docs/index.md)
-- [Kubernetes Resource Driver](https://github.com/accanto-systems/kubernetes-driver/blob/master/docs/index.md)
+- [Ansible Lifecycle Driver](https://github.com/IBM/ansible-lifecycle-driver/blob/master/docs/index.md)
+- [SOL 003 Lifecycle Driver](https://github.com/IBM/sol003-lifecycle-driver)
+- [Openstack VIM Driver](https://github.com/IBM/openstack-vim-driver/blob/master/docs/index.md)
+- [Kubernetes Resource Driver](https://github.com/IBM/kubernetes-driver/blob/master/docs/index.md)
 
 If you want to create your own Resource Driver, check out [how to create custom driver](/user-guides/resource-engineering/drivers/creating-drivers/).
 

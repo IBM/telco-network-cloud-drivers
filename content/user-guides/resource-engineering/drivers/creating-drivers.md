@@ -7,11 +7,11 @@ weight: 50
 
 You may create your own resource driver to support integration with virtual infrastructure and to complete transitions and operations with different scripting mechanisms. The driver must fulfill resource driver APIs and be capable of accepting HTTP requests and returning responses asynchronously on Kafka. 
 
-The programming language used to create the driver is at the discretion of the user. The [SOL 003 Lifecycle Driver](https://github.com/accanto-systems/sol003-lifecycle-driver) is a good example of writing a driver with Java.
+The programming language used to create the driver is at the discretion of the user. The [SOL 003 Lifecycle Driver](https://github.com/IBM/sol003-lifecycle-driver) is a good example of writing a driver with Java.
 
-The [Ignition Framework](https://github.com/accanto-systems/ignition) has been created to help developers quickly build drivers in Python. It provides boilerplate code for handling API requests and sending asynchronous Kafka responses. This enables developers to focus on the real functionality of their driver by providing implementations of an interface per API to act on the target request. Read through the [documentation on creating a driver](https://github.com/accanto-systems/ignition/blob/master/docs/user-guide/creating-a-driver.md) to learn how to get started.
+The [Ignition Framework](https://github.com/IBM/ignition) has been created to help developers quickly build drivers in Python. It provides boilerplate code for handling API requests and sending asynchronous Kafka responses. This enables developers to focus on the real functionality of their driver by providing implementations of an interface per API to act on the target request. Read through the [documentation on creating a driver](https://github.com/IBM/ignition/blob/master/docs/user-guide/creating-a-driver.md) to learn how to get started.
 
-The Resource Driver API is specified (in OpenAPI format) in the [Ignition Framework](https://github.com/accanto-systems/ignition/blob/master/ignition/openapi/resource-driver.yaml). Copy the definition and paste it into the [Swagger Editor](https://editor.swagger.io/) to view a pretty version of it.
+The Resource Driver API is specified (in OpenAPI format) in the [Ignition Framework](https://github.com/IBM/ignition/blob/master/ignition/openapi/resource-driver.yaml). Copy the definition and paste it into the [Swagger Editor](https://editor.swagger.io/) to view a pretty version of it.
 
 # Resource Infrastructure and Operation (Lifecycle) Requests
 
@@ -41,7 +41,7 @@ The `/execute` operation is used to execute any lifecycle transition or operatio
 - property values, including all of the values for properties on the descriptor and details for infrastructure objects in `associatedTopology`
 - the deployment location the Resource is assigned to
 
-The operation is expected to be potentially long running. To cater for this, the API states it should return an immediate response with an identifier for the request. [Ignition](https://github.com/accanto-systems/ignition) will handle these aspects of request handling, or at least provide APIs that handle/managed it for you.
+The operation is expected to be potentially long running. To cater for this, the API states it should return an immediate response with an identifier for the request. [Ignition](https://github.com/IBM/ignition) will handle these aspects of request handling, or at least provide APIs that handle/managed it for you.
 
 On completion, the driver is expected to produce a message on the `lm_vnfc_lifecycle_execution_events` Kafka topic with the request identifier and details of the success or failure of the operation. Brent is constantly monitoring this topic for messages and will use the earlier returned request identifier to determine the operation each message relates to. For a full definition of the expected message format see [Asynchronous Message Format](#asynchronous-message-format)
 

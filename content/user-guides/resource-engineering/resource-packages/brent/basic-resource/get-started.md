@@ -32,8 +32,8 @@ Your Openstack environment will need:
 
 Your TNC-O environment must have the following: 
 
-- [Openstack VIM Driver](https://github.com/accanto-systems/openstack-vim-driver) installed and onboarded
-- [Ansible Lifecycle Driver](https://github.com/accanto-systems/ansible-lifecycle-driver) installed and onboarded
+- [Openstack VIM Driver](https://github.com/IBM/openstack-vim-driver) installed and onboarded
+- [Ansible Lifecycle Driver](https://github.com/IBM/ansible-lifecycle-driver) installed and onboarded
 - A valid Deployment Location onboarded to TNC-O with the necessary properties required by the Openstack VIM Driver and Ansible Lifecycle Driver
 
 # Get Started

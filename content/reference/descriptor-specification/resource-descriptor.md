@@ -282,7 +282,7 @@ Resource descriptors must support the Create lifecycle transition. However, they
 
 For each lifecycle transition one can configure in the "drivers" section which Resource Driver to use based on property values. The key is the type of a [Resource Driver](/user-guides/resource-engineering/drivers/onboarding/). 
 
-Through [Resource Drivers](content\user-guides\resource-engineering\drivers\overview.md), `Create` and `Delete` handles the existence of infrastructure objects while other lifecycles execute lifecycle transitions against the objects that are part of the resource's associated topology. An example: "Create" lifecycle uses the [Kubernetes Driver](https://github.com/accanto-systems/kubernetes-driver) to create a Kubernetes pod, then "Install" lifecycle runs an Ansible playbook in that pod.
+Through [Resource Drivers](content\user-guides\resource-engineering\drivers\overview.md), `Create` and `Delete` handles the existence of infrastructure objects while other lifecycles execute lifecycle transitions against the objects that are part of the resource's associated topology. An example: "Create" lifecycle uses the [Kubernetes Driver](https://github.com/IBM/kubernetes-driver) to create a Kubernetes pod, then "Install" lifecycle runs an Ansible playbook in that pod.
 
 Selector criteria defines property values to match when selecting a resource driver to handle a lifecycle transition request. At present only `infrastructure-type` (the deployment location "type") is supported, allowing the selection of a resource driver based on one or more infrastructure types.
 

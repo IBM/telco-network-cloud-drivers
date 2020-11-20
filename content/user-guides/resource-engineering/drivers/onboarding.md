@@ -5,7 +5,7 @@ weight: 40
 
 # Onboard Drivers
 
-You can onboard drivers with the `resourcedriver add` command from [LMCTL](/reference/lmctl) v2.1+. Read more about all the commands from [LMCTL resourcedriver command reference](https://github.com/accanto-systems/lmctl/tree/master/docs/command-reference/resourcedriver)
+You can onboard drivers with the `resourcedriver add` command from [LMCTL](/reference/lmctl) v2.1+. Read more about all the commands from [LMCTL resourcedriver command reference](https://github.com/IBM/lmctl/tree/master/docs/command-reference/resourcedriver)
 
 Drivers by default run with SSL enabled and need to be onboarded with an SSL certificate that allows Brent to communicate with them. To retrieve the SSL certificate for a deployed driver (in base64-encoded PEM format), run the following command:
 

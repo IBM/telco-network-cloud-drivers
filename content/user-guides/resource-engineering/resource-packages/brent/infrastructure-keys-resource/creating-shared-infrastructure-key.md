@@ -11,7 +11,7 @@ The [resource descriptor](/user-guides/resource-engineering/resource-packages/br
 
 Note: in the case of Openstack it's not possible to create key pairs programmatically (using HEAT templates, for example) with existing public and private key portions created using another mechanism (such as openssl), so create the key pair in Openstack UI and use the downloaded private key (e.g server1_ssh_key.pem) when adding as a shared infrastructure key in TNC-O.
 
-The best way to add a shared infrastructure key is to use [LMCTL](https://github.com/accanto-systems/lmctl/blob/master/docs/command-reference/key/add.md). For example:
+The best way to add a shared infrastructure key is to use [LMCTL](https://github.com/IBM/lmctl/blob/master/docs/command-reference/key/add.md). For example:
 
 ```
 lmctl key add --public server1_ssh_key.pub --private server1_ssh_key.pem dev apache1_server_key
